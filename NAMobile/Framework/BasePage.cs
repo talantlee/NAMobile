@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NAMobile.DAL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Web;
@@ -11,19 +12,105 @@ namespace NAMobile.Framework
 
         protected Model.UserInfo LoginUser
         {
-            get
-            {
-                if (Session["_currLoginUser"] == null)
-                {
-                    LogOut();
-                }
-                return Session["_currLoginUser"] as Model.UserInfo;
-            }
+          
             set
             {
-                Session["_currLoginUser"] = value;
+                if (value != null)
+                {
+                    Session["UserID"] = value.UserID;
+                    Session["LoginID"] = value.LoginId;
+                    Session["UserNam"] = value.UserNam;
+                    Session["L_SysID"] = value.SysID;
+                    Session["IP"] = UserHostIp;
+                    Session["LoginHost"] = Request.ServerVariables["HTTP_HOST"];
+                    Session["ShowPrice"] = value.ShowPrice.Trim();
+
+                    Session["PriceList"] = value.PriceList.Trim();
+                    Session["SecurityLevel"] = value.SecurityLevel;
+                    Session["GrantList"] = value.GrantList;
+                    Session["mGrantList"] = "";
+                    Session["RGAA"] = value.RgaEmail; //to do
+
+                    Session["CanAnswer"] = value.answer;
+                    //  session("isproxyClient") = "Y"
+                    Session["QsSpec"] = value.QsSpec;
+                    Session["allowWaive"] = value.allowWaive;
+                    Session["isNQA"] = value.isNQA;
+
+                    Session["isCash"] = value.isCash;
+
+                    Session["ClientType"] = value.ClientType;
+
+                    Session["ClientTypeDes"] = value.ClientTypeDes;
+
+                    Session["Email"] = value.Email;
+
+                    Session["ClientShipVia"] = value.ShipVia;
+
+                    Session["CustDelivery"] = value.CustDelivery;
+
+                    Session["isTemplate"] = value.isTemplate;
+
+                    Session["DealerID"] = "";
+
+                    Session["DealerName"] = "";
+
+                    Session["isApprovedUser"] = value.isApproved;
+                    Session["RGAEmail"] = value.RgaEmail;
+                    Session["AccounTisActived"] = value.ActivedStatus;
+                    Session["Rights"] = "";
+                    if (value.Rights=="*" || value.Rights.ToLower() == "m")
+                    {
+                        Session["Rights"] = value.Rights;
+                        Session["SysUserID"] = value.UserID;
+                        Session["SysLoginID"] = value.LoginId;
+                    }
+                    else if ( value.Rights.ToLower() == "p")
+                    {
+                        Session["Rights"] = value.Rights;
+                        Session["SysUserID"] = "";
+                    }
+                    else
+                    {
+                        Session["Rights"] = value.Rights;
+                        Session["SysUserID"] = "";
+                    }
+                    Session["LoginOK"] = true;
+                    Session["logoingTime"] = DateTime.Now;
+
+                }
+                else
+                {
+                    Session["UserID"] = string.Empty; ;
+                    Session["SysUserID"] = "";
+                    Session["LoginID"] = "";
+                }
             }
         }
+        protected void CheckVaild()
+        {
+            if (Session["UserID"] == null)
+            {
+
+                //if (Request.IsAuthenticated)
+                //{
+                //    Session["_currLoginUser"] = new UserInfoDAL().GetModel(Page.User.Identity.Name);
+                //}
+                LogOut();
+                return;
+            }
+            if (string.IsNullOrEmpty(Session["UserID"].ToString()))
+            {
+                LogOut();
+                return;
+            }
+          
+        }
+
+                                            		
+
+                                             
+										
         protected string AppVersion
         {
             get
@@ -49,7 +136,7 @@ namespace NAMobile.Framework
 
         protected void LogOut()
         {
-            Response.Redirect("~/LoginOut.aspx");
+            Response.Redirect("~/Default.aspx");
         }
 
      
@@ -113,7 +200,7 @@ namespace NAMobile.Framework
         {
             get
             {
-                return CustomerWeb.Entity.Config.ScriptVersion;
+                return Model.Config.ScriptVersion;
             }
 
         }
@@ -126,7 +213,15 @@ namespace NAMobile.Framework
                 RegisterScript(string.Format("parent.DeskTopApp.showMessage(\"{0}\")", ss.Replace("\n", " ").Replace("\r", "")));
 
         }
-
+        public string UserID
+        {
+            get
+            {
+                if (Session["UserID"] != null)
+                    return Session["UserID"].ToString();
+                return string.Empty;
+            }
+        }
         protected override void OnError(EventArgs e)
         {
             base.OnError(e);
@@ -134,12 +229,11 @@ namespace NAMobile.Framework
 
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append(UserHostIp);
-            if (Session["_currLoginUser"] != null)
-            {
+           
                 sb.Append("(");
-                sb.Append(LoginUser.UserId);
+                sb.Append(UserID);
                 sb.Append(")");
-            }
+            
 
 
 
@@ -164,7 +258,7 @@ namespace NAMobile.Framework
 
 
         }
-        public  string UserHostIp
+        public  static string UserHostIp
         {
             get
             {

@@ -7,15 +7,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-        <meta charset="utf-8" />
+        
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <script src="lib/jquery-3.6.0.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <title></title>
-     
-       
+    <title><%Response.Write(Session["WebTitle"]==null?"Norman Australia":Session["WebTitle"].ToString()); %></title>
 </head>
 <body>
     <form id="form1" runat="server">

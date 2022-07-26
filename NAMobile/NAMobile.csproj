@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\SqlHelper.cs" />
+    <Compile Include="DAL\UserInfoDAL.cs" />
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -92,6 +93,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Framework\EmailUtl.cs" />
+    <Compile Include="Framework\MD5Str.cs" />
     <Compile Include="Model\Config.cs" />
     <Compile Include="Model\UserInfo.cs" />
     <Compile Include="Global.asax.cs">
