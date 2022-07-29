@@ -11,7 +11,7 @@
     <script src="lib/jquery-3.6.0.min.js" type="text/javascript"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
     <title><%Response.Write(Session["WebTitle"]==null?"Norman Australia":Session["WebTitle"].ToString()); %></title>
-    <style>
+    <style type="text/css">
         html,
 body {
   height: 100%;
@@ -70,7 +70,7 @@ body {
      <asp:Button ID="btn_submit" runat="server" CssClass="btn btn-primary" Text="Sign in"  OnClick="btn_submit_Click" />
     
               <div class="row" style="padding-top:10px;color:red">
-               <asp:Label ID="lblmess" runat="server">sdfsdf</asp:Label>
+               <asp:Label ID="lblmess" runat="server"></asp:Label>
                   </div>
   </form>
 </main>

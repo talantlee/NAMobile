@@ -1,0 +1,1 @@
+Xcopy D:\Source\Web\NAMobile\NAMobile \\172.16.1.43\d$\chinaweb\NAMobile\NAMobile /s /d /y /r /c /h

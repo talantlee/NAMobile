@@ -14,11 +14,6 @@
         }
       }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
 
 
       .nav-scroller {
@@ -28,7 +23,7 @@
         overflow-y: hidden;
       }
     </style>
- <link href="../css/dashboard.css" rel="stylesheet" />
+ <link href="css/dashboard.css" rel="stylesheet" />
  <header class="navbar sticky-top bg-light flex-md-nowrap p-0" style="height:63px">
        
         <img src="css/images/home_norman3.jpg" height="49" />
@@ -115,3 +110,11 @@
              
           </div>
       </div>
+  <script src="lib/feather.min.js"></script>
+        <script type="text/javascript">
+            (() => {
+                'use strict'
+                feather.replace({ 'aria-hidden': 'true' })
+            })();
+
+        </script>

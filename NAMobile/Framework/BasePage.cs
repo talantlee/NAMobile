@@ -17,6 +17,7 @@ namespace NAMobile.Framework
             {
                 if (value != null)
                 {
+                    //todo: 為了 方便 將asp 代碼遷移過來加上的。
                     Session["UserID"] = value.UserID;
                     Session["LoginID"] = value.LoginId;
                     Session["UserNam"] = value.UserNam;

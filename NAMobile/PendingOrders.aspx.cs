@@ -17,7 +17,7 @@ namespace NAMobile
                 if (Session["_currentLoginUser"] != null)
                 {
                     this.LoginUser = Session["_currentLoginUser"] as UserInfo;
-                    Session["_currentLoginUser"] = null;
+                   
                     this.CheckVaild();
                 }else
                 {
