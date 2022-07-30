@@ -25,5 +25,15 @@ namespace NAMobile
                 }
             }
         }
+        public bool hasQueryConditions
+        {
+            get
+            {
+
+                return (Session["Rights"].ToString() == "*" || (Session["SecurityLevel"].ToString() == "99" && Session["Rights"].ToString() == "" && Session["isCash"].ToString() == "0"));
+            }
+
+        }
+
     }
 }

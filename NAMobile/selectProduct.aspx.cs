@@ -13,6 +13,7 @@ namespace NAMobile
         {
             if (this.txtProductType.Text.Length > 1)
             {
+                Session["orderporducttype"]=txtProductType.Text;
                 Response.Redirect("TorderAEdit.aspx");
             }
         }

@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="navTop.ascx.cs" Inherits="NAMobile.navTop" %>
  <style>
       .bd-placeholder-img {
-        font-size: 1.125rem;
+        font-size: 0.95rem;
         text-anchor: middle;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -25,11 +25,27 @@
     </style>
  <link href="css/dashboard.css" rel="stylesheet" />
  <header class="navbar sticky-top bg-light flex-md-nowrap p-0" style="height:63px">
+       <div class="row container-fluid">
+           <div class="col col-8 col-md-11"><img src="css/images/home_norman3.jpg" height="49" /></div>
+           <div class="col"> 
+                <svg width="50" height="50" class="bd-placeholder-img rounded"  >
+                  <circle cx="25" cy="25" r="20" fill="#55595c" />
+                 <text x="50%" y="50%" fill="#eceeef" dy=".3em"><%  if (Session["UserShortNam"] != null)
+                                                                    {
+                                                                        Response.Write(Session["UserShortNam"].ToString());
+                                                                    }%></text>
+                </svg>
+                    
+       </div>
+           <div class="col d-md-none">
+              <button class="navbar-toggler position-absolute collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+           </div>
+       </div>
+     
+   
        
-        <img src="css/images/home_norman3.jpg" height="49" />
-          <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
       
         
       </header>
@@ -110,6 +126,11 @@
              
           </div>
       </div>
+     <div  style="z-index:1001; height:100%; position:absolute; top:0; width:100%; text-align:center; padding-top:120px" id="loadingdv">
+                           <div class="spinner-border text-primary m-5" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
   <script src="lib/feather.min.js"></script>
         <script type="text/javascript">
             (() => {

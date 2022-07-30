@@ -13,6 +13,8 @@
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <script src="lib/jquery-3.6.0.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link href="lib/bootstrap/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <script src="lib/bootstrap-datepicker.min.js"></script>
     <title><%Response.Write(Session["WebTitle"]==null?"Norman Australia":Session["WebTitle"].ToString()); %></title>
 </head>
 <body>
@@ -21,7 +23,7 @@
         <div class="container-fluid" >
                 <div class="row" >
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                      <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">Order Header Information / Shutters</div>
+                      <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">Order Header Information / <asp:Label ID="lbl_producttype" ForeColor="Blue" runat="server"></asp:Label></div>
                      <div style="padding-top:10px;">
                       <div class="row row-cols-1 row-cols-sm-2 g-3">
                                <div class="col">
@@ -77,12 +79,32 @@
            
         
         </div>
-        <div class="container p-5 fixed-bottom">
-               <a href="#" class="btn btn-primary">Back</a>
+
+        <div style="display:none">
+               <asp:TextBox ID="txtProductType" runat="server"></asp:TextBox>
+
+        </div>
+        <div class="container p-5">
+               <a href="#" class="btn btn-primary" onclick="window.history.go(-1)">Back</a>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
          <a href="#" class="btn btn-primary">Submit</a>
         </div>
 
     </form>
+          <script type="text/javascript">
+          
+              $(function () {
+                  $('#tbx_inputdate').attr("readOnly", "true");
+                  $('#tbx_inputdate').datepicker({
+                      autoclose: true,
+                      format: "dd-mm-yyyy",
+                      todayHighlight: true
+                  });
+                
+                $("#loadingdv").css("display", "none");
+            });
+         
+          </script>
+ 
 </body>
 </html>

@@ -113,6 +113,11 @@ Performance FauxWood</p>
                // document.getElementById("form1").action = "TorderAEdit.aspx";
                 document.getElementById("form1").submit();
             }
+            $(function () {
+             
+                $("#loadingdv").css("display", "none");
+            });
+         
         </script>
  
       

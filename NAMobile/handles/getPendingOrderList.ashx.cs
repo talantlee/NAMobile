@@ -27,6 +27,6 @@ namespace NAMobile.handles
           
         }
 
-      
+    
     }
 }

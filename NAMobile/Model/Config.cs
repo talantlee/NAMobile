@@ -6,8 +6,8 @@ namespace NAMobile.Model
 {
     public class Config
     {
-        public const string glbDateTimeFormat = "yyyy-MM-dd HH:mm:ss";
-        public const string glbDateFormat = "yyyy-MM-dd";
+        public const string glbDateTimeFormat = "dd-MM-yyyy HH:mm:ss";
+        public const string glbDateFormat = "dd-MM-yyyy";
     
         private static bool _istestserver;
         private static bool _ismaintance;
@@ -36,6 +36,13 @@ namespace NAMobile.Model
             set
             {
                 _isForceHttps = value;
+            }
+        }
+        public static string NowDateToString
+        {
+            get
+            {
+                return DateTime.UtcNow.AddHours(10).ToString(glbDateFormat);
             }
         }
 

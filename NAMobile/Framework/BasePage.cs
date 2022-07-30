@@ -21,6 +21,13 @@ namespace NAMobile.Framework
                     Session["UserID"] = value.UserID;
                     Session["LoginID"] = value.LoginId;
                     Session["UserNam"] = value.UserNam;
+                    if (value.UserNam.Length > 2)
+                    {
+                        Session["UserShortNam"] = value.UserNam.Substring(0,1).ToUpper() + value.UserNam.Substring(value.UserNam.Length-1).ToUpper();
+                    }else
+                    {
+                        Session["UserShortNam"] = value.UserNam.ToUpper();
+                    }
                     Session["L_SysID"] = value.SysID;
                     Session["IP"] = UserHostIp;
                     Session["LoginHost"] = Request.ServerVariables["HTTP_HOST"];
@@ -137,6 +144,7 @@ namespace NAMobile.Framework
 
         protected void LogOut()
         {
+            Session.Abandon();
             Response.Redirect("~/Default.aspx");
         }
 
@@ -223,6 +231,27 @@ namespace NAMobile.Framework
                 return string.Empty;
             }
         }
+
+        public static string GetProductName(string pd)
+        {
+            switch (pd.ToLower())
+            {
+                case "cellularshade":
+                    return "Honeycomb Shades";
+                case "roman":
+                    return "Roman Shades";
+                case "roller":
+                    return "Soluna Roller Shade";
+                case "displaytower":
+                    return "Display Tower";
+            }
+            return pd;
+        }
+
+        
+
+
+
         protected override void OnError(EventArgs e)
         {
             base.OnError(e);

@@ -73,6 +73,8 @@
     <Content Include="Default.aspx" />
     <Content Include="doc\test.txt" />
     <Content Include="Global.asax" />
+    <Content Include="lib\bootstrap-datepicker.min.js" />
+    <Content Include="lib\bootstrap\css\bootstrap-datepicker3.min.css" />
     <Content Include="lib\bootstrap\css\bootstrap.min.css" />
     <Content Include="lib\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="lib\bootstrap\js\bootstrap.bundle.min.js" />
@@ -82,6 +84,7 @@
     <Content Include="PendingOrders.aspx" />
     <Content Include="selectProduct.aspx" />
     <Content Include="TorderAEdit.aspx" />
+    <Content Include="TOrderInfo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +140,13 @@
     </Compile>
     <Compile Include="TorderAEdit.aspx.designer.cs">
       <DependentUpon>TorderAEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TOrderInfo.aspx.cs">
+      <DependentUpon>TOrderInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TOrderInfo.aspx.designer.cs">
+      <DependentUpon>TOrderInfo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -22,8 +22,8 @@
                 <div class="row" >
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                       <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">ORDERS LIST (JOBS NOT SUBMITTED)</div>
-
-                    <%if (Session["Rights"].ToString() == "*" || (Session["SecurityLevel"].ToString() == "99" && Session["Rights"].ToString() == "" && Session["isCash"].ToString() == "0"))
+     
+                    <%if (hasQueryConditions)
                         { %>
                      <div class="pt-2" >
                              User ID&nbsp;:
@@ -37,9 +37,13 @@
                               <thead>
                                   <tr>
                                       <th scope="col">#</th>
-                                      <th scope="col">User Id</th>
+                                        <%if (hasQueryConditions) { %>
+                                      <th scope="col" class="d-none">User Id</th>
+                                      <%} %>
                                       <th scope="col">Customer Name</th>
+                                       <%if (hasQueryConditions) { %>
                                        <th scope="col">State/Country</th>
+                                        <%} %>
                                        <th scope="col">City</th>
                                        <th scope="col">Item No.</th>
 
@@ -76,7 +80,7 @@
                   </main>
                  </div>
              </div>
-        <div class="container p-5 fixed-bottom">
+        <div class="container p-5 pt-3">
             <a href="selectProduct.aspx" class="btn btn-primary">Add Order</a>
         </div>
         <script type="text/javascript">
@@ -132,9 +136,13 @@
                 let shtml = new Array();
                 shtml.push("<tr>")
                 shtml.push("<td>" + dr.autoid.toString() + "</td>")
-                shtml.push("<td>" + dr.userid + "</td>")
+                   <%if (hasQueryConditions) { %>
+                shtml.push("<td >" + dr.userid + "</td>")
+                 <%}%>
                 shtml.push("<td>" + dr.custnam + "</td>")
+                  <%if (hasQueryConditions) { %>
                 shtml.push("<td>" + dr.countryname + "</td>")
+                  <%} %>
                 shtml.push("<td>" + dr.cityname + "</td>")
                 shtml.push("<td>" + dr.shuttercount + "</td>")
                 shtml.push("<td>" + dr.po + "</td>")
@@ -144,6 +152,7 @@
                 shtml.push("<td>" + dr.orderamt + "</td>")
                 <%}%>
                 shtml.push("<td>" + dr.producttype + "</td>")
+                shtml.push("<td><a class=\"btn btn-primary\" role=\"button\" href=\"TorderAEdit.aspx?GLID=" + dr .glid+"\" >View</a></td>")
                 shtml.push("</tr>")
                 return shtml.join('');
             }
@@ -195,6 +204,7 @@
             }
             $(function () {
                 getData(1);
+                $("#loadingdv").css("display", "none");
             });
         </script>
 
