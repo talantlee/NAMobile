@@ -44,7 +44,7 @@
                         </div>
 
                       <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;"><asp:Label ID="lbl_producttype" ForeColor="Blue" runat="server"></asp:Label></div>
-                     <div class="pt-2">
+                     <div style="padding-top:0.5rem;">
                    
                       <div class="row row-cols-2 row-cols-sm-2 g-3">
                             <div class="col">
@@ -104,11 +104,11 @@
                                             </div>
                                   <div class="col col-sm-8">
                                     <asp:DropDownList ID="drp_ArrivedPort" runat="server" class="form-select" >
-                                                        <asp:ListItem Value=""></asp:ListItem>
-                                           <asp:ListItem Value="Sydney">Sydney</asp:ListItem>
-                                             <asp:ListItem Value="Melbourne">Melbourne</asp:ListItem>
-                                                       <asp:ListItem Value="Brisbane">Brisbane</asp:ListItem>
-                                                       <asp:ListItem Value="Perth">Perth</asp:ListItem>
+                                                <asp:ListItem Value=""></asp:ListItem>
+                                                <asp:ListItem Value="Sydney">Sydney</asp:ListItem>
+                                                <asp:ListItem Value="Melbourne">Melbourne</asp:ListItem>
+                                                <asp:ListItem Value="Brisbane">Brisbane</asp:ListItem>
+                                                <asp:ListItem Value="Perth">Perth</asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
                                     </div>
@@ -117,30 +117,179 @@
 
                              
                      </div>
-                      <!--Ship to -->
-                      <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">Bill to </div>
-                      <div class="row row-cols-1 row-cols-sm-2 g-3">
-                          <div class="col">
-                               <div class="row row-cols-1 row-cols-sm-3 pt-3">
-                                      <div class="col col-sm-2 pt-1">
-                                             <label for="tbx_po" class="form-label">Dealer :<font color="red">*</font></label>
-                                      </div>
-                                      <div class="col col-sm-3 pt-1">
-                                                <asp:TextBox ID="tbx_accountname" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
-                                      </div>
-                                     <div class="col col-sm-7 pt-1">
-                                                <asp:TextBox ID="tbx_custid" runat="server" CssClass="form-control"   required></asp:TextBox>
-                                      </div>
-                                  </div>
-                          </div>
-                      </div>
-                      <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">Ship to </div>
-               
-                      </div>
+                    
+                    <div class="row row-cols-1 row-cols-sm-2">
+                        <!--Bill to -->
+                        <div class="col">
+                            <div class="row"  style="padding-top:1.5rem;">
+                                <div class="col col-3">
+                                     <label for="tbx_accountname" class="form-label" style="font-weight:bold">Bill to</label>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col col-3 text-end" style="font-weight:600" >Dealer Code:</div>
+                                        <div class="col"> <asp:TextBox  ID="tbx_accountname" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox></div>
+                                        <div class="col col-4">
+                                            <a href="#" class="btn btn-primary" >Import</a>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Contact</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >	Matthew English</label>
+                                </div>
+                            </div>
+                              <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Street</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >19/14 Argyle Street</label>
+                                </div>
+                            </div>
+
+                                 <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Post code</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >4010</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >State/Country</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >Queensland</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Phone</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >+61488116128</label>
+                                </div>
+                            </div>
+                                <div class="row ">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Email</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >matthew@normanaustralia.com.au</label>
+                                </div>
+                            </div>
+                                <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Website</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >www.normanaustralia.com.au</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--Ship to -->
+                         <div class="col">
+                                    <div class="row"  style="padding-top:1.5rem;">
+                                <div class="col col-3">
+                                     <label for="tbx_accountname" class="form-label" style="font-weight:bold">Ship to</label>
+                                </div>
+                                <div class="col">
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
+                                </div>
+                                       
+                            </div>
+                               <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Contact</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >	Matthew English</label>
+                                </div>
+                            </div>
+                              <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Street</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >19/14 Argyle Street</label>
+                                </div>
+                            </div>
+
+                                 <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Post code</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >4010</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >State/Country</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >Queensland</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Phone</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >+61488116128</label>
+                                </div>
+                            </div>
+                                <div class="row ">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Email</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >matthew@normanaustralia.com.au</label>
+                                </div>
+                            </div>
+                                <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Website</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >www.normanaustralia.com.au</label>
+                                </div>
+                            </div>
+                                <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Ship Instruction</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >www.normanaustralia.com.au</label>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    
+                    <div class="pt-3 row row-cols-1">
+                        <div class="col">
+                                     <label for="txt_remark" class="form-label" style="font-weight:bold">Instruction</label>
+                         </div>
+                        <div class="col">
+                            <asp:TextBox ID="txt_remark" TextMode="MultiLine" runat="server" Rows="5" MaxLength="500" Width="98%"></asp:TextBox>
+                        </div>
+                        
+                    </div>
+
+                         </div>
+                      
                   </main>
-                 </div>
-           
-        
+
+             </div>
         </div>
 
         <div style="display:none">
@@ -162,6 +311,8 @@
           
               $(function () {
                   $('#tbx_inputdate').attr("readOnly", "true");
+                  $('#tbx_accountname').attr("readOnly", "true");
+                  
                   $('#tbx_inputdate').datepicker({
                       autoclose: true,
                       format: "dd-mm-yyyy",
