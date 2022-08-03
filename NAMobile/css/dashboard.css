@@ -24,12 +24,15 @@ body {
     padding: 48px 0 0; /* Height of navbar */
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
-
+.mainpadding{
+    padding-top:60px;
+}
 @media (max-width: 767.98px) {
     .sidebar {
         /* top: 3.6rem;*/
     }
 }
+
 
 .sidebar-sticky {
     height: calc(100vh - 63px);
@@ -62,6 +65,11 @@ body {
   font-size: .75rem;
 }
 
+.sidebar .list-group-item {
+    color: #003c4b;
+    font-weight:600;
+    cursor:pointer;
+}
 /*
  * Navbar
  */
@@ -72,3 +80,24 @@ body {
   right: 1rem;
 }
 
+.btn-na-style {
+    background-color: #003c4b;
+    color: #fff;
+    border: 0px solid #003c4b;
+    box-shadow: 5px 5px 7px grey;
+ 
+    padding:3px 10px 3px 10px;
+   
+}
+    .btn-na-style:hover {
+        box-shadow: 7px 7px 7px grey;
+    }
+
+.btn-na-style-grey {
+    background-color: #e5e5e5;
+    color: #000;
+    border: 0px solid #003c4b;
+    padding: 3px 10px 3px 10px;
+    box-shadow: 2px 2px 7px grey;
+    height: 1.7rem;
+}

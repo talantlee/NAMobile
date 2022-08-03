@@ -27,7 +27,7 @@ namespace NAMobile
                     //login success.
                     new UserInfoDAL().AddLogin(user.UserID, this.Session.SessionID.ToLower(), BasePage.UserHostIp);
                     Session["_currentLoginUser"] = user;
-                    Response.Redirect("PendingOrders.aspx");
+                    Response.Redirect("Notices.aspx");
                 }
                 else
                 {

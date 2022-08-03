@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\dashboard.css" />
+    <Content Include="css\elsteps.css" />
     <Content Include="css\images\home_norman3.jpg" />
     <Content Include="Default.aspx" />
     <Content Include="doc\test.txt" />
@@ -81,7 +82,9 @@
     <Content Include="lib\feather.min.js" />
     <Content Include="lib\jquery-3.6.0.min.js" />
     <Content Include="navTop.ascx" />
+    <Content Include="Notices.aspx" />
     <Content Include="PendingOrders.aspx" />
+    <Content Include="SelectMaterial.aspx" />
     <Content Include="selectProduct.aspx" />
     <Content Include="TorderAEdit.aspx" />
     <Content Include="TOrderInfo.aspx" />
@@ -119,6 +122,13 @@
     <Compile Include="navTop.ascx.designer.cs">
       <DependentUpon>navTop.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Notices.aspx.cs">
+      <DependentUpon>Notices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notices.aspx.designer.cs">
+      <DependentUpon>Notices.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PendingOrders.aspx.cs">
       <DependentUpon>PendingOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,6 +137,13 @@
       <DependentUpon>PendingOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectMaterial.aspx.cs">
+      <DependentUpon>SelectMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectMaterial.aspx.designer.cs">
+      <DependentUpon>SelectMaterial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="selectProduct.aspx.cs">
       <DependentUpon>selectProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -11,7 +11,7 @@ namespace NAMobile
 {
 
 
-    public partial class TOrderInfo
+    public partial class Notices
     {
 
         /// <summary>

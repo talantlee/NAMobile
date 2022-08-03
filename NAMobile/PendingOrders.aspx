@@ -20,7 +20,8 @@
         <uc1:navTop runat="server" id="navTop" />
         <div class="container-fluid" >
                 <div class="row" >
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mainpadding" >
+                   
                       <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">ORDERS LIST (JOBS NOT SUBMITTED)</div>
      
                     <%if (hasQueryConditions)

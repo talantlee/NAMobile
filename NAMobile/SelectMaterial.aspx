@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="selectProduct.aspx.cs" Inherits="NAMobile.selectProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SelectMaterial.aspx.cs" Inherits="NAMobile.SelectMaterial" %>
+
 
 <%@ Register Src="~/navTop.ascx" TagPrefix="uc1" TagName="navTop" %>
 
@@ -25,7 +26,7 @@
         <div class="container-fluid" >
                 <div class="row" >
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mainpadding">
-                      <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">Please Select The Product:</div>
+                      <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">Program</div>
                       
                     <div class="album py-5 bg-light">
                         <div class="container text-center">
@@ -35,9 +36,9 @@
 
         <div class="col" onclick="doSelect('Shutters')">
           <div class="card shadow-sm">
-            <img src="css/images/base/progam/Shutters2.png" height="176" width="160" class="card-img-top" alt="..."/>
+            <img src="css/images/base/progam/MDF CleanLook.gif" height="176" width="160" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <p class="card-text">&nbsp;<br />Shutters<br />&nbsp;</p>
+              <p class="card-text">Woodlore</p>
           
             </div>
           </div>
@@ -45,11 +46,9 @@
 
          <div class="col"  onclick="doSelect('Blinds')">
           <div class="card shadow-sm">
-            <img src="css/images/base/progam/Blinds2.png" height="176" width="160" class="card-img-top" alt="..."/>
+            <img src="css/images/base/progam/MDFP.gif" height="176" width="160" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <p class="card-text">SmartPrivacy Blinds<br />
-Normandy Wood &<br />
-Performance FauxWood</p>
+              <p class="card-text">Woodlore Plus</p>
             
             </div>
           </div>
@@ -57,9 +56,9 @@ Performance FauxWood</p>
 
         <div class="col"  onclick="doSelect('CellularShade')">
           <div class="card shadow-sm">
-            <img src="css/images/base/progam/CellularShade2.png" height="176" width="160" class="card-img-top" alt="..."/>
+            <img src="css/images/base/progam/HardWood.gif" height="176" width="160" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <p class="card-text">Honeycomb Shades</p>
+              <p class="card-text">Brightwood</p>
             
             </div>
           </div>
@@ -69,7 +68,7 @@ Performance FauxWood</p>
           <div class="card shadow-sm">
             <img src="css/images/base/progam/Roller2.png" height="176" width="160" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <p class="card-text">Soluna Roller Shade</p>
+              <p class="card-text">Normandy</p>
            
             </div>
           </div>
@@ -79,7 +78,7 @@ Performance FauxWood</p>
           <div class="card shadow-sm">
             <img src="css/images/base/progam/PerfectSheer.gif" height="176" width="160" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <p class="card-text">Perfectsheer</p>
+              <p class="card-text">Ultra</p>
             
             </div>
           </div>
@@ -87,9 +86,9 @@ Performance FauxWood</p>
 
            <div class="col"  onclick="doSelect('DisplayTower')">
           <div class="card shadow-sm">
-            <img src="css/images/base/progam/DisplayTower.png" height="176" width="160" class="card-img-top" alt="..."/>
+            <img src="css/images/base/progam/HandSample.gif" height="176" width="160" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <p class="card-text">Display Tower</p>
+              <p class="card-text">MS4 Motorised Shutter Hand Sample</p>
             
             </div>
           </div>

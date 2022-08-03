@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace NAMobile
 {
-    public partial class TorderAEdit :Framework.BasePage
+    public partial class TorderAEdit :   Framework.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +23,7 @@ namespace NAMobile
                     //新增
                     txtProductType.Text=pd;
                     this.tbx_inputdate.Text = NAMobile.Model.Config.NowDateToString;
+                   
                 }
                 else
                 {
@@ -34,7 +35,13 @@ namespace NAMobile
                         this.tbx_po.Text = hdr.Rows[0]["po"].ToString();
                         tbx_txtcustnam.Text = hdr.Rows[0]["Custnam"].ToString();
                         this.tbx_inputdate.Text = Convert.ToDateTime(hdr.Rows[0]["PODate"]).ToString(NAMobile.Model.Config.glbDateFormat);
-                     
+                        if(hdr.Rows[0]["ArrivedPort"].ToString().Length>0) drp_ArrivedPort.SelectedValue= hdr.Rows[0]["ArrivedPort"].ToString();
+                        this.drp_shipvia.SelectedValue = hdr.Rows[0]["shipvia"].ToString();
+
+                        this.tbx_accountname.Text = hdr.Rows[0]["accountname"].ToString();
+                        this.tbx_custid.Text = hdr.Rows[0]["custid"].ToString();
+                        tbx_glid.Text= hdr.Rows[0]["glid"].ToString();
+
                     }
                     else
                     {
@@ -47,6 +54,12 @@ namespace NAMobile
             }
             this.lbl_producttype.Text = GetProductName(txtProductType.Text);
            // Session["orderporducttype"] = null;
+        }
+
+        protected void btn_submit_Click(object sender, EventArgs e)
+        {
+            string glid = tbx_glid.Text;
+            Response.Redirect("TOrderInfo.aspx?glid="+ glid);
         }
     }
 }
