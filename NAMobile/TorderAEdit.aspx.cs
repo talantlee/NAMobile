@@ -13,7 +13,7 @@ namespace NAMobile
         protected void Page_Load(object sender, EventArgs e)
         {
             this.CheckVaild();
-            string pd = Session["orderporducttype"]==null?"": Session["orderporducttype"].ToString();
+            string pd = Request.QueryString["orderporducttype"]??"";
 
             string glid = Request.QueryString["glid"] ?? "";
             if (!Page.IsPostBack)

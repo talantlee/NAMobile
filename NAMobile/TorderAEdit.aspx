@@ -26,95 +26,96 @@
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mainpadding">
                    
                 
-                        <div class="p-3">
+                        <div class="pt-3">
                             <div style="display: flex;white-space: nowrap;">
-                                <div class="el-step is-horizontal" style="flex-basis: 20%; margin-right: 0px;"><div class="el-step__head is-success"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text" >1</div></div><div class="el-step__main"><div class="el-step__title is-success">Ship Infomation</div><div class="el-step__description is-success"></div></div></div> 
-                                <div class="el-step is-horizontal" style="flex-basis: 20%; margin-right: 0px;"><div class="el-step__head is-success"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text">2</div></div><div class="el-step__main"><div class="el-step__title is-success">步骤 2</div><div class="el-step__description is-success"></div></div></div> 
-                                    <div class="el-step is-horizontal" style="flex-basis: 20%; margin-right: 0px;"><div class="el-step__head is-process"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text">3</div></div><div class="el-step__main"><div class="el-step__title is-success">步骤 3</div><div class="el-step__description is-success"></div></div></div> 
-                                <div class="el-step is-horizontal" style="flex-basis: 20%; margin-right: 0px;"><div class="el-step__head is-wait"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text">4</div></div><div class="el-step__main"><div class="el-step__title is-success">步骤 4</div><div class="el-step__description is-success"></div></div></div> 
-                           
-                                <div class="el-step is-horizontal is-flex" style="flex-basis: 20%; max-width: 33.3333%;"><div class="el-step__head is-wait"><div class="el-step__line"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text"><!----><div class="el-step__icon-inner">5</div></div></div><div class="el-step__main"><div class="el-step__title is-process">步骤 5</div><div class="el-step__description is-process"></div></div></div>
-                            </div> 
-
+                                <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-process"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text" >1</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
+                                <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-wait"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text">2</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
+                                    <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-wait"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text">3</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
+                                <!-- div class="el-step is-horizontal" style="flex-basis: 20%; margin-right: 0px;"><div class="el-step__head is-wait"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text">4</div></div><div class="el-step__main"><div class="el-step__title is-process">Step 6</div><div class="el-step__description is-success"></div></div></!--> 
+                            <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-wait"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text">4</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
+                                <div class="el-step is-horizontal is-flex" style="flex-basis: 25%; max-width:25%;"><div class="el-step__head is-wait"><div class="el-step__line"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text"><!----><div class="el-step__icon-inner">5</div></div></div><div class="el-step__main"><div class="el-step__description is-process"></div></div></div>
+                            </div>
+                            <div class="pt-2">
+                            <div style="background-color:#fddd89; height:3rem; vertical-align:central; line-height:3rem; font-weight:bold; font-size:1rem;" class="text-center rounded">
+                                Ship Infomation
+                            </div>
+                            </div>
 
                         </div>
 
-                      <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">Order Header Information / <asp:Label ID="lbl_producttype" ForeColor="Blue" runat="server"></asp:Label></div>
-                     <div style="padding-top:10px;">
-                      <div class="row row-cols-1 row-cols-sm-2 g-3">
-                               <div class="col">
-                                  <div class="row row-cols-1 row-cols-sm-2">
-                                      <div class="col col-sm-3">
-                                             <label for="tbx_po" class="form-label">Job/Order No:<font color="red">*</font></label>
-                                      </div>
-                                      <div class="col col-sm-9">
-                                            <asp:TextBox ID="tbx_po" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
-                                      </div>
-                                  </div>
-          
-                               </div>
+                      <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;"><asp:Label ID="lbl_producttype" ForeColor="Blue" runat="server"></asp:Label></div>
+                     <div class="pt-2">
+                   
+                      <div class="row row-cols-2 row-cols-sm-2 g-3">
                             <div class="col">
                                   <div class="row row-cols-1 row-cols-sm-2">
-                                       <div class="col col-sm-3" >
+                                       <div class="col col-sm-4" >
                                  <label for="tbx_inputdate" class="form-label">Input Date:<font color="red">*</font></label>
                                         </div>
-                                  <div class="col col-sm-9">
+                                  <div class="col col-sm-8">
                                         <asp:TextBox ID="tbx_inputdate" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
                                        </div>
                                     </div>
           
                                </div>
+                               <div class="col">
+                                  <div class="row row-cols-1 row-cols-sm-2">
+                                      <div class="col col-sm-4">
+                                             <label for="tbx_po" class="form-label">Job/Order No:<font color="red">*</font></label>
+                                      </div>
+                                      <div class="col col-sm-8">
+                                            <asp:TextBox ID="tbx_po" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
+                                      </div>
+                                  </div>
+          
+                               </div>
+                          </div>
 
+                    <div class="row row-cols-1 row-cols-sm-3">
                             <div class="col">
-                                <div class="row row-cols-1 row-cols-sm-2">
-                                    <div class="col col-sm-3" >
+                                <div class="row row-cols-1 row-cols-sm-2 pt-2">
+                                    <div class="col col-sm-4" >
                                  <label for="tbx_txtcustnam" class="form-label">Customer Name:<font color="red">*</font></label>
                                             </div>
-                                  <div class="col col-sm-9">
+                                  <div class="col col-sm-8">
                                  <asp:TextBox ID="tbx_txtcustnam" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
                                         </div>
                                     </div>
           
                                </div>
-
-                    
-                             <div class="col">
-                                  <div class="row row-cols-1 row-cols-sm-2">
-                                       <div class="col col-sm-3" >
-                                 <label for="tbx_shipvia" class="form-label">Ship Via:<font color="red">*</font></label>
-                                               </div>
-                                  <div class="col col-sm-9">
-                                      <div class="row">
-                                          <div class="col">
-                                            <asp:DropDownList ID="drp_shipvia" runat="server" class="form-select" required>
+                           <div class="col">
+                                <div class="row row-cols-1 row-cols-sm-2 pt-2">
+                                    <div class="col col-sm-4" >
+                                 <label for="drp_shipvia" class="form-label">Ship Via:<font color="red">*</font></label>
+                                            </div>
+                                  <div class="col col-sm-8">
+                                  <asp:DropDownList ID="drp_shipvia" runat="server" class="form-select" required>
                                            <asp:ListItem Value="ship">Sea freight</asp:ListItem>
                                              <asp:ListItem Value="air">Airfreight</asp:ListItem>
                                             </asp:DropDownList>
-                                          </div>
-                                          <div class="col col-sm-3">
-                                              <label for="drp_ArrivedPort" class="form-label">Container Port:<font color="red">*</font></label>
-                                              
-                                          </div>
-                                          <div class="col">
-                                                  <asp:DropDownList ID="drp_ArrivedPort" runat="server" class="form-select" >
+                                        </div>
+                                    </div>
+          
+                               </div>
+                           <div class="col">
+                                <div class="row row-cols-1 row-cols-sm-2 pt-2">
+                                    <div class="col col-sm-4" >
+                                 <label for="drp_ArrivedPort" class="form-label">Container Port:<font color="red">*</font></label>
+                                            </div>
+                                  <div class="col col-sm-8">
+                                    <asp:DropDownList ID="drp_ArrivedPort" runat="server" class="form-select" >
                                                         <asp:ListItem Value=""></asp:ListItem>
                                            <asp:ListItem Value="Sydney">Sydney</asp:ListItem>
                                              <asp:ListItem Value="Melbourne">Melbourne</asp:ListItem>
                                                        <asp:ListItem Value="Brisbane">Brisbane</asp:ListItem>
                                                        <asp:ListItem Value="Perth">Perth</asp:ListItem>
                                             </asp:DropDownList>
-
-                                           
-
-                                          </div>
-
-                                      </div>
-                                 
-                               
-             </div>
+                                        </div>
                                     </div>
           
                                </div>
+
+                             
                      </div>
                       <!--Ship to -->
                       <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">Bill to </div>

@@ -12,18 +12,8 @@ namespace NAMobile
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                if (Session["_currentLoginUser"] != null)
-                {
-                    this.LoginUser = Session["_currentLoginUser"] as UserInfo;
-                   
-                    this.CheckVaild();
-                }else
-                {
-                    LogOut();
-                }
-            }
+            this.CheckVaild();
+          
         }
         public bool hasQueryConditions
         {

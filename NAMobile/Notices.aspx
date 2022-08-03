@@ -102,7 +102,7 @@ Norman's new WRC SmartPrivacy is the ultimate in quality for the customer wantin
                  
              </div>
 
-        <nav class="navbar fixed-bottom d-mds-none" style="background-color:#c5c5c5">
+        <nav class="navbar fixed-bottom d-md-none" style="background-color:#c5c5c5">
   <div class="container-fluid row text-center align-items-start" style="font-weight:600; color:#003c4b; font-size:0.76rem;box-sizing:content-box">
      
             <div class="col subMenu col-3" >
@@ -113,9 +113,9 @@ Norman's new WRC SmartPrivacy is the ultimate in quality for the customer wantin
                 <div><span data-feather="square" class="align-text-bottom chagetoggler" style="width:24px; height:24px;"></span> </div>
                <div>RGA</div>
            </div>
-             <div class="col subMenu col-3"  >
-                <div><span data-feather="file-text" class="align-text-bottom chagetoggler" style="width:24px; height:24px;"></span> </div>
-               <div>Place Order</div>
+             <div class="col subMenu col-3"   >
+                <div onclick="goUrl('PendingOrders.aspx')"><span data-feather="file-text" class="align-text-bottom chagetoggler" style="width:24px; height:24px;"></span> </div>
+               <div onclick="goUrl('PendingOrders.aspx')">Place Order</div>
            </div>
              <div class="col subMenu"  >
                 <div><span data-feather="folder" class="align-text-bottom chagetoggler" style="width:24px; height:24px;"></span> </div>
@@ -135,7 +135,9 @@ Norman's new WRC SmartPrivacy is the ultimate in quality for the customer wantin
                 feather.replace({ 'aria-hidden': 'true' })
                 $("#loadingdv").css("display", "none");
             });
-         
+            function goUrl(url) {
+                window.location.href = url;
+            }
         </script>
  
       

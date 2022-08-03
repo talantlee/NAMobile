@@ -22,6 +22,7 @@
         height: 2.75rem;
         overflow-y: hidden;
       }
+    
     </style>
  <link href="css/dashboard.css" rel="stylesheet" />
 <!--
@@ -151,7 +152,7 @@
             <div class="text-center p-1" style="background-color:#6e8299; color:white;font-size:1.15rem; ">About Order</div>
          <ul class="list-group">
   <li class="list-group-item">Place Order</li>
-              <li class="list-group-item ps-5">Shutters &nbsp;&nbsp;<span data-feather="chevron-right" class="align-text-top" ></span>
+              <li class="list-group-item ps-5" data-bs-toggle="modal" data-bs-target="#selectshutterprogram">Shutters &nbsp;&nbsp;<span data-feather="chevron-right" class="align-text-top" ></span>
               </li>
                 <li class="list-group-item ps-5">Blinds &nbsp;&nbsp;<span data-feather="chevron-right" class="align-text-top" ></span></li>
               <li class="list-group-item ps-5">Shades &nbsp;&nbsp;<span data-feather="chevron-right" class="align-text-top" ></span></li>
@@ -183,11 +184,33 @@
     </div>
 </div>
 
-     <div  style="z-index:1001; height:100%; position:absolute; top:0; width:100%; text-align:center; padding-top:120px" id="loadingdv">
+ <div  style="z-index:1001; height:100%; position:absolute; top:0; width:100%; text-align:center; padding-top:120px" id="loadingdv">
                            <div class="spinner-border text-primary m-5" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
         </div>
+
+<div class="modal fade" id="selectshutterprogram" tabindex="-1" aria-labelledby="selectshutterprogramtitle" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+   
+      <div class="modal-body">
+                   <ul class="list-group">
+                        <li class="list-group-item" style="background-color:#badef2;height:0.75rem; font-size:0.85rem;" >&nbsp;</li>
+  <li class="list-group-item list-group-item-action" onclick="placeOrder('CS','MDF CleanLook')">Woodlore</li>
+  <li class="list-group-item list-group-item-action" onclick="placeOrder('CS','MDFP')">Woodlore Plus</li>
+  <li class="list-group-item list-group-item-action">Brightwood</li>
+  <li class="list-group-item list-group-item-action">Normandy</li>
+  <li class="list-group-item list-group-item-action">Ultra</li>
+    <li class="list-group-item list-group-item-action">MS4 Motorised Shutter Hand Sample</li>        
+                         <li class="list-group-item" style="background-color:#badef2;height:0.75rem; font-size:0.85rem;" >&nbsp;</li>
+</ul>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
   <script src="lib/feather.min.js"></script>
         <script type="text/javascript">
             (() => {
@@ -206,6 +229,29 @@
                 }
                 feather.replace({ class: 'chagetoggler' });
 
+            }
+
+            function placeOrder(pd, progam) {
+                switch (pd) {
+                    case "CS":
+                        window.location.href = "TorderAEdit.aspx?orderporducttype=Shutters&pgmcode="+progam;
+                        break;
+                    case "CB":
+                        window.location.href = "TorderAEdit.aspx?orderporducttype=Blinds&pgmcode=" + progam;
+                        break;
+                    case "CC":
+                        window.location.href = "TorderAEdit.aspx?orderporducttype=CellularShade&pgmcode=" + progam;
+                        break;
+                    case "RL":
+                        window.location.href = "TorderAEdit.aspx?orderporducttype=Roller&pgmcode=" + progam;
+                        break;
+                    case "PS":
+                        window.location.href = "TorderAEdit.aspx?orderporducttype=PerfectSheer&pgmcode=" + progam;
+                        break;
+                    case "DS":
+                        window.location.href = "TorderAEdit.aspx?orderporducttype=DisplayTower&pgmcode=" + progam;
+                        break;
+                }
             }
 
         </script>
