@@ -11,7 +11,7 @@ namespace NAMobile
 {
 
 
-    public partial class TorderAEdit
+    public partial class ShutterProgamOptions
     {
 
         /// <summary>
@@ -42,67 +42,49 @@ namespace NAMobile
         protected global::System.Web.UI.WebControls.Label lbl_producttype;
 
         /// <summary>
-        /// tbx_inputdate 控制項。
+        /// drp_shapetype 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_inputdate;
+        protected global::System.Web.UI.WebControls.DropDownList drp_shapetype;
 
         /// <summary>
-        /// tbx_po 控制項。
+        /// drp_roomsel 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_po;
+        protected global::System.Web.UI.WebControls.DropDownList drp_roomsel;
 
         /// <summary>
-        /// tbx_txtcustnam 控制項。
+        /// tbx_room 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_txtcustnam;
+        protected global::System.Web.UI.WebControls.TextBox tbx_room;
 
         /// <summary>
-        /// drp_shipvia 控制項。
+        /// tbx_matchitemno 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drp_shipvia;
+        protected global::System.Web.UI.WebControls.TextBox tbx_matchitemno;
 
         /// <summary>
-        /// drp_ArrivedPort 控制項。
+        /// drp_matchtype 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drp_ArrivedPort;
-
-        /// <summary>
-        /// txt_custid 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_custid;
-
-        /// <summary>
-        /// txt_remark 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_remark;
+        protected global::System.Web.UI.WebControls.DropDownList drp_matchtype;
 
         /// <summary>
         /// txtProductType 控制項。
@@ -121,14 +103,5 @@ namespace NAMobile
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_glid;
-
-        /// <summary>
-        /// btn_submit 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit;
     }
 }

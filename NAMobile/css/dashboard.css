@@ -103,3 +103,9 @@ body {
     box-shadow: 2px 2px 7px grey;
     height: 1.7rem;
 }
+.fonttitle{
+    font-weight:600;
+}
+.rowpt{
+    padding-top:0.5rem;
+}

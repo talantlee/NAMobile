@@ -71,6 +71,7 @@
     <Content Include="css\dashboard.css" />
     <Content Include="css\elsteps.css" />
     <Content Include="css\images\home_norman3.jpg" />
+    <Content Include="css\switchs.css" />
     <Content Include="Default.aspx" />
     <Content Include="doc\test.txt" />
     <Content Include="Global.asax" />
@@ -86,6 +87,7 @@
     <Content Include="PendingOrders.aspx" />
     <Content Include="SelectMaterial.aspx" />
     <Content Include="selectProduct.aspx" />
+    <Content Include="ShutterProgamOptions.aspx" />
     <Content Include="TorderAEdit.aspx" />
     <Content Include="TOrderInfo.aspx" />
     <Content Include="Web.config" />
@@ -150,6 +152,13 @@
     </Compile>
     <Compile Include="selectProduct.aspx.designer.cs">
       <DependentUpon>selectProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShutterProgamOptions.aspx.cs">
+      <DependentUpon>ShutterProgamOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShutterProgamOptions.aspx.designer.cs">
+      <DependentUpon>ShutterProgamOptions.aspx</DependentUpon>
     </Compile>
     <Compile Include="TorderAEdit.aspx.cs">
       <DependentUpon>TorderAEdit.aspx</DependentUpon>

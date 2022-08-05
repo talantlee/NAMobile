@@ -44,13 +44,13 @@
                         </div>
 
                       <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;"><asp:Label ID="lbl_producttype" ForeColor="Blue" runat="server"></asp:Label></div>
-                     <div style="padding-top:0.5rem;">
+                     <div class="rowpt">
                    
                       <div class="row row-cols-2 row-cols-sm-2 g-3">
                             <div class="col">
                                   <div class="row row-cols-1 row-cols-sm-2">
                                        <div class="col col-sm-4" >
-                                 <label for="tbx_inputdate" class="form-label">Input Date:<font color="red">*</font></label>
+                                 <label for="tbx_inputdate" class="form-label fonttitle">Input Date:<font color="red">*</font></label>
                                         </div>
                                   <div class="col col-sm-8">
                                         <asp:TextBox ID="tbx_inputdate" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
@@ -61,7 +61,7 @@
                                <div class="col">
                                   <div class="row row-cols-1 row-cols-sm-2">
                                       <div class="col col-sm-4">
-                                             <label for="tbx_po" class="form-label">Job/Order No:<font color="red">*</font></label>
+                                             <label for="tbx_po" class="form-label fonttitle">Job/Order No:<font color="red">*</font></label>
                                       </div>
                                       <div class="col col-sm-8">
                                             <asp:TextBox ID="tbx_po" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
@@ -75,7 +75,7 @@
                             <div class="col">
                                 <div class="row row-cols-1 row-cols-sm-2 pt-2">
                                     <div class="col col-sm-4" >
-                                 <label for="tbx_txtcustnam" class="form-label">Customer Name:<font color="red">*</font></label>
+                                 <label for="tbx_txtcustnam" class="form-label fonttitle">Customer Name:<font color="red">*</font></label>
                                             </div>
                                   <div class="col col-sm-8">
                                  <asp:TextBox ID="tbx_txtcustnam" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
@@ -86,7 +86,7 @@
                            <div class="col">
                                 <div class="row row-cols-1 row-cols-sm-2 pt-2">
                                     <div class="col col-sm-4" >
-                                 <label for="drp_shipvia" class="form-label">Ship Via:<font color="red">*</font></label>
+                                 <label for="drp_shipvia" class="form-label fonttitle">Ship Via:<font color="red">*</font></label>
                                             </div>
                                   <div class="col col-sm-8">
                                   <asp:DropDownList ID="drp_shipvia" runat="server" class="form-select" required>
@@ -100,7 +100,7 @@
                            <div class="col">
                                 <div class="row row-cols-1 row-cols-sm-2 pt-2">
                                     <div class="col col-sm-4" >
-                                 <label for="drp_ArrivedPort" class="form-label">Container Port:<font color="red">*</font></label>
+                                 <label for="drp_ArrivedPort" class="form-label fonttitle">Container Port:<font color="red">*</font></label>
                                             </div>
                                   <div class="col col-sm-8">
                                     <asp:DropDownList ID="drp_ArrivedPort" runat="server" class="form-select" >
@@ -123,20 +123,35 @@
                         <div class="col">
                             <div class="row"  style="padding-top:1.5rem;">
                                 <div class="col col-3">
-                                     <label for="tbx_accountname" class="form-label" style="font-weight:bold">Bill to</label>
+                                     <label for="tbx_accountname" class="form-label fonttitle" >Bill to</label>
                                 </div>
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col col-3 text-end" style="font-weight:600" >Dealer Code:</div>
-                                        <div class="col"> <asp:TextBox  ID="tbx_accountname" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox></div>
+                                           <%if (Session["Rights"].ToString() == "*" || Session["Rights"].ToString() == "M") {  %>
+                                        <div class="col col-3 text-end fonttitle" style="font-weight:600" >Dealer Code:</div>
+                                           <%} %>
+                                        <div class="col">
+                                            <asp:TextBox  ID="txt_custid" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
+
+                                        </div>
+
+                                       <%if (Session["Rights"].ToString() == "*" || Session["Rights"].ToString() == "M") { %>
                                         <div class="col col-4">
                                             <a href="#" class="btn btn-primary" >Import</a>
                                         </div>
+                                        <%} %>
                                     </div>
                                    
                                 </div>
                             </div>
-
+                              <div class="row">
+                                  <div class="col col-3">
+                                     <label  class="form-label" >Company</label>
+                                </div>
+                                <div class="col">
+                                      <label  class="form-label" >Norman Australia</label>
+                                </div>
+                            </div>
                             <div class="row">
                                   <div class="col col-3">
                                      <label  class="form-label" >Contact</label>
@@ -203,7 +218,8 @@
                                      <label for="tbx_accountname" class="form-label" style="font-weight:bold">Ship to</label>
                                 </div>
                                 <div class="col">
-                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" MaxLength="50"  required></asp:TextBox>
+                                    <select></select>
+                                   
                                 </div>
                                        
                             </div>
@@ -294,14 +310,15 @@
 
         <div style="display:none">
                <asp:TextBox ID="txtProductType" runat="server"></asp:TextBox>
-            <asp:TextBox ID="tbx_glid" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbx_glid" runat="server" ReadOnly="true"></asp:TextBox>
 
         </div>
         <div class="container p-5">
-               <a href="#" class="btn btn-primary" onclick="window.history.go(-1)">Back</a>
+            <input type="button" class="btn-na-style" value="< Back" onclick="window.history.go(-1)" />
+             
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-            <asp:Button ID="btn_submit" runat="server"  class="btn btn-primary" Text="Submit" OnClick="btn_submit_Click" />
+            <asp:Button ID="btn_submit" runat="server"  class="btn-na-style" Text="Continue >" OnClick="btn_submit_Click" />
             
 
         </div>

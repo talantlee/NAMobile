@@ -16,8 +16,10 @@ namespace NAMobile
             string pd = Request.QueryString["orderporducttype"]??"";
 
             string glid = Request.QueryString["glid"] ?? "";
+           
             if (!Page.IsPostBack)
             {
+                tbx_glid.Text = glid;
                 if (!string.IsNullOrEmpty(pd) && string.IsNullOrEmpty(glid))
                 {
                     //新增
@@ -38,8 +40,8 @@ namespace NAMobile
                         if(hdr.Rows[0]["ArrivedPort"].ToString().Length>0) drp_ArrivedPort.SelectedValue= hdr.Rows[0]["ArrivedPort"].ToString();
                         this.drp_shipvia.SelectedValue = hdr.Rows[0]["shipvia"].ToString();
 
-                        this.tbx_accountname.Text = hdr.Rows[0]["accountname"].ToString();
-                        this.tbx_custid.Text = hdr.Rows[0]["custid"].ToString();
+                 //       this.tbx_accountname.Text = hdr.Rows[0]["accountname"].ToString();
+                      //  this.tbx.Text = hdr.Rows[0]["custid"].ToString();
                         tbx_glid.Text= hdr.Rows[0]["glid"].ToString();
 
                     }
@@ -59,7 +61,13 @@ namespace NAMobile
         protected void btn_submit_Click(object sender, EventArgs e)
         {
             string glid = tbx_glid.Text;
-            Response.Redirect("TOrderInfo.aspx?glid="+ glid);
+            if (glid.Length > 0)
+            {
+                Response.Redirect("TOrderInfo.aspx?glid=" + glid);
+            }else
+            {
+                Response.Redirect("ShutterProgamOptions.aspx?glid=" + glid);
+            }
         }
     }
 }
