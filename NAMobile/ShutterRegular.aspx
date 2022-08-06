@@ -16,6 +16,7 @@
     <title><%Response.Write(Session["WebTitle"]==null?"Norman Australia":Session["WebTitle"].ToString()); %></title>
     <link href="css/elsteps.css" rel="stylesheet" />
     <link href="css/switchs.css" rel="stylesheet" />
+    <link href="css/radiogroups.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server"  class="needs-validation" novalidate>
@@ -109,14 +110,16 @@
                                  <label for="drp_OrderSizeStyle" class="form-label fonttitle">Inside Mount or Outside Mount<font color="red">*</font></label>
                                         </div>
                                   <div class="col col-sm-4">
-                                    <div class="switch">
-			                                <input class="switch-checkbox" id="chx_mounttype" type="checkbox" />
-			                                <label class="switch-label" for="chx_mounttype">
-				                                <span class="switch-inner" data-on="IN" data-off="Out"></span>
-				                                <span class="switch-switch"></span>
-			                                </label>
-		                                    </div>
-                                    </div>
+                                  
+                                 
+                                          <div class="el-radio-group" role="radiogroup" aria-label="radio-group" id="el-id-5195-113">
+                                              <label class="el-radio-button el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="New York"><span class="el-radio-button__inner">IN</span></label>
+                                              <label class="el-radio-button is-active el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="Washington"><span class="el-radio-button__inner">OUT</span></label>
+                                          </div>
+
+
+
+                                  </div>
                         </div>
                               
                      </div>

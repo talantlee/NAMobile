@@ -85,6 +85,7 @@
     <Content Include="navTop.ascx" />
     <Content Include="Notices.aspx" />
     <Content Include="PendingOrders.aspx" />
+    <Content Include="css\radiogroups.css" />
     <Content Include="SelectMaterial.aspx" />
     <Content Include="selectProduct.aspx" />
     <Content Include="ShutterProgamOptions.aspx" />

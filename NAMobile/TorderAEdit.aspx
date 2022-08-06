@@ -339,6 +339,7 @@
                 $("#loadingdv").css("display", "none");
               });
 
+              /*
               (function () {
                   'use strict'
 
@@ -358,7 +359,7 @@
                           }, false)
                       })
               })();
-         
+         */
           </script>
  
 </body>
