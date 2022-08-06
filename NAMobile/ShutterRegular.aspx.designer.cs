@@ -11,7 +11,7 @@ namespace NAMobile
 {
 
 
-    public partial class ShutterProgamOptions
+    public partial class ShutterRegular
     {
 
         /// <summary>
@@ -33,49 +33,13 @@ namespace NAMobile
         protected global::NAMobile.navTop navTop;
 
         /// <summary>
-        /// lbl_producttype 控制項。
+        /// drp_OrderSizeStyle 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_producttype;
-
-        /// <summary>
-        /// drp_shapetype 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drp_shapetype;
-
-        /// <summary>
-        /// drp_roomsel 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drp_roomsel;
-
-        /// <summary>
-        /// tbx_room 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_room;
-
-        /// <summary>
-        /// drp_matchtype 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drp_matchtype;
+        protected global::System.Web.UI.WebControls.DropDownList drp_OrderSizeStyle;
 
         /// <summary>
         /// txtProductType 控制項。

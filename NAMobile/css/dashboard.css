@@ -1,7 +1,9 @@
 body {
   font-size: .875rem;
 }
-
+:root {
+    --normanau-color: #003c4b;
+}
 .feather {
   width: 16px;
   height: 16px;
@@ -74,7 +76,7 @@ body {
  * Navbar
  */
 
-#sidebarMenu .list-group-item {
+    #sidebarMenu .list-group-item {
     cursor: pointer;
 }
 .navbar .navbar-toggler {
@@ -83,13 +85,11 @@ body {
 }
 
 .btn-na-style {
-    background-color: #003c4b;
+    background-color:var(--normanau-color);
     color: #fff;
     border: 0px solid #003c4b;
     box-shadow: 5px 5px 7px grey;
- 
-    padding:3px 10px 3px 10px;
-   
+    padding: 3px 10px 3px 10px;
 }
     .btn-na-style:hover {
         box-shadow: 7px 7px 7px grey;
@@ -108,4 +108,8 @@ body {
 }
 .rowpt{
     padding-top:0.5rem;
+}
+.na-style-font {
+    background-color: var(--normanau-color);
+    color: #fff;
 }

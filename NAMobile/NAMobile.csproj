@@ -88,6 +88,7 @@
     <Content Include="SelectMaterial.aspx" />
     <Content Include="selectProduct.aspx" />
     <Content Include="ShutterProgamOptions.aspx" />
+    <Content Include="ShutterRegular.aspx" />
     <Content Include="TorderAEdit.aspx" />
     <Content Include="TOrderInfo.aspx" />
     <Content Include="Web.config" />
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="ShutterProgamOptions.aspx.designer.cs">
       <DependentUpon>ShutterProgamOptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShutterRegular.aspx.cs">
+      <DependentUpon>ShutterRegular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShutterRegular.aspx.designer.cs">
+      <DependentUpon>ShutterRegular.aspx</DependentUpon>
     </Compile>
     <Compile Include="TorderAEdit.aspx.cs">
       <DependentUpon>TorderAEdit.aspx</DependentUpon>

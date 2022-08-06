@@ -29,7 +29,7 @@
                    <!-- Step -2" -->
                   <div class="pt-3">
                             <div style="display: flex;white-space: nowrap;">
-                                <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-success"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text" style="cursor" >1</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
+                                <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-success"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text" style="cursor:pointer" onclick="goStep(1)" >1</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
                                 <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-process"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text">2</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
                                     <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-wait"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text">3</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
                                 <!-- div class="el-step is-horizontal" style="flex-basis: 20%; margin-right: 0px;"><div class="el-step__head is-wait"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text">4</div></div><div class="el-step__main"><div class="el-step__title is-process">Step 6</div><div class="el-step__description is-success"></div></div></!--> 
@@ -114,7 +114,8 @@
                                             </div>
                                   <div class="col col-sm-8">
                                       <div class="row">
-                                          <div class="col col-4"><asp:TextBox ID="tbx_matchitemno" runat="server" CssClass="form-control"></asp:TextBox></div>
+                                          <div class="col col-4">
+                                              <input type="number" min="1" max="100" onblur="checkMatchItem()" step="1" id="tbx_matchitemno" class="form-control" /></div>
                                           <div class="col">
                                                  <asp:DropDownList ID="drp_matchtype" runat="server" class="form-select" >
                                                 <asp:ListItem Value=""></asp:ListItem>
@@ -164,14 +165,14 @@
             <input type="button" class="btn-na-style" value="< Back" onclick="window.history.go(-1)" />
              
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <input type="button" class="btn-na-style" value="Continue >" />
+            <input type="button" class="btn-na-style" value="Continue >" onclick="window.location.href='ShutterRegular.aspx';" />
            
 
         </div>
 
     </form>
           <script type="text/javascript">
-          
+              
               $(function () {
                   $('#tbx_inputdate').attr("readOnly", "true");
                   $('#tbx_accountname').attr("readOnly", "true");
@@ -182,15 +183,31 @@
                       todayHighlight: true
                   });
                   chgRoom();
+                  checkMatchItem();
                 $("#loadingdv").css("display", "none");
               });
-
+              function goStep(st) {
+                  if (st == 1) {
+                      window.location.href = "TorderAEdit.aspx";
+                  }
+              }
               function chgRoom() {
                   if ($("#drp_roomsel").val() != "Other") {
                       $("#dv_otherroom").addClass("d-none");
                   } else {
                       $("#dv_otherroom").removeClass("d-none");
                   }
+              }
+              function checkMatchItem() {
+                  if (document.getElementById("tbx_matchitemno").value == "" || document.getElementById("tbx_matchitemno").value == "0") {
+                      document.getElementById("drp_matchtype").value = "";
+                      document.getElementById("drp_matchtype").disabled = true;
+                  }
+                  else {
+                      document.getElementById("drp_matchtype").disabled = false;
+                  }
+                  return true;
+
               }
 
               (function () {
