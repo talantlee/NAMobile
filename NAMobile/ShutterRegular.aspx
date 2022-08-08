@@ -113,8 +113,8 @@
                                   
                                  
                                           <div class="el-radio-group" role="radiogroup" aria-label="radio-group" id="el-id-5195-113">
-                                              <label class="el-radio-button el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="New York"><span class="el-radio-button__inner">IN</span></label>
-                                              <label class="el-radio-button is-active el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="Washington"><span class="el-radio-button__inner">OUT</span></label>
+                                              <label class="el-radio-button el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="I"><span class="el-radio-button__inner">IN</span></label>
+                                              <label class="el-radio-button is-active el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="O" checked><span class="el-radio-button__inner">OUT</span></label>
                                           </div>
 
 

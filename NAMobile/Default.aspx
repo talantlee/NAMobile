@@ -87,7 +87,7 @@ I agree to the Norman Australia Pty Ltd Terms of Trade and Privacy Policy. </div
 
     <div class="form-floating">
      
-        <asp:TextBox ID="floatingInput" runat="server" CssClass="form-control" placeholder="User ID" Text="testa"  required></asp:TextBox>
+        <asp:TextBox ID="floatingInput" runat="server" CssClass="form-control" placeholder="User ID" Text="admin"  required></asp:TextBox>
       <label for="floatingInput">User ID</label>
     </div>
 
@@ -110,7 +110,7 @@ I agree to the Norman Australia Pty Ltd Terms of Trade and Privacy Policy. </div
       
         (function () {
             'use strict'
-            document.getElementById("floatingPassword").value = "a12345";
+            document.getElementById("floatingPassword").value = "123456";
             feather.replace({ 'aria-hidden': 'true' })
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.querySelectorAll('.needs-validation')

@@ -33,37 +33,112 @@
                             </div>
                             <div class="pt-2">
                             <div style="background-color:#fddd89; height:3rem; vertical-align:central; line-height:3rem; font-weight:bold; font-size:1rem;" class="text-center rounded">
-                              Product Details ①
+                              Order Details
                             </div>
                             </div>
 
                         </div>
+                    
 
-                      <div style="font-weight:600; font-size:1.03rem; padding-top:10px; padding-bottom:6px; border-bottom:solid 1px #ccc;">Order Information(Master/Detail)</div>
-     
-              
-                      <div class="table-responsive pt-2">
-                          <table class="table table-striped table-sm" id="table_list">
-                              <thead>
-                                  <tr>
-                                      <th scope="col">#</th>
-                                   
-                                      <th scope="col">Action</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                
-                              </tbody>
-                          </table>
-                      </div>
+                    <div class="d-flex justify-content-between" style="border-bottom:solid 1px #ccc;">
+                    <div class="pt-3" >
+                        <div class="row">
+                            <div class="col" style="font-weight:600; font-size:1.1rem;">Order No</div>
+                          
 
+                        </div>
                        
+                       </div>
+                    <div class="pt-3">
+                        <div class="rounded-pill ps-2 pe-2" style="background-color:#585858;color:white"  >
+                            <span data-feather="printer" ></span><span class="p-1" >Print</span>
+                            </div>
+                     
+
+                    </div>
+                  </div>
+
+                    <div class="p-2">
+                    <!-- header -->
+                    <div class="row row-cols-1 row-cols-sm-2 rounded-3 pb-2 pt-1" style="background-color:#efefef">
+                        <!-- customer -->
+                        <div class="col">
+                                <div class="row pt-1">
+                                    <div class="col col-4 fonttitle">Dealer Name</div>
+                                     <div class="col col-8">Malibu Blind</div>
+                                </div>
+                              <div class="row pt-1">
+                                    <div class="col col-4 fonttitle">Customer Name</div>
+                                     <div class="col col-8">123</div>
+                                </div>
+                            <div class="row pt-1">
+                                    <div class="col col-4 fonttitle">Input Date</div>
+                                     <div class="col col-8">Jul-27-2022</div>
+                                </div>
+                            <div class="row pt-1">
+                                    <div class="col col-4 fonttitle">Job/Order No</div>
+                                    <div class="col col-8">0123456789</div>
+                                </div>
+                        </div>
+                          <!-- shipto-->
+                         <div class="col">
+                              <div class="row pt-1 ps-2 pe-2">
+                                    <div class="col text-center border fonttitle border-dark">Ship To</div>
+                                </div>
+                       
+                         <div class="row pt-1">
+                                    <div class="col col-4 fonttitle">State/Country</div>
+                                    <div class="col col-8">Roxburgh Park</div>
+                                </div>
+                         <div class="row pt-1">
+                                    <div class="col col-4 fonttitle">City</div>
+                                    <div class="col col-8">Victoria</div>
+                                </div>
+                        
+                                  <div class="row pt-1 ps-2 pe-2">
+                                    <div class="col text-center border fonttitle border-dark bg-white" style="cursor:pointer" >
+                                           <span data-feather="edit-2"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                    </div>
+                                </div>
+
+                          </div>
+                    </div>
+                   <!-- end header -->
+                  </div>
+              
+                    <!-- copy order -->
+                      <div class="p-2">
+                          <div class="rounded-2 row" style="color:white;background-color:var(--normanau-color)">
+                              <div class="col text-center p-2"  data-bs-toggle="collapse" data-bs-target="#dvcopyordercollapse" aria-expanded="false" aria-controls="dvcopyordercollapse">Copy Previous Order <span data-feather="plus" class="align-text-bottom" id="spcollapsecopyinfo"  onclick="collapseCopyInfo(this)"></span></div>
+                          </div>
+
+                          <div class="row row-cols-1 row-cols-sm-3 collapse" id="dvcopyordercollapse" style="background-color:#efefef">
+                              <div class="col pt-1 pb-1 ps-3">
+                                  WO# <input type="text"  /> <input type="button"  value="View" />
+                              </div>
+                                <div class="col pt-1 pb-1 ps-3">
+                                  Copy Item From <input type="text"  /> to  <input type="text"  />
+                              </div>
+                               <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle border-dark bg-white rounded-1" >
+                                    <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
+                                 </div>
+                              </div>
+                          </div>
+
+                      </div>
+                    
+                    <!-- order detail info -->
+                      <div class="p-2">
+                      </div>
                   </main>
                  </div>
              </div>
         <div class="container p-5 pt-3">
-            <a href="SelectMaterial.aspx" class="btn btn-primary">Progam</a> &nbsp;&nbsp;&nbsp;
-              <a href="#" class="btn btn-primary">Add parts</a>
+            <input type="button" class="btn-na-style" value="Progam" />
+             &nbsp;&nbsp;&nbsp;
+             <input type="button" class="btn-na-style" value="Add parts" />
+            
         </div>
         <script type="text/javascript">
             function getData(goPage) {
@@ -121,9 +196,20 @@
                 shtml.push("</tr>")
                 return shtml.join('');
             }
-        
+            function collapseCopyInfo(obj) {
+                if ($(obj).hasClass("feather-plus")) {
+                    $(obj).removeClass("feather-plus");
+                    obj.setAttribute("data-feather", "minus");
+                   
+                } else {
+                    $(obj).removeClass("feather-minus");
+                    obj.setAttribute("data-feather", "plus");
+                }
+                feather.replace({ id: 'spcollapsecopyinfo' });
+            }
             $(function () {
-            
+                feather.replace({ 'aria-hidden': 'true' })
+               
                 $("#loadingdv").css("display", "none");
             });
         </script>
