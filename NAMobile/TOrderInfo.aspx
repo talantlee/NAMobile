@@ -117,7 +117,7 @@
                                   WO# <input type="text"  /> <input type="button"  value="View" />
                               </div>
                                 <div class="col pt-1 pb-1 ps-3">
-                                  Copy Item From <input type="text"  /> to  <input type="text"  />
+                                  Copy Item From <input type="text"  style="width:3.8rem;" /> to  <input type="text" style="width:3.8rem;"  />
                               </div>
                                <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
                                    <div class="border fonttitle border-dark bg-white rounded-1" >
@@ -128,9 +128,197 @@
 
                       </div>
                     
-                    <!-- order detail info -->
-                      <div class="p-2">
+                    <!-- order detail info for handset-->
+                      <div class="p-2 d-block d-sm-none">
+
+                          
+                         <div class="row row-cols-2 bg-light mt-2 rounded-2">
+                              <div class="col">No</div>
+                              <div class="col fonttitle">1</div>
+                              <div class="col">Item</div>
+                               <div class="col fonttitle">Shutter</div>
+                                 <div class="col">Room</div>
+                               <div class="col fonttitle">Bathroom</div>
+
+                               <div class="col">Material</div>
+                               <div class="col fonttitle">Woodlore</div>
+
+                                <div class="col">Range Type</div>
+                               <div class="col fonttitle">Beaded</div>
+
+                                <div class="col">Item Type</div>
+                               <div class="col fonttitle">L Frame</div>
+
+                                   <div class="col">Gross Open Width/Height</div>
+                               <div class="col fonttitle">650/1000</div>
+                                 <div class="col">Inside Mount or Outside Mount</div>
+                               <div class="col fonttitle">L Frame</div>
+
+                                  <div class="col">Number of Window Openings</div>
+                               <div class="col fonttitle">1</div>
+
+                               <div class="col">Blade Size</div>
+                               <div class="col fonttitle">47mm Elliptical Louvre</div>
+
+                               <div class="col">Colour</div>
+                               <div class="col fonttitle">Pure White</div>
+
+                             <div class="col">Hinge Colour</div>
+                               <div class="col fonttitle">-</div>
+                             <div class="col">Mid Rail Location</div>
+                              <div class="col fonttitle">-</div>
+
+                              <div class="col">Layout Code</div>
+                              <div class="col fonttitle">F</div>
+                         </div>
+                           <div class="row bg-light p-1">
+                                  <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                              </div>
+                          <!-- parts -->
+                          
+                        
+                        
+
+                         <div class="row row-cols-2 bg-light mt-2 rounded-2">
+                                <div class="col">No</div>
+                               <div class="col fonttitle">2</div>
+                              <div class="col">Item</div>
+                               <div class="col fonttitle">Shutter</div>
+                               <div class="col">Material</div>
+                               <div class="col fonttitle">Woodlore</div>
+                                 <div class="col">Room</div>
+                               <div class="col fonttitle">Bathroom</div>
+                                <div class="col">Range Type</div>
+                               <div class="col fonttitle">Beaded</div>
+
+                                <div class="col">Item Type</div>
+                               <div class="col fonttitle">L Frame</div>
+
+                                   <div class="col">Gross Open Width/Height</div>
+                               <div class="col fonttitle">650/1000</div>
+                                 <div class="col">Inside Mount or Outside Mount</div>
+                               <div class="col fonttitle">L Frame</div>
+
+                                  <div class="col">Number of Window Openings</div>
+                               <div class="col fonttitle">1</div>
+
+                               <div class="col">Blade Size</div>
+                               <div class="col fonttitle">47mm Elliptical Louvre</div>
+
+                               <div class="col">Colour</div>
+                               <div class="col fonttitle">Pure White</div>
+
+                             <div class="col">Hinge Colour</div>
+                               <div class="col fonttitle">-</div>
+                             <div class="col">Mid Rail Location</div>
+                              <div class="col fonttitle">-</div>
+
+                              <div class="col">Layout Code</div>
+                              <div class="col fonttitle">F</div>
+                         </div>
+                            <div class="row bg-light p-1">
+                                  <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                              </div>
+
+                       
                       </div>
+
+
+                       <!-- order detail info for pc -->
+                     <div class="p-2 d-none d-sm-block">
+                          <table class="table table-striped table-hover">
+                            <thead>
+                            <tr >
+                              <th scope="col">No</th>
+                              <th scope="col">Item</th>
+                              <th scope="col">Material</th>
+                              <th scope="col">Room</th>
+                                <th scope="col">Item Type</th>
+                                   <th scope="col">Gross Open<br />
+Width/Height</th>
+                                <th>Inside Mount or <br />
+Outside Mount
+</th>
+                                <th>Number of <br />Window Openings</th>
+                                <th>Blade Size</th>
+                                 <th>Colour</th>
+                                 <th>Hinge Colour</th>
+                                 <th>Mid Rail Location</th>
+                                 <th>Layout Code</th>
+                                 <th>m2</th>
+                                 <th>Item Total Charge</th>
+                            </tr>
+                          </thead>
+                              <tbody class="table-group-divider">
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>Mark</td>
+                                  <td>Otto</td>
+                                  <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Jacob</td>
+                                  <td>Thornton</td>
+                                  <td>@fat</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                  <td colspan="2">Larry the Bird</td>
+                                  <td>@twitter</td>
+                                </tr>
+                              </tbody>
+
+                        </table>
+                     </div>
+
+
                   </main>
                  </div>
              </div>
