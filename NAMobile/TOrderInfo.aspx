@@ -127,49 +127,50 @@
                           </div>
 
                       </div>
-                    
+                    <div class="bg-white row"><div class="col">&nbsp;</div></div>
                     <!-- order detail info for handset-->
-                      <div class="p-2 d-block d-sm-none bg-light">
+                      <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
 
-                          
-                         <div class="row row-cols-2 rounded-2">
+                             
+                          <div class="eacherow mb-2" >
+                         <div class="row row-cols-2">
                               <div class="col">No</div>
-                              <div class="col fonttitle">1</div>
+                              <div class="col fonttitle text-end">1</div>
                               <div class="col">Item</div>
-                               <div class="col fonttitle">Shutter</div>
+                               <div class="col fonttitle text-end">Shutter</div>
                                  <div class="col">Room</div>
-                               <div class="col fonttitle">Bathroom</div>
+                               <div class="col fonttitle text-end">Bathroom</div>
 
                                <div class="col">Material</div>
-                               <div class="col fonttitle">Woodlore</div>
+                               <div class="col fonttitle text-end">Woodlore</div>
 
                                 <div class="col">Range Type</div>
-                               <div class="col fonttitle">Beaded</div>
+                               <div class="col fonttitle text-end">Beaded</div>
 
                                 <div class="col">Item Type</div>
-                               <div class="col fonttitle">L Frame</div>
+                               <div class="col fonttitle text-end">L Frame</div>
 
                                    <div class="col">Gross Open Width/Height</div>
-                               <div class="col fonttitle">650/1000</div>
+                               <div class="col fonttitle text-end">650/1000</div>
                                  <div class="col">Inside Mount or Outside Mount</div>
-                               <div class="col fonttitle">L Frame</div>
+                               <div class="col fonttitle text-end">L Frame</div>
 
                                   <div class="col">Number of Window Openings</div>
-                               <div class="col fonttitle">1</div>
+                               <div class="col fonttitle text-end">1</div>
 
                                <div class="col">Blade Size</div>
-                               <div class="col fonttitle">47mm Elliptical Louvre</div>
+                               <div class="col fonttitle text-end">47mm Elliptical Louvre</div>
 
                                <div class="col">Colour</div>
-                               <div class="col fonttitle">Pure White</div>
+                               <div class="col fonttitle text-end">Pure White</div>
 
                              <div class="col">Hinge Colour</div>
-                               <div class="col fonttitle">-</div>
+                               <div class="col fonttitle text-end">-</div>
                              <div class="col">Mid Rail Location</div>
-                              <div class="col fonttitle">-</div>
+                              <div class="col fonttitle text-end">-</div>
 
                               <div class="col">Layout Code</div>
-                              <div class="col fonttitle">F</div>
+                              <div class="col fonttitle text-end">F</div>
                          </div>
                           <!-- toobar-->
                            <div class="row p-1">
@@ -203,28 +204,28 @@
                         <div class="bg-white p-3 rounded-2 m-2" >
                             <div class="row row-cols-2">
                                 <div class="col ">No</div>
-                                <div class="col fonttitle">1</div>
+                                <div class="col fonttitle text-end">1</div>
 
                                   <div class="col">Item</div>
-                                <div class="col fonttitle">Hinge</div>
+                                <div class="col fonttitle text-end">Hinge</div>
 
                                   <div class="col">Qty</div>
-                                <div class="col fonttitle">100</div>
+                                <div class="col fonttitle text-end">100</div>
 
                                   <div class="col">Length (mm)</div>
-                                <div class="col fonttitle">1</div>
+                                <div class="col fonttitle text-end">1</div>
 
                                   <div class="col">Material</div>
-                                <div class="col fonttitle">Woodlore</div>
+                                <div class="col fonttitle text-end">Woodlore</div>
 
                                   <div class="col">Specification</div>
-                                <div class="col fonttitle">60mm Self-mortise hinge</div>
+                                <div class="col fonttitle text-end">60mm Self-mortise hinge</div>
                                 
                                   <div class="col">Colour</div>
-                                <div class="col fonttitle">Silk White</div>
+                                <div class="col fonttitle text-end">Silk White</div>
                                 
                                   <div class="col">Item Total Charge</div>
-                                <div class="col fonttitle">A$ 332.10</div>
+                                <div class="col fonttitle text-end">A$ 332.10</div>
 
                                 
                             </div>
@@ -249,25 +250,25 @@
 
                              <div class="row row-cols-2 pt-2">
                                 <div class="col">No</div>
-                                <div class="col fonttitle">1</div>
+                                <div class="col fonttitle text-end">1</div>
 
                                   <div class="col">Item</div>
-                                <div class="col fonttitle">Hinge</div>
+                                <div class="col fonttitle text-end">Hinge</div>
 
                                   <div class="col">Qty</div>
-                                <div class="col fonttitle">100</div>
+                                <div class="col fonttitle text-end">100</div>
 
                                   <div class="col">Length (mm)</div>
-                                <div class="col fonttitle">1</div>
+                                <div class="col fonttitle text-end">1</div>
 
                                   <div class="col">Material</div>
-                                <div class="col fonttitle">Woodlore</div>
+                                <div class="col fonttitle text-end">Woodlore</div>
 
                                   <div class="col">Specification</div>
-                                <div class="col fonttitle">60mm Self-mortise hinge</div>
+                                <div class="col fonttitle text-end">60mm Self-mortise hinge</div>
                                 
                                   <div class="col">Colour</div>
-                                <div class="col fonttitle">Silk White</div>
+                                <div class="col fonttitle text-end">Silk White</div>
                                 
                                   <div class="col">Item Total Charge</div>
                             
@@ -292,52 +293,67 @@
                                 </div>
                             </div>
 
+                            <!-- sub part total -->
                             <div class="row row-cols-2 pt-2">
                                 <div class="col">Parts Charge Total</div>
-                                  <div class="col text-end">A$ 372.60</div>
+                                  <div class="col text-end fonttitle">A$ 372.60</div>
                             </div>
 
                         </div>
-                        
+                          <!--Item total --->
+                        <div class="row row-cols-2 p-1">
+                                <div class="col">m2</div>
+                                  <div class="col text-end fonttitle">0.65</div>
+                                <div class="col">Item Total Charge</div>
+                                  <div class="col text-end fonttitle">A$ 498.33</div>
+                            </div>
+                        </div>
 
-                         <div class="row row-cols-2 mt-2 rounded-2">
-                                <div class="col">No</div>
-                               <div class="col fonttitle">2</div>
+                          <div class="bg-white row"><div class="col">&nbsp;</div></div>
+
+                         
+                           <div class="eacherow mb-2" >
+                         <div class="row row-cols-2">
+                              <div class="col">No</div>
+                              <div class="col fonttitle text-end">1</div>
                               <div class="col">Item</div>
-                               <div class="col fonttitle">Shutter</div>
-                               <div class="col">Material</div>
-                               <div class="col fonttitle">Woodlore</div>
+                               <div class="col fonttitle text-end">Shutter</div>
                                  <div class="col">Room</div>
-                               <div class="col fonttitle">Bathroom</div>
+                               <div class="col fonttitle text-end">Bathroom</div>
+
+                               <div class="col">Material</div>
+                               <div class="col fonttitle text-end">Woodlore</div>
+
                                 <div class="col">Range Type</div>
-                               <div class="col fonttitle">Beaded</div>
+                               <div class="col fonttitle text-end">Beaded</div>
 
                                 <div class="col">Item Type</div>
-                               <div class="col fonttitle">L Frame</div>
+                               <div class="col fonttitle text-end">L Frame</div>
 
                                    <div class="col">Gross Open Width/Height</div>
-                               <div class="col fonttitle">650/1000</div>
+                               <div class="col fonttitle text-end">650/1000</div>
                                  <div class="col">Inside Mount or Outside Mount</div>
-                               <div class="col fonttitle">L Frame</div>
+                               <div class="col fonttitle text-end">L Frame</div>
 
                                   <div class="col">Number of Window Openings</div>
-                               <div class="col fonttitle">1</div>
+                               <div class="col fonttitle text-end">1</div>
 
                                <div class="col">Blade Size</div>
-                               <div class="col fonttitle">47mm Elliptical Louvre</div>
+                               <div class="col fonttitle text-end">47mm Elliptical Louvre</div>
 
                                <div class="col">Colour</div>
-                               <div class="col fonttitle">Pure White</div>
+                               <div class="col fonttitle text-end">Pure White</div>
 
                              <div class="col">Hinge Colour</div>
-                               <div class="col fonttitle">-</div>
+                               <div class="col fonttitle text-end">-</div>
                              <div class="col">Mid Rail Location</div>
-                              <div class="col fonttitle">-</div>
+                              <div class="col fonttitle text-end">-</div>
 
                               <div class="col">Layout Code</div>
-                              <div class="col fonttitle">F</div>
+                              <div class="col fonttitle text-end">F</div>
                          </div>
-                         <div class="row bg-light p-1">
+                          <!-- toobar-->
+                           <div class="row p-1">
                                   <div class="col">
                                        <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
                                    <div class="border fonttitle bg-white rounded-1 p-1" >
@@ -363,9 +379,121 @@
 
                                   </div>
                               </div>
+                          <!-- parts -->
+                          <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
+                        <div class="bg-white p-3 rounded-2 m-2" >
+                            <div class="row row-cols-2">
+                                <div class="col ">No</div>
+                                <div class="col fonttitle text-end">1</div>
 
-                       
+                                  <div class="col">Item</div>
+                                <div class="col fonttitle text-end">Hinge</div>
+
+                                  <div class="col">Qty</div>
+                                <div class="col fonttitle text-end">100</div>
+
+                                  <div class="col">Length (mm)</div>
+                                <div class="col fonttitle text-end">1</div>
+
+                                  <div class="col">Material</div>
+                                <div class="col fonttitle text-end">Woodlore</div>
+
+                                  <div class="col">Specification</div>
+                                <div class="col fonttitle text-end">60mm Self-mortise hinge</div>
+                                
+                                  <div class="col">Colour</div>
+                                <div class="col fonttitle text-end">Silk White</div>
+                                
+                                  <div class="col">Item Total Charge</div>
+                                <div class="col fonttitle text-end">A$ 332.10</div>
+
+                                
+                            </div>
+                            <div class="row border-bottom border-dark pb-2 pt-3 row-cols-2">
+                                  <div class="col col-4">Action</div>
+                                   <div class="col col-8">
+                                       <div class="row-cols-2 row">
+                                        <div class="text-center col"  >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
+                                 </div>
+                              </div>
+                                     <div class="text-center col" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1 " >
+                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                 </div>
+                              </div>
                       </div>
+
+                                </div>
+                            </div>
+
+                             <div class="row row-cols-2 pt-2">
+                                <div class="col">No</div>
+                                <div class="col fonttitle text-end">1</div>
+
+                                  <div class="col">Item</div>
+                                <div class="col fonttitle text-end">Hinge</div>
+
+                                  <div class="col">Qty</div>
+                                <div class="col fonttitle text-end">100</div>
+
+                                  <div class="col">Length (mm)</div>
+                                <div class="col fonttitle text-end">1</div>
+
+                                  <div class="col">Material</div>
+                                <div class="col fonttitle text-end">Woodlore</div>
+
+                                  <div class="col">Specification</div>
+                                <div class="col fonttitle text-end">60mm Self-mortise hinge</div>
+                                
+                                  <div class="col">Colour</div>
+                                <div class="col fonttitle text-end">Silk White</div>
+                                
+                                  <div class="col">Item Total Charge</div>
+                            
+                            </div>
+
+                             <div class="row border-bottom border-dark pb-2 pt-3 row-cols-2">
+                                  <div class="col col-4">Action</div>
+                                   <div class="col col-8">
+                                       <div class="row-cols-2 row">
+                                        <div class="text-center col"  >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
+                                 </div>
+                              </div>
+                                     <div class="text-center col" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1 " >
+                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                 </div>
+                              </div>
+                         </div>
+
+                                </div>
+                            </div>
+
+                            <!-- sub part total -->
+                            <div class="row row-cols-2 pt-2">
+                                <div class="col">Parts Charge Total</div>
+                                  <div class="col text-end fonttitle">A$ 372.60</div>
+                            </div>
+
+                        </div>
+                          <!--Item total --->
+                        <div class="row row-cols-2 p-1">
+                                <div class="col">m2</div>
+                                  <div class="col text-end fonttitle">0.65</div>
+                                <div class="col">Item Total Charge</div>
+                                  <div class="col text-end fonttitle">A$ 498.33</div>
+                            </div>
+                        </div>
+
+                      
+
+                         <!--end  order detail info for handset-->
+                      </div>
+                    
 
 
                        <!-- order detail info for pc -->
