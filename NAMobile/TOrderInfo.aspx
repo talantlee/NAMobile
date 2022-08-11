@@ -305,7 +305,7 @@
                                 <div class="col">m2</div>
                                   <div class="col text-end fonttitle">0.65</div>
                                 <div class="col">Item Total Charge</div>
-                                  <div class="col text-end fonttitle">A$ 498.33</div>
+                                  <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 498.33</div>
                             </div>
                         </div>
 
@@ -485,7 +485,7 @@
                                 <div class="col">m2</div>
                                   <div class="col text-end fonttitle">0.65</div>
                                 <div class="col">Item Total Charge</div>
-                                  <div class="col text-end fonttitle">A$ 498.33</div>
+                                  <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 498.33</div>
                             </div>
                         </div>
 
@@ -493,6 +493,7 @@
 
                          <!--end  order detail info for handset-->
                       </div>
+
                     
 
 
@@ -544,15 +545,74 @@ Outside Mount
                         </table>
                      </div>
 
+                 
+
+
+
+                       <!-- tool bar -->
+                      <div class="p-3">
+                          <div class="row">
+                              <div class="col text-center">
+                                  <input type="button" class="btn-na "  data-bs-toggle="modal" data-bs-target="#selectshutterprogram" value="+ Add New Item" />
+                             &nbsp;&nbsp;&nbsp;
+                             <input type="button" class="btn-na " value="+ Add Part" />
+                              </div>
+                          </div>
+                            
+                      </div>
+
+                      <!-- Order total -->
+                    <div class="p-2">
+                       <div class="row row-cols-2 p-1">
+                                <div class="col">Total m2</div>
+                                  <div class="col text-end fonttitle">1.25</div>
+                                <div class="col">Order surcharge</div>
+                                  <div class="col text-end fonttitle" >A$ 25</div>
+                       </div>
+
+                        <div  class="p-1 border-top border-dark" >
+                        <div class="row row-cols-2 pt-3">
+                             <div class="col">Total cost of job (excl GST)</div>
+                               <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 648.72</div>
+                        </div>
+                     </div>
+
+                    </div>   
+
+                          <div class="p-3">
+                   
+                             <div class="row pt-3">
+                                 <div class="col col-2"></div>
+                                  <div class="col col-4">
+                                         <input type="button" class="btn btn-outline-secondary"  value="Delete Order" />
+                          
+                         
+
+                                  </div>
+                                   <div class="col col-4 text-end">
+                                           <input type="button" class="btn btn-outline-secondary" value="Edit Order" />
+                                       </div>
+                                  <div class="col col-2"></div>
+                            
+                            </div>
+                    
+                             <div class="d-grid col-8 mx-auto pt-3">
+                                <input type="button" class="btn-na " value="Check out" />
+                            </div>
+                      </div>
+
 
                   </main>
                  </div>
              </div>
         <div class="container p-5 pt-3">
-            <input type="button" class="btn-na-style" value="Progam" />
-             &nbsp;&nbsp;&nbsp;
-             <input type="button" class="btn-na-style" value="Add parts" />
+          
             
+        </div>
+
+
+        <div style="display:none">
+            <asp:TextBox ID="tbx_glid" runat="server" ReadOnly="true" />
         </div>
         <script type="text/javascript">
             function getData(goPage) {

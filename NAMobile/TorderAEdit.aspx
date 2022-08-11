@@ -314,11 +314,11 @@
 
         </div>
         <div class="container p-5">
-            <input type="button" class="btn-na-style" value="< Back" onclick="window.history.go(-1)" />
+            <input type="button" class="btn-na " value="< Back" onclick="window.history.go(-1)" />
              
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-            <asp:Button ID="btn_submit" runat="server"  class="btn-na-style" Text="Continue >" OnClick="btn_submit_Click" />
+            <asp:Button ID="btn_submit" runat="server"  class=" btn-na " Text="Continue >" OnClick="btn_submit_Click" />
             
 
         </div>

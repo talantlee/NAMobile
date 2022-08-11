@@ -162,10 +162,10 @@
 
         </div>
         <div class="container p-5">
-            <input type="button" class="btn-na-style" value="< Back" onclick="window.history.go(-1)" />
+            <input type="button" class="btn-na " value="< Back" onclick="window.history.go(-1)" />
              
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <input type="button" class="btn-na-style" value="Continue >" onclick="window.location.href='ShutterRegular.aspx';" />
+            <input type="button" class="btn-na " value="Continue >" onclick="window.location.href='ShutterRegular.aspx';" />
            
 
         </div>

@@ -139,10 +139,10 @@
 
         </div>
         <div class="container p-5">
-            <input type="button" class="btn-na-style" value="< Back" onclick="backStep()" />
+            <input type="button" class="btn-na " value="< Back" onclick="backStep()" />
              
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <input type="button" class="btn-na-style" value="Continue >" onclick="goNextStep()" />
+            <input type="button" class="btn-na " value="Continue >" onclick="goNextStep()" />
            
             <input type="hidden" value="3" id="iptstep" />
 

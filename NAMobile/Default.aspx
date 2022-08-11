@@ -77,7 +77,7 @@ B. We may modify these Terms of Trade and / or the content of our Site without n
 C. if you have any questions, please contact our Customer Service team on (07) 3256 1068.<br />
 I agree to the Norman Australia Pty Ltd Terms of Trade and Privacy Policy. </div>
     <div class="p-2">
-         <button type="button" onclick="agreecodi()"  class="btn-na-style">Aggree</button>
+         <button type="button" onclick="agreecodi()"  class="btn-na">Aggree</button>
 
 
     </div>
@@ -96,8 +96,8 @@ I agree to the Norman Australia Pty Ltd Terms of Trade and Privacy Policy. </div
     
       <label for="floatingPassword">Password</label>
     </div>
-    <input type="button" value="Register" class="btn-na-style-grey" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <asp:Button ID="btn_submit" runat="server" CssClass="btn-na-style" Text=" Login "  OnClick="btn_submit_Click" />
+    <input type="button" value="Register" class="btn-na btn-na-grey" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <asp:Button ID="btn_submit" runat="server" CssClass="btn-na" Text=" Login "  OnClick="btn_submit_Click" />
     
               <div class="row" style="padding-top:10px;color:red">
                <asp:Label ID="lblmess" runat="server"></asp:Label>

@@ -129,26 +129,40 @@
             }
 
             function placeOrder(pd, progam) {
+                //glid
+                let url = "TorderAEdit.aspx?pgmcode=" + progam;
+                let pdtype = "";
                 switch (pd) {
                     case "CS":
-                        window.location.href = "TorderAEdit.aspx?orderporducttype=Shutters&pgmcode="+progam;
+                        pdtype ="&orderporducttype=Shutter";
                         break;
                     case "CB":
-                        window.location.href = "TorderAEdit.aspx?orderporducttype=Blinds&pgmcode=" + progam;
+                        pdtype = "&orderporducttype=Blinds";
+                      
                         break;
                     case "CC":
-                        window.location.href = "TorderAEdit.aspx?orderporducttype=CellularShade&pgmcode=" + progam;
+                        pdtype = "&orderporducttype=CellularShade";
+                      
                         break;
                     case "RL":
-                        window.location.href = "TorderAEdit.aspx?orderporducttype=Roller&pgmcode=" + progam;
+                        pdtype = "&orderporducttype=Roller";
+                    
                         break;
                     case "PS":
-                        window.location.href = "TorderAEdit.aspx?orderporducttype=PerfectSheer&pgmcode=" + progam;
+                        pdtype = "&orderporducttype=PerfectSheer";
+                     
                         break;
                     case "DS":
-                        window.location.href = "TorderAEdit.aspx?orderporducttype=DisplayTower&pgmcode=" + progam;
+                        pdtype = "&orderporducttype=DisplayTower";
+                       
                         break;
                 }
+                let glid = "";
+                if (document.querySelector("#tbx_glid")) {
+                    glid = document.getElementById("tbx_glid").value;
+                }
+                //
+                window.location.href = url.concat(pdtype, "&glid=" + glid);
             }
 
         </script>
