@@ -84,7 +84,7 @@ body {
   right: 1rem;
 }
 .btn-na {
-       background-color: var(--normanau-color);
+    background-color: var(--normanau-color);
     color: #fff;
     border: 0px solid #003c4b;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),0 1px 1px rgba(0, 0, 0, 0.075);
@@ -104,6 +104,11 @@ body {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.btn-na-outline {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #003c4b;
+}
 .btn-na:hover {
     box-shadow: 5px 5px 5px grey;
 }

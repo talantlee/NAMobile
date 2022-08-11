@@ -295,10 +295,13 @@
 
                             <!-- sub part total -->
                             <div class="row row-cols-2 pt-2">
-                                <div class="col">Parts Charge Total</div>
+                                  <div class="col">Parts Charge Total</div>
                                   <div class="col text-end fonttitle">A$ 372.60</div>
                             </div>
-
+                           <div class="row pt-2 text-center">
+                                  <div class="col"><input type="button" class="btn-na btn-na-outline" value="+ Add Part" /></div>
+                                
+                            </div>
                         </div>
                           <!--Item total --->
                         <div class="row row-cols-2 p-1">
@@ -312,10 +315,10 @@
                           <div class="bg-white row"><div class="col">&nbsp;</div></div>
 
                          
-                           <div class="eacherow mb-2" >
+                          <div class="eacherow mb-2" >
                          <div class="row row-cols-2">
                               <div class="col">No</div>
-                              <div class="col fonttitle text-end">1</div>
+                              <div class="col fonttitle text-end">2</div>
                               <div class="col">Item</div>
                                <div class="col fonttitle text-end">Shutter</div>
                                  <div class="col">Room</div>
@@ -380,7 +383,7 @@
                                   </div>
                               </div>
                           <!-- parts -->
-                          <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
+                         <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
                         <div class="bg-white p-3 rounded-2 m-2" >
                             <div class="row row-cols-2">
                                 <div class="col ">No</div>
@@ -474,11 +477,15 @@
                             </div>
 
                             <!-- sub part total -->
+                             
                             <div class="row row-cols-2 pt-2">
                                 <div class="col">Parts Charge Total</div>
                                   <div class="col text-end fonttitle">A$ 372.60</div>
                             </div>
-
+                             <div class="row pt-2 text-center">
+                                  <div class="col"><input type="button" class="btn-na btn-na-outline" value="+ Add Part" /></div>
+                                
+                            </div>
                         </div>
                           <!--Item total --->
                         <div class="row row-cols-2 p-1">
@@ -489,7 +496,95 @@
                             </div>
                         </div>
 
-                      
+                      <div class="bg-white row"><div class="col">&nbsp;</div></div>
+
+                         
+                      <div class="eacherow mb-2" >
+                         <div class="row row-cols-2">
+                              <div class="col">No</div>
+                              <div class="col fonttitle text-end">3</div>
+                              <div class="col">Item</div>
+                               <div class="col fonttitle text-end">Shutter</div>
+                                 <div class="col">Room</div>
+                               <div class="col fonttitle text-end">Bathroom</div>
+
+                               <div class="col">Material</div>
+                               <div class="col fonttitle text-end">Woodlore</div>
+
+                                <div class="col">Range Type</div>
+                               <div class="col fonttitle text-end">Beaded</div>
+
+                                <div class="col">Item Type</div>
+                               <div class="col fonttitle text-end">L Frame</div>
+
+                                   <div class="col">Gross Open Width/Height</div>
+                               <div class="col fonttitle text-end">650/1000</div>
+                                 <div class="col">Inside Mount or Outside Mount</div>
+                               <div class="col fonttitle text-end">L Frame</div>
+
+                                  <div class="col">Number of Window Openings</div>
+                               <div class="col fonttitle text-end">1</div>
+
+                               <div class="col">Blade Size</div>
+                               <div class="col fonttitle text-end">47mm Elliptical Louvre</div>
+
+                               <div class="col">Colour</div>
+                               <div class="col fonttitle text-end">Pure White</div>
+
+                             <div class="col">Hinge Colour</div>
+                               <div class="col fonttitle text-end">-</div>
+                             <div class="col">Mid Rail Location</div>
+                              <div class="col fonttitle text-end">-</div>
+
+                              <div class="col">Layout Code</div>
+                              <div class="col fonttitle text-end">F</div>
+                         </div>
+                          <!-- toobar-->
+                           <div class="row p-1">
+                                  <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                              </div>
+                          <!-- parts -->
+                             <div class="row"><div class="col"><span data-feather="plus" class="align-text-bottom"  ></span>Part</div></div>
+                       <div class="bg-white p-3 rounded-2 m-2" >
+                        
+                            <!-- sub part total -->
+                           
+                             <div class="row pt-2 text-center">
+                                  <div class="col"><input type="button" class="btn-na" style="background-color:#fff;color:#000;border: 1px solid #003c4b;" value="+ Add Part" /></div>
+                                
+                            </div>
+                        </div>
+                          <!--Item total --->
+                        <div class="row row-cols-2 p-1">
+                                <div class="col">m2</div>
+                                  <div class="col text-end fonttitle">0.65</div>
+                                <div class="col">Item Total Charge</div>
+                                  <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 498.33</div>
+                            </div>
+                        </div>
 
                          <!--end  order detail info for handset-->
 
@@ -528,11 +623,11 @@
                              <div class="row pt-2">
                                  <div class="col col-2"></div>
                                   <div class="col col-4">
-                                         <input type="button" class="btn btn-outline-secondary"  value="Delete Order" />
+                                         <input type="button" class="btn-na btn-na-outline"   value="Delete Order" />
 
                                   </div>
                                    <div class="col col-4 text-end">
-                                           <input type="button" class="btn btn-outline-secondary" value="Edit Order" />
+                                           <input type="button"  class="btn-na btn-na-outline" style="background-color:#fff;color:#000;border: 1px solid #003c4b;"  value="Edit Order" />
                                        </div>
                                   <div class="col col-2"></div>
                             
@@ -577,20 +672,57 @@ Outside Mount
                               <tbody class="table-group-divider">
                                 <tr>
                                   <th scope="row">1</th>
-                                  <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>@mdo</td>
+                                  <td>Shutter</td>
+                                  <td>Woodlore</td>
+                                  <td>Bathroom</td>
+                                    
+                                  <td>L Frame</td>
+                                  <td>650/1000</td>
+                                      <td>IN</td>
+                                  <td>1</td>
+                                  <td>47mm Elliptical Louvre</td>
+                                       <td>Pure White</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                     <td>F</td>
+                                    <td>0.65</td>
+                                     <td>498.33</td>
                                 </tr>
-                                <tr>
-                                  <th scope="row">2</th>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
+                                   <tr>
+                                  <th scope="row">1</th>
+                                  <td>Shutter</td>
+                                  <td>Woodlore</td>
+                                  <td>Bathroom</td>
+                                    
+                                  <td>L Frame</td>
+                                  <td>650/1000</td>
+                                      <td>IN</td>
+                                  <td>1</td>
+                                  <td>47mm Elliptical Louvre</td>
+                                       <td>Pure White</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                     <td>F</td>
+                                    <td>0.65</td>
+                                     <td>498.33</td>
                                 </tr>
-                                <tr>
-                                  <th scope="row">3</th>
-                                  <td colspan="2">Larry the Bird</td>
-                                  <td>@twitter</td>
+                                         <tr>
+                                  <th scope="row">1</th>
+                                  <td>Shutter</td>
+                                  <td>Woodlore</td>
+                                  <td>Bathroom</td>
+                                    
+                                  <td>L Frame</td>
+                                  <td>650/1000</td>
+                                      <td>IN</td>
+                                  <td>1</td>
+                                  <td>47mm Elliptical Louvre</td>
+                                       <td>Pure White</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                     <td>F</td>
+                                    <td>0.65</td>
+                                     <td>498.33</td>
                                 </tr>
                               </tbody>
 
