@@ -492,6 +492,58 @@
                       
 
                          <!--end  order detail info for handset-->
+
+                          
+                       <!-- tool bar -->
+                      <div class="p-3">
+                          <div class="row">
+                              <div class="col text-center">
+                                  <input type="button" class="btn-na "  data-bs-toggle="modal" data-bs-target="#selectshutterprogram" value="+ Add New Item" />
+                             &nbsp;&nbsp;&nbsp;
+                             <input type="button" class="btn-na" value="+ Add Part" />
+                              </div>
+                          </div>
+                            
+                      </div>
+
+                      <!-- Order total -->
+                    <div class="p-2">
+                       <div class="row row-cols-2 p-1">
+                                <div class="col">Total m2</div>
+                                  <div class="col text-end fonttitle">1.25</div>
+                                <div class="col">Order surcharge</div>
+                                  <div class="col text-end fonttitle" >A$ 25</div>
+                       </div>
+
+                        <div  class="p-1 border-top border-dark" >
+                        <div class="row row-cols-2 pt-3">
+                             <div class="col">Total cost of job (excl GST)</div>
+                               <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 648.72</div>
+                        </div>
+                     </div>
+
+                    </div>   
+
+                      <div class="p-3">
+                             <div class="row pt-2">
+                                 <div class="col col-2"></div>
+                                  <div class="col col-4">
+                                         <input type="button" class="btn btn-outline-secondary"  value="Delete Order" />
+
+                                  </div>
+                                   <div class="col col-4 text-end">
+                                           <input type="button" class="btn btn-outline-secondary" value="Edit Order" />
+                                       </div>
+                                  <div class="col col-2"></div>
+                            
+                            </div>
+                    
+                             <div class="d-grid col-8 mx-auto pt-3">
+                                <input type="button" class="btn-na " value=" Check out " />
+                            </div>
+                      </div>
+
+
                       </div>
 
                     
@@ -545,70 +597,70 @@ Outside Mount
                         </table>
                      </div>
 
-                 
-
-
-
-                       <!-- tool bar -->
-                      <div class="p-3">
+            
+                             <!-- Order total -->
+                        <div class="d-none d-sm-block p-4">
+                            <div class="p-3">
                           <div class="row">
-                              <div class="col text-center">
+                              <div class="col text-end">
                                   <input type="button" class="btn-na "  data-bs-toggle="modal" data-bs-target="#selectshutterprogram" value="+ Add New Item" />
                              &nbsp;&nbsp;&nbsp;
-                             <input type="button" class="btn-na " value="+ Add Part" />
+                             <input type="button" class="btn-na" value="+ Add Part" />
+                              </div>
+                          </div>
+                            
+                      </div>
+                            <div class="row justify-content-end p-1">
+                            <div class="col-2">
+                                Total m2
+                            </div>
+                            <div class="col-2 fonttitle text-end">
+                            1.25
+                            </div>
+                            </div>
+
+                            <div class="row justify-content-end p-1">
+                            <div class="col-2">
+                                Order surcharge
+                            </div>
+                            <div class="col-2 fonttitle text-end">
+                            A$ 25
+                            </div>
+                            </div>
+
+                            <div class="row justify-content-end p-1">
+                            <div class="col-2 border-top border-dark pt-3">
+                            Total cost of job (excl GST)
+                            </div>
+                            <div class="col-2 fonttitle border-top border-dark text-end pt-3" style="color:red; font-size:1.1rem;">
+                                A$ 648.72
+                            </div>
+                            </div>
+
+
+                              <div class="p-3">
+                          <div class="row">
+                              <div class="col text-end">
+                                  <input type="button" class="btn btn-outline-secondary"  value="Delete Order" />
+                             &nbsp;&nbsp;&nbsp;
+                             <input type="button" class="btn btn-outline-secondary" value="Edit Order" />
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input type="button" class="btn-na " value=" Check out " />
                               </div>
                           </div>
                             
                       </div>
 
-                      <!-- Order total -->
-                    <div class="p-2">
-                       <div class="row row-cols-2 p-1">
-                                <div class="col">Total m2</div>
-                                  <div class="col text-end fonttitle">1.25</div>
-                                <div class="col">Order surcharge</div>
-                                  <div class="col text-end fonttitle" >A$ 25</div>
-                       </div>
-
-                        <div  class="p-1 border-top border-dark" >
-                        <div class="row row-cols-2 pt-3">
-                             <div class="col">Total cost of job (excl GST)</div>
-                               <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 648.72</div>
+                      
                         </div>
-                     </div>
+                
 
-                    </div>   
-
-                          <div class="p-3">
-                   
-                             <div class="row pt-3">
-                                 <div class="col col-2"></div>
-                                  <div class="col col-4">
-                                         <input type="button" class="btn btn-outline-secondary"  value="Delete Order" />
-                          
-                         
-
-                                  </div>
-                                   <div class="col col-4 text-end">
-                                           <input type="button" class="btn btn-outline-secondary" value="Edit Order" />
-                                       </div>
-                                  <div class="col col-2"></div>
-                            
-                            </div>
-                    
-                             <div class="d-grid col-8 mx-auto pt-3">
-                                <input type="button" class="btn-na " value="Check out" />
-                            </div>
-                      </div>
 
 
                   </main>
                  </div>
              </div>
-        <div class="container p-5 pt-3">
-          
-            
-        </div>
+   
 
 
         <div style="display:none">
