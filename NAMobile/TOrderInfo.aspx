@@ -96,6 +96,10 @@
                                 </div>
                         
                                   <div class="row pt-1 ps-2 pe-2">
+
+        
+      
+                                  
                                     <div class="col text-center border fonttitle border-dark bg-white" style="cursor:pointer" >
                                            <span data-feather="edit-2"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
                                     </div>
@@ -645,8 +649,8 @@
 
 
                        <!-- order detail info for pc -->
-                     <div class="p-2 d-none d-sm-block">
-                          <table class="table table-striped table-hover">
+                     <div class="p-2 d-none d-sm-block bg-light">
+                          <table class="table">
                             <thead>
                             <tr >
                               <th scope="col">No</th>
@@ -665,11 +669,11 @@ Outside Mount
                                  <th>Hinge Colour</th>
                                  <th>Mid Rail Location</th>
                                  <th>Layout Code</th>
-                                 <th>m2</th>
-                                 <th>Item Total Charge</th>
+                                 <!--th>m2</!--th>
+                                 <th>Item Total Charge</th-->
                             </tr>
                           </thead>
-                              <tbody class="table-group-divider">
+                            <tbody class="table-group-divider">
                                 <tr>
                                   <th scope="row">1</th>
                                   <td>Shutter</td>
@@ -685,48 +689,102 @@ Outside Mount
                                   <td>-</td>
                                   <td>-</td>
                                      <td>F</td>
-                                    <td>0.65</td>
-                                     <td>498.33</td>
+                                    <!--td>0.65</td>
+                                     <td>498.33</td -->
                                 </tr>
-                                   <tr>
-                                  <th scope="row">1</th>
-                                  <td>Shutter</td>
-                                  <td>Woodlore</td>
-                                  <td>Bathroom</td>
-                                    
-                                  <td>L Frame</td>
-                                  <td>650/1000</td>
-                                      <td>IN</td>
-                                  <td>1</td>
-                                  <td>47mm Elliptical Louvre</td>
-                                       <td>Pure White</td>
-                                  <td>-</td>
-                                  <td>-</td>
-                                     <td>F</td>
-                                    <td>0.65</td>
-                                     <td>498.33</td>
-                                </tr>
-                                         <tr>
-                                  <th scope="row">1</th>
-                                  <td>Shutter</td>
-                                  <td>Woodlore</td>
-                                  <td>Bathroom</td>
-                                    
-                                  <td>L Frame</td>
-                                  <td>650/1000</td>
-                                      <td>IN</td>
-                                  <td>1</td>
-                                  <td>47mm Elliptical Louvre</td>
-                                       <td>Pure White</td>
-                                  <td>-</td>
-                                  <td>-</td>
-                                     <td>F</td>
-                                    <td>0.65</td>
-                                     <td>498.33</td>
-                                </tr>
+                                 <!-- order parts -->
+                                 <tr >
+                                     <td colspan="13" class="border-0">
+                                         <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
+                                         <div class="bg-white p-1 rounded-2 m-2" >
+                                         <table class="table table-borderless">
+                                                     <thead>
+                                                    <tr >
+                                                      <th scope="col">No</th>
+                                                      <th scope="col">Item</th>
+                                                      <th scope="col">Qty</th>
+                                                      <th scope="col">Length (mm)</th>
+                                                        <th scope="col">Material</th>
+                                                           <th scope="col">Specification</th>
+                                                        <th>Colour</th>
+                                                        <th>Item Total Charge</th>
+                                                        <th>Action</th>
+                               
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      <tr><td scope="row">1</td>
+                                                          <td>Hinge</td>
+                                                           <td>25</td>
+                                                           <td>-</td>
+                                                           <td>Woodlore</td>
+                                                           <td>60mm Self-mortise hinge</td>
+                                                           <td>Antique Brass</td>
+                                                           <td>A$ 332.10</td>
+                                                          <td></td>
+                                                      </tr>
+                                                  </tbody>
+                                                  
+                                                  <tfoot>
+                                                      <tr >
+                                                          <td  colspan="2" >
+                                                               <input type="button" class="btn-na btn-na-outline" value="+ Add Part" />
+                                                          </td>
+                                                          <td colspan="4"></td>
+                                                          <td class=" border-top border-dark" >Parts Charge Total</td>
+                                                          <td class=" border-top border-dark" colspan="2">A$ 372.60</td>
+                                                          
+                                                      </tr>
+                                                  </tfoot>
+
+                                                
+                                              </table>
+                   
+                                         <!-- sub part total -->
+                      
+                               
+                     
+                         
+                                        </div>
+                                     </td>
+
+                                 </tr>
+                                 <!-- order parts -->
+                                 <tr >
+                                      <td colspan="13" class="border-0">
+                                            <!--Item total --->
+                                          <div class="row justify-content-end">
+                                             <div class="col-8">
+                                               
+                                                 </div>
+                                            <div class="col-2 border-dark border-top pt-2">
+                                             m2
+                                            </div>
+                                            <div class="col-2 fonttitle text-end border-dark border-top pt-2">
+                                          0.6
+                                            </div>
+                                            </div>
+                                           <div class="row justify-content-end">
+                                             <div class="col-8">
+                                               
+                                                 </div>
+                                            <div class="col-2 pt-2">
+                                             Item Total Charge
+                                            </div>
+                                            <div class="col-2 fonttitle text-end pt-2">
+                                         A$ 498.33
+                                            </div>
+                                            </div>
+                                      </td>
+                                  </tr>
+                                   
+
+                               
                               </tbody>
 
                         </table>
+                          
+                      
                      </div>
 
             
@@ -770,12 +828,13 @@ Outside Mount
                             </div>
 
 
+
                               <div class="p-3">
                           <div class="row">
                               <div class="col text-end">
-                                  <input type="button" class="btn btn-outline-secondary"  value="Delete Order" />
+                                  <input type="button" class="btn-na btn-na-outline"  value="Delete Order" />
                              &nbsp;&nbsp;&nbsp;
-                             <input type="button" class="btn btn-outline-secondary" value="Edit Order" />
+                             <input type="button" class="btn-na btn-na-outline" value="Edit Order" />
                                     &nbsp;&nbsp;&nbsp;
                                     <input type="button" class="btn-na " value=" Check out " />
                               </div>
@@ -787,8 +846,7 @@ Outside Mount
                         </div>
                 
 
-
-
+                      
                   </main>
                  </div>
              </div>
