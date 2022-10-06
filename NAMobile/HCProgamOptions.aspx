@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ShutterProgamOptions.aspx.cs" Inherits="NAMobile.ShutterProgamOptions" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HCProgamOptions.aspx.cs" Inherits="NAMobile.HCProgamOptions" %>
 <%@ Register Src="~/navTop.ascx" TagPrefix="uc1" TagName="navTop" %>
 
 
@@ -135,20 +135,7 @@
 
                      </div>
                     
-                    <div class="row rowpt">
-                              <div class="col col-sm-2" >
-                                 <label for="tbx_inputdate" class="form-label fonttitle">Motorized Shutters<font color="red">*</font></label>
-                                        </div>
-                                  <div class="col col-sm-4">
-                                           <div class="switch">
-			                                <input class="switch-checkbox" id="chxismotorized" type="checkbox" />
-			                                <label class="switch-label" for="chxismotorized">
-				                                <span class="switch-inner" data-on="YES" data-off="NO"></span>
-				                                <span class="switch-switch"></span>
-			                                </label>
-		                                    </div>
-                                  </div>
-                    </div>
+            
 
 
                   </main>
@@ -174,10 +161,8 @@
           <script type="text/javascript">
               
               $(function () {
-              
-               
-                  
                  
+               
                   chgRoom();
                   checkMatchItem();
                 $("#loadingdv").css("display", "none");

@@ -2,7 +2,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-au" >
 <head runat="server">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -128,6 +128,11 @@ I agree to the Norman Australia Pty Ltd Terms of Trade and Privacy Policy. </div
                     }, false)
                 })
         })();
+        $(function () {
+            if ($("#lblmess").html().length > 6) {
+                agreecodi();
+            }
+        });
         function agreecodi() {
            
             document.getElementById("dvAgreeterm").classList.add("d-none");

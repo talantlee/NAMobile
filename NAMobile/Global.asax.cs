@@ -62,7 +62,32 @@ namespace NAMobile
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
+            if (Request.ServerVariables.Get("HTTPS") == "off" && NAMobile.Model.Config.isForceHttps)
+            {
 
+                string serveraddress = "";
+                serveraddress = Request.ServerVariables.Get("HTTP_HOST");
+                if (serveraddress.ToLower().IndexOf("normanjapan") > -1 || serveraddress.ToLower().IndexOf("nienmade") > -1)
+                {
+
+                    string url = "";
+                    url = url + "https://" + serveraddress + Request.ServerVariables.Get("SCRIPT_NAME");
+                    if (Request.ServerVariables.Get("QUERY_STRING").Trim().Length > 0)
+                    {
+                        url = url + "?" + Request.ServerVariables.Get("QUERY_STRING");
+                    }
+                    Response.Redirect(url);
+                }
+            }
+
+
+
+
+            if (NMSafe.XssFilter.CheckGet())
+            {
+                Response.Write("Please make sure these characters are not included in your URL: \",',<,\\,because these characters may cause XSS attacks.");
+                Response.End();
+            }
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)

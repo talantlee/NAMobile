@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-au" >
 <head runat="server">
         
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -37,7 +37,7 @@
                                 <div class="el-step is-horizontal is-flex" style="flex-basis: 25%; max-width:25%;"><div class="el-step__head is-wait" id="navStep5"><div class="el-step__line"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text"><!----><div class="el-step__icon-inner">5</div></div></div><div class="el-step__main"><div class="el-step__description is-process"></div></div></div>
                             </div>
                             <div class="pt-2">
-                            <div style="background-color:#fddd89; height:3rem; vertical-align:central; line-height:3rem; font-weight:bold; font-size:1rem;" class="text-center rounded">
+                            <div style="background-color:#fddd89; height:3rem; vertical-align:central; line-height:3rem; font-weight:bold; font-size:1rem;" class="text-center rounded" id="stepinfo">
                               Product Details ①
                             </div>
                             </div>
@@ -177,6 +177,7 @@
                       $("#navStep4").addClass("is-process");
                       //$("#navStep4").removeClass("is-process");
                       // $("#navStep4").addClass("is-wait");
+                      $("#stepinfo").html("Product Details ②");
                   } else if (st == 3) {
                       $("#dvStep4").addClass("d-none");
                       $("#dvStep3").removeClass("d-none");
@@ -184,6 +185,7 @@
                       $("#navStep3").addClass("is-process");
                       $("#navStep4").removeClass("is-process");
                       $("#navStep4").addClass("is-wait");
+                      $("#stepinfo").html("Product Details ①");
                   } else if (st == 5) {
                       window.location.href = "TOrderInfo.aspx";
                   }

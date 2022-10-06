@@ -65,19 +65,19 @@
                         <div class="col">
                                 <div class="row pt-1">
                                     <div class="col col-4 fonttitle">Dealer Name</div>
-                                     <div class="col col-8">Malibu Blind</div>
+                                     <div class="col col-8"><asp:Label ID="lbl_dealername" runat="server"></asp:Label></div>
                                 </div>
                               <div class="row pt-1">
                                     <div class="col col-4 fonttitle">Customer Name</div>
-                                     <div class="col col-8">123</div>
+                                     <div class="col col-8"><asp:Label ID="lbl_custnam" runat="server"></asp:Label></div>
                                 </div>
                             <div class="row pt-1">
                                     <div class="col col-4 fonttitle">Input Date</div>
-                                     <div class="col col-8">Jul-27-2022</div>
+                                     <div class="col col-8"><asp:Label ID="lbl_inputdate" runat="server"></asp:Label></div>
                                 </div>
                             <div class="row pt-1">
                                     <div class="col col-4 fonttitle">Job/Order No</div>
-                                    <div class="col col-8">0123456789</div>
+                                    <div class="col col-8"><asp:Label ID="lbl_po" runat="server"></asp:Label></div>
                                 </div>
                         </div>
                           <!-- shipto-->
@@ -88,11 +88,11 @@
                        
                          <div class="row pt-1">
                                     <div class="col col-4 fonttitle">State/Country</div>
-                                    <div class="col col-8">Roxburgh Park</div>
+                                    <div class="col col-8"><asp:Label ID="lbl_state" runat="server"></asp:Label></div>
                                 </div>
                          <div class="row pt-1">
                                     <div class="col col-4 fonttitle">City</div>
-                                    <div class="col col-8">Victoria</div>
+                                    <div class="col col-8"><asp:Label ID="lbl_city" runat="server"></asp:Label></div>
                                 </div>
                         
                                   <div class="row pt-1 ps-2 pe-2">
@@ -100,7 +100,7 @@
         
       
                                   
-                                    <div class="col text-center border fonttitle border-dark bg-white" style="cursor:pointer" >
+                                    <div class="col text-center border fonttitle border-dark bg-white" style="cursor:pointer" onclick="EditHdr()" >
                                            <span data-feather="edit-2"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
                                     </div>
                                 </div>
@@ -793,7 +793,7 @@ Outside Mount
                             <div class="p-3">
                           <div class="row">
                               <div class="col text-end">
-                                  <input type="button" class="btn-na "  data-bs-toggle="modal" data-bs-target="#selectshutterprogram" value="+ Add New Item" />
+                                  <input type="button" class="btn-na "   onclick="addorderitem()"  value="+ Add New Item" />
                              &nbsp;&nbsp;&nbsp;
                              <input type="button" class="btn-na" value="+ Add Part" />
                               </div>
@@ -805,7 +805,7 @@ Outside Mount
                                 Total m2
                             </div>
                             <div class="col-2 fonttitle text-end">
-                            1.25
+                            <asp:Label ID="lbl_m2" runat="server"></asp:Label>
                             </div>
                             </div>
 
@@ -814,7 +814,8 @@ Outside Mount
                                 Order surcharge
                             </div>
                             <div class="col-2 fonttitle text-end">
-                            A$ 25
+                              <asp:Label ID="lbl_ordersurcharge" runat="server"></asp:Label>
+                           
                             </div>
                             </div>
 
@@ -823,11 +824,10 @@ Outside Mount
                             Total cost of job (excl GST)
                             </div>
                             <div class="col-2 fonttitle border-top border-dark text-end pt-3" style="color:red; font-size:1.1rem;">
-                                A$ 648.72
+                                 <asp:Label ID="lbl_ordertotal" runat="server"></asp:Label>
+                              
                             </div>
                             </div>
-
-
 
                               <div class="p-3">
                           <div class="row">
@@ -851,10 +851,31 @@ Outside Mount
                  </div>
              </div>
    
+        
+<div class="modal fade" id="addshutteritem" tabindex="-1"  style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+                   <ul class="list-group">
+                        <li class="list-group-item" style="background-color:#badef2;height:0.75rem; font-size:0.85rem;" >&nbsp;</li>
+                          <li class="list-group-item list-group-item-action" onclick="placeShutterItem('MDF CleanLook')">Woodlore</li>
+                          <li class="list-group-item list-group-item-action" onclick="placeShutterItem('MDFP')">Woodlore Plus</li>
+                          <li class="list-group-item list-group-item-action">Brightwood</li>
+                          <li class="list-group-item list-group-item-action">Normandy</li>
+                          <li class="list-group-item list-group-item-action">Ultra</li>
+                            <li class="list-group-item list-group-item-action">MS4 Motorised Shutter Hand Sample</li>        
+                         <li class="list-group-item" style="background-color:#badef2;height:0.75rem; font-size:0.85rem;" >&nbsp;</li>
+</ul>
 
+      </div>
+     
+    </div>
+  </div>
+</div>
 
         <div style="display:none">
             <asp:TextBox ID="tbx_glid" runat="server" ReadOnly="true" />
+             <asp:TextBox ID="txt_producttype" runat="server" ReadOnly="true" />
         </div>
         <script type="text/javascript">
             function getData(goPage) {
@@ -928,6 +949,24 @@ Outside Mount
                
                 $("#loadingdv").css("display", "none");
             });
+            function EditHdr() {
+                window.location.href = 'TorderAEdit.aspx?GLID=' + document.getElementById("tbx_glid").value;
+            }
+            function addorderitem() {
+                let pdtype = document.getElementById("txt_producttype").value;
+                switch (pdtype.toLowerCase()) {
+                    case "shutters":
+                        $("#addshutteritem").modal('show');
+                        break;
+                    case "cellularshade":
+                        window.location.href ="HCProgamOptions.aspx?glid=" + document.querySelector("#tbx_glid").value;
+                        break;
+                }
+            }
+            function placeShutterItem(progam) {
+                let url = "ShutterProgamOptions.aspx?pgmcode=" + progam;
+                window.location.href = url.concat("&glid=" + document.querySelector("#tbx_glid").value);
+            }
         </script>
 
 

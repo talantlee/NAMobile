@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-au" >
 <head runat="server">
         
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -39,7 +39,7 @@
                                   <tr>
                                       <th scope="col">#</th>
                                         <%if (hasQueryConditions) { %>
-                                      <th scope="col" class="d-none">User Id</th>
+                                      <th scope="col" >User Id</th>
                                       <%} %>
                                       <th scope="col">Customer Name</th>
                                        <%if (hasQueryConditions) { %>
@@ -81,7 +81,7 @@
                   </main>
                  </div>
              </div>
-        <div class="container p-5 pt-3">
+        <div class="container p-5 pt-3 d-none">
             <a href="selectProduct.aspx" class="btn btn-primary">Add Order</a>
         </div>
         <script type="text/javascript">
@@ -112,6 +112,7 @@
                             return false;
                         }
                         $("#dv_pageing").css("display", "");
+                        $("#table_list").find("tbody").empty();
                         //$("#dv_pageing").css("display", "");
                         //$("#dv_norecord").css("display", "none");
                         var totalrows = data.rows[0].totalrows;
@@ -152,10 +153,30 @@
                  <%if(Session["ShowPrice"]!=null && Session["ShowPrice"].ToString() == "Y") {  %>
                 shtml.push("<td>" + dr.orderamt + "</td>")
                 <%}%>
-                shtml.push("<td>" + dr.producttype + "</td>")
-                shtml.push("<td><a class=\"btn btn-primary\" role=\"button\" href=\"TorderAEdit.aspx?GLID=" + dr .glid+"\" >View</a></td>")
+
+
+                shtml.push("<td>" + getPdName(dr.producttype) + "</td>")
+                shtml.push("<td><a class=\"btn btn-primary\" role=\"button\" href=\"TOrderInfo.aspx?GLID=" + dr .glid+"\" >View</a></td>")
                 shtml.push("</tr>")
                 return shtml.join('');
+            }
+            function getPdName(producttype) {
+                switch (producttype.toUpperCase()) {
+                    case "CELLULARSHADE":
+                        return "Honeycomb Shades";
+                    case "ROMAN":
+                        return "Roman Shades";
+                    case "BLINDS":
+                        return "SmartPrivacy Blind";
+                    case "ROMAN":
+                        return "Roman Shades";
+                    case "ROLLER":
+                        return "Soluna Roller Shade";
+                    case "DISPLAYTOWER":
+                        return "Display Tower";
+                    default:
+                        return producttype;
+                }
             }
             function setTotalPages(pageidx,pagecount) {
 
@@ -179,7 +200,7 @@
                     $("#btn_next").addClass("disabled");
                     $("#btn_next").attr("disabled", "disabled");
                 } else {
-                    pshtml += (pageidx * pagesize).toString();
+                    pshtml += (pageidx * pagecount).toString();
                     $("#btn_next").removeAttr("disabled");
                     $("#btn_next").removeClass("disabled");
                     if (pageidx < pagecount) {

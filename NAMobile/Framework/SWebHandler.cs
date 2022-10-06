@@ -19,6 +19,7 @@ namespace NAMobile.Framework
             }
             if (!isauthed)
             {
+                throw new UnauthorizedAccessException("Your login information has expired, please log in again.");
                 switch (datatype)
                 {
                     case HandlerDataType.DATATABLE:

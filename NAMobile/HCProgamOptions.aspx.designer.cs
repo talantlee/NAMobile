@@ -11,7 +11,7 @@ namespace NAMobile
 {
 
 
-    public partial class TOrderInfo
+    public partial class HCProgamOptions
     {
 
         /// <summary>
@@ -33,85 +33,58 @@ namespace NAMobile
         protected global::NAMobile.navTop navTop;
 
         /// <summary>
-        /// lbl_dealername 控制項。
+        /// lbl_producttype 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_dealername;
+        protected global::System.Web.UI.WebControls.Label lbl_producttype;
 
         /// <summary>
-        /// lbl_custnam 控制項。
+        /// drp_shapetype 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_custnam;
+        protected global::System.Web.UI.WebControls.DropDownList drp_shapetype;
 
         /// <summary>
-        /// lbl_inputdate 控制項。
+        /// drp_roomsel 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_inputdate;
+        protected global::System.Web.UI.WebControls.DropDownList drp_roomsel;
 
         /// <summary>
-        /// lbl_po 控制項。
+        /// tbx_room 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_po;
+        protected global::System.Web.UI.WebControls.TextBox tbx_room;
 
         /// <summary>
-        /// lbl_state 控制項。
+        /// drp_matchtype 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_state;
+        protected global::System.Web.UI.WebControls.DropDownList drp_matchtype;
 
         /// <summary>
-        /// lbl_city 控制項。
+        /// txtProductType 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_city;
-
-        /// <summary>
-        /// lbl_m2 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_m2;
-
-        /// <summary>
-        /// lbl_ordersurcharge 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ordersurcharge;
-
-        /// <summary>
-        /// lbl_ordertotal 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ordertotal;
+        protected global::System.Web.UI.WebControls.TextBox txtProductType;
 
         /// <summary>
         /// tbx_glid 控制項。
@@ -121,14 +94,5 @@ namespace NAMobile
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_glid;
-
-        /// <summary>
-        /// txt_producttype 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_producttype;
     }
 }

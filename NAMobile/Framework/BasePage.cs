@@ -69,7 +69,7 @@ namespace NAMobile.Framework
                     Session["Rights"] = "";
                     if (value.Rights=="*" || value.Rights.ToLower() == "m")
                     {
-                        Session["Rights"] = value.Rights;
+                        Session["Rights"] = value.Rights.ToUpper();
                         Session["SysUserID"] = value.UserID;
                         Session["SysLoginID"] = value.LoginId;
                     }
