@@ -11,7 +11,8 @@ namespace NAMobile
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string shapetype = Request.QueryString["shapetype"]??"";
+            tbx_shapetype.Text= shapetype;
         }
     }
 }

@@ -165,8 +165,8 @@
             <input type="button" class="btn-na " value="< Back" onclick="window.history.go(-1)" />
              
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <input type="button" class="btn-na " value="Continue >" onclick="window.location.href='ShutterRegular.aspx';" />
-           
+          
+           <asp:Button ID="btncontinue" runat="server" CssClass="btn-na" Text="Continue" OnClick="btncontinue_Click" />
 
         </div>
 

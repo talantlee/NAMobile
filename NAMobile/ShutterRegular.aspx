@@ -134,7 +134,7 @@
         </div>
 
         <div style="display:none">
-               <asp:TextBox ID="txtProductType" runat="server"></asp:TextBox>
+               <asp:TextBox ID="tbx_shapetype" runat="server"></asp:TextBox>
             <asp:TextBox ID="tbx_glid" runat="server" ReadOnly="true"></asp:TextBox>
 
         </div>

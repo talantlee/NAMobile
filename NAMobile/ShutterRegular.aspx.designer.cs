@@ -42,13 +42,13 @@ namespace NAMobile
         protected global::System.Web.UI.WebControls.DropDownList drp_OrderSizeStyle;
 
         /// <summary>
-        /// txtProductType 控制項。
+        /// tbx_shapetype 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductType;
+        protected global::System.Web.UI.WebControls.TextBox tbx_shapetype;
 
         /// <summary>
         /// tbx_glid 控制項。

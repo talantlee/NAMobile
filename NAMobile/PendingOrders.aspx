@@ -92,7 +92,7 @@
                    
                 }
                 dtl.page = goPage;
-            
+               
                 $.ajax({
                     url: "handles/getPendingOrderList.ashx",
                     dataType: "json",
@@ -178,7 +178,7 @@
                         return producttype;
                 }
             }
-            function setTotalPages(pageidx,pagecount) {
+            function setTotalPages(pageidx, pagecount) {
 
                 var shtml = new Array();
                 $("#sel_pages").find("option").remove();
@@ -194,22 +194,24 @@
 
                 var pshtml = " /";
                 pshtml += pagecount.toString();
+              
              //   pshtml += ((pageidx - 1) * pagesize + 1).toString();
                
                 if (pageidx >= pagecount) {
                     $("#btn_next").addClass("disabled");
                     $("#btn_next").attr("disabled", "disabled");
                 } else {
-                    pshtml += (pageidx * pagecount).toString();
+                  //  pshtml += (pageidx * pagecount).toString();
                     $("#btn_next").removeAttr("disabled");
                     $("#btn_next").removeClass("disabled");
                     if (pageidx < pagecount) {
                         $("#btn_next").click(function () {
-                            getData(pageidx + 1);
+                            getData(parseInt(pageidx) + 1);
                         });
                     }
                 }
                 pshtml += "";
+               
                 $("#td_currentrecord").html(pshtml);
                 if (pageidx == 1) {
                     $("#btn_prev").addClass("disabled", "");
@@ -219,7 +221,7 @@
                     $("#btn_prev").removeAttr("disabled");
                     if (pageidx > 1 && pagecount > 1) {
                         $("#btn_prev").click(function () {
-                            getData(pageidx - 1);
+                            getData(parseInt(pageidx) - 1);
                         });
                     }
                 }

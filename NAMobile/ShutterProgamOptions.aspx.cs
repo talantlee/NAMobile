@@ -14,6 +14,9 @@ namespace NAMobile
 
         }
 
-     
+        protected void btncontinue_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("ShutterRegular.aspx?shapetype="+this.drp_shapetype.SelectedValue);
+        }
     }
 }

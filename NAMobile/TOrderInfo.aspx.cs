@@ -14,6 +14,7 @@ namespace NAMobile
             this.CheckVaild();
 
             string glid = Request.QueryString["glid"] ?? "";
+        
             if (!Page.IsPostBack)
             {
 
