@@ -11,7 +11,7 @@ namespace NAMobile
 {
 
 
-    public partial class ShutterRegular
+    public partial class PerfectSheerOptions
     {
 
         /// <summary>
@@ -33,22 +33,31 @@ namespace NAMobile
         protected global::NAMobile.navTop navTop;
 
         /// <summary>
-        /// drp_OrderSizeStyle 控制項。
+        /// lbl_producttype 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drp_OrderSizeStyle;
+        protected global::System.Web.UI.WebControls.Label lbl_producttype;
 
         /// <summary>
-        /// tbx_shapetype 控制項。
+        /// drp_shapetype 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_shapetype;
+        protected global::System.Web.UI.WebControls.DropDownList drp_shapetype;
+
+        /// <summary>
+        /// drp_roomsel 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drp_roomsel;
 
         /// <summary>
         /// tbx_room 控制項。
@@ -60,13 +69,22 @@ namespace NAMobile
         protected global::System.Web.UI.WebControls.TextBox tbx_room;
 
         /// <summary>
-        /// drp_roomsel 控制項。
+        /// drp_matchtype 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox drp_roomsel;
+        protected global::System.Web.UI.WebControls.DropDownList drp_matchtype;
+
+        /// <summary>
+        /// txtProductType 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProductType;
 
         /// <summary>
         /// tbx_glid 控制項。

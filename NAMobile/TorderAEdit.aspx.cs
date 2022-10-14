@@ -45,12 +45,15 @@ namespace NAMobile
                         if (dt.Rows.Count == 1)
                         {
                             this.tbx_accountname.Text = dt.Rows[0]["AccoountName"].ToString();
+                            tbx_custid.Text = dt.Rows[0]["CustName"].ToString();
+                            tbx_custid.ReadOnly = true;
                             setDealerBillTo(this.tbx_accountname.Text);
                             //todo:set default shipto
                         }
                         else
                         {
                             this.tbx_accountname.ReadOnly = false;
+                            tbx_custid.ReadOnly = false;
                             UserDealerList = "<select class=\"form-select\" name=\"iptaccountname\" onchange=\"chgDealerID()\">";
                             UserDealerList += "<option value=''></option>";
                             foreach (DataRow dr in dt.Rows)
@@ -70,7 +73,7 @@ namespace NAMobile
                     //新增
                     txtProductType.Text = pd;
                     this.tbx_inputdate.Text = NAMobile.Model.Config.NowDateToString;
-
+                    this.tbx_orderuserid.Text = UserID;
                 }
 
                 else
@@ -81,10 +84,12 @@ namespace NAMobile
                         txtProductType.Text = hdr.Rows[0]["producttype"].ToString();
                         this.tbx_accountname.Text = hdr.Rows[0]["accountname"].ToString();
 
-                     
+                     this.tbx_orderuserid.Text= hdr.Rows[0]["userid"].ToString();
 
                         this.tbx_po.Text = hdr.Rows[0]["po"].ToString();
                         tbx_txtcustnam.Text = hdr.Rows[0]["Custnam"].ToString();
+
+                        tbx_custid.Text = hdr.Rows[0]["custid"].ToString();
                         this.tbx_inputdate.Text = Convert.ToDateTime(hdr.Rows[0]["PODate"]).ToString(NAMobile.Model.Config.glbDateFormat);
                         if (hdr.Rows[0]["ArrivedPort"].ToString().Length > 0) drp_ArrivedPort.SelectedValue = hdr.Rows[0]["ArrivedPort"].ToString();
                         this.drp_shipvia.SelectedValue = hdr.Rows[0]["shipvia"].ToString();
@@ -115,11 +120,12 @@ namespace NAMobile
 
                         this.drp_shiptostate.SelectedValue = hdr.Rows[0]["ShipToCountry"].ToString();
                         tbx_shiptoremark.Text = hdr.Rows[0]["ShipRemark"].ToString();
+                        txt_remark.Text = hdr.Rows[0]["MemoA"].ToString();
 
-                    
-                                
 
-                              
+
+
+
 
                     }
                     else
@@ -172,11 +178,29 @@ namespace NAMobile
         protected void btn_submit_Click(object sender, EventArgs e)
         {
             string glid = tbx_glid.Text;
+
+
+
+              string ArrivedPort ="";
+            if (drp_shipvia.SelectedValue != "ship")
+            {
+                ArrivedPort = drp_ArrivedPort.SelectedValue;
+            }
+
             if (glid.Length > 0)
             {
+                DAL.OrderDAL.TOrderHeader_Edit(tbx_orderuserid.Text, glid, tbx_accountname.Text, tbx_custid.Text, tbx_txtcustnam.Text, tbx_inputdate.Text, tbx_po.Text,
+                Request.UserHostAddress, ArrivedPort, txt_remark.Text, tbx_shipto.Text, drp_shipvia.SelectedValue, txtProductType.Text, this.drp_shiptostate.SelectedValue,
+                tbx_shiptocity.Text, tbx_shipstostreet.Text, tbx_shiptozip.Text, tbx_shiptocontacter.Text, tbx_shiptocontacter1.Text, tbx_shiptoemail.Text,
+                tbx_shiptotel.Text, tbx_shiptowebsite.Text, tbx_shiptoremark.Text, UserID, "M");
                 Response.Redirect("TOrderInfo.aspx?glid=" + glid);
             }else
             {
+                glid=DAL.OrderDAL.TOrderHeader_Edit(tbx_orderuserid.Text, glid, tbx_accountname.Text, tbx_custid.Text, tbx_txtcustnam.Text, tbx_inputdate.Text, tbx_po.Text,
+                Request.UserHostAddress, ArrivedPort, txt_remark.Text, tbx_shipto.Text, drp_shipvia.SelectedValue, txtProductType.Text, this.drp_shiptostate.SelectedValue,
+                tbx_shiptocity.Text, tbx_shipstostreet.Text, tbx_shiptozip.Text, tbx_shiptocontacter.Text, tbx_shiptocontacter1.Text, tbx_shiptoemail.Text,
+                tbx_shiptotel.Text, tbx_shiptowebsite.Text, tbx_shiptoremark.Text, UserID, "I");
+
                 Response.Redirect("ShutterProgamOptions.aspx?glid=" + glid);
             }
         }

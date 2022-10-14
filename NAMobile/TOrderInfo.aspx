@@ -961,6 +961,9 @@ Outside Mount
                     case "cellularshade":
                         window.location.href ="HCProgamOptions.aspx?glid=" + document.querySelector("#tbx_glid").value;
                         break;
+                    case "perfectsheer":
+                        window.location.href = "PerfectSheerOptions.aspx?glid=" + document.querySelector("#tbx_glid").value;
+                        break;
                 }
             }
             function placeShutterItem(progam) {

@@ -26,8 +26,18 @@ $(function () {
     if (document.getElementById("tbx_shipto").value != "") {
         $("#selshipto").val(document.getElementById("tbx_shipto").value);
     }
+
+    $("#selallshipto").find("option").remove();
+    for (let i = 0; i < document.getElementById("drpshipto").options.length; i++) {
+        $("#selallshipto").append("<option value='" + document.getElementById("drpshipto").options[i].value + "'>" + document.getElementById("drpshipto").options[i].text + "</option>");
+    }
+
+
+
     $("#loadingdv").css("display", "none");
     setShipToReadOnly();
+
+
     isLoaded = true;
 });
 
@@ -124,6 +134,8 @@ function chgDealerID() {
     var dealerid = $("[name='iptaccountname']").val();
     if (dealerid.length > 0) {
         $("#tbx_accountname").val(dealerid);
+     
+        
         getAccountData(false);
     }
 }
@@ -143,6 +155,7 @@ function getAccountData(checkonly) {
                 checkok = false;
                 return false;
             }
+            $("#tbx_custid").val(data.rows[0].dealername);
             $("#lbldealername").html(data.rows[0].dealername);
             $("#lbl_contacter").html(data.rows[0].contact + " " + data.rows[0].contact1);
             $("#lbl_street").html(data.rows[0].street);
@@ -153,19 +166,19 @@ function getAccountData(checkonly) {
             $("#lbl_email").html(data.rows[0].email);
             $("#lbl_website").html(data.rows[0].website);
 
-            $("#drpshipto").find("option").remove();
+            $("#selallshipto").find("option").remove();
             var shiplist = data.rows[0].shiplist.split("|@|");
 
            
             var shipcount = 0;
             for (var i = 0; i < shiplist.length; i++) {
                 if (shiplist[i] == "") continue;
-                $("#drpshipto").append("<option value='" + shiplist[i].split("||")[0] + "'>" + shiplist[i].split("||")[1] + "</option>");
+                $("#selallshipto").append("<option value='" + shiplist[i].split("||")[0] + "'>" + shiplist[i].split("||")[1] + "</option>");
                 shipcount++;
             }
             if (shipcount > 1) {
-                document.getElementById("drpshipto").options.add(new Option("",""),0);
-               // $("#drpshipto").append("<option value=''></option>");
+                document.getElementById("selallshipto").options.add(new Option("",""),0);
+              
             }
             setShiptoList();
             if (shipcount == 1) {
@@ -189,8 +202,8 @@ function setShiptoList() {
     //var oldvalue = $("#selshipto").val();
 
     $("#selshipto").find("option").remove();
-    for (let i = 0; i < document.getElementById("drpshipto").options.length; i++) {
-        $("#selshipto").append("<option value='" + document.getElementById("drpshipto").options[i].value + "'>" + document.getElementById("drpshipto").options[i].text +"</option>");
+    for (let i = 0; i < document.getElementById("selallshipto").options.length; i++) {
+        $("#selshipto").append("<option value='" + document.getElementById("selallshipto").options[i].value + "'>" + document.getElementById("selallshipto").options[i].text +"</option>");
     }
     if ($("#drp_shipvia").val() == "air" || $("[name='iptaccountname']").val() == "C000359") {
         $("#selshipto").append("<option value='New'>New</option>");

@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace NAMobile
 {
-    public partial class HCProgamOptions : System.Web.UI.Page
+    public partial class HCProgamOptions : Framework.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.CheckVaild();
         }
     }
 }

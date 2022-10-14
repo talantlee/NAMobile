@@ -19,6 +19,12 @@ namespace NAMobile.DAL
             return new SqlHelper().ExecuteDataset("NAMB_lft_TOrderGetHdr", userid, glid).Tables[0];
         }
 
+
+        public static string TOrderHeader_Edit(params object[] paras)
+        {
+            return new SqlHelper().ExecuteScalar<string>("NAMB_TOrderAMaintain", paras);
+        }
+
         /// <summary>
         /// 
         /// </summary>

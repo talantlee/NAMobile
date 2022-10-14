@@ -70,7 +70,7 @@
                                  <label for="drp_OrderSizeStyle" class="form-label fonttitle">Installation Method<font color="red">*</font></label>
                                         </div>
                                   <div class="col col-sm-4">
-                                     <asp:DropDownList ID="drp_OrderSizeStyle" class="form-select" runat="server" required>
+                                     <asp:DropDownList ID="drp_OrderSizeStyle" CssClass="form-select" runat="server" required>
                                         <asp:ListItem Value="Regular">Panel With Frame</asp:ListItem>
                                      </asp:DropDownList>
                                     </div>
@@ -112,10 +112,10 @@
                                   <div class="col col-sm-4">
                                   
                                  
-                                          <div class="el-radio-group" role="radiogroup" aria-label="radio-group" id="el-id-5195-113">
-                                              <label class="el-radio-button el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="I"><span class="el-radio-button__inner">IN</span></label>
-                                              <label class="el-radio-button is-active el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="O" checked><span class="el-radio-button__inner">OUT</span></label>
-                                          </div>
+                                    <div class="el-radio-group" role="radiogroup" aria-label="radio-group" id="el-id-5195-113">
+                                        <label class="el-radio-button el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="I"><span class="el-radio-button__inner">IN</span></label>
+                                        <label class="el-radio-button is-active el-radio-button--large"><input class="el-radio-button__original-radio" type="radio" name="el-id-5195-101" value="O" checked><span class="el-radio-button__inner">OUT</span></label>
+                                    </div>
 
 
 
@@ -124,6 +124,31 @@
                               
                      </div>
 
+                       <div  class="rowpt">
+                   
+                      <div class="row row-cols-1 row-cols-sm-2">
+                           
+                                       <div class="col col-sm-2" >
+                                            <label for="drp_OrderSizeStyle" class="form-label fonttitle">DayNite™ Shutter<font color="red">*</font></label>
+                                        </div>
+                                  <div class="col col-sm-4">
+                                        
+                                 <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Y" checked>
+                                  <label class="form-check-label" for="exampleRadios1">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="inlineRadio2" value="N">
+                                  <label class="form-check-label" for="inlineRadio2">No</label>
+                                </div>
+
+
+                                  </div>
+                        </div>
+                              
+                     </div>
 
                     </div>
                     <!--end step 4 -->
@@ -134,7 +159,9 @@
         </div>
 
         <div style="display:none">
-               <asp:TextBox ID="tbx_shapetype" runat="server"></asp:TextBox>
+               <asp:TextBox ID="tbx_shapetype" runat="server" ReadOnly="true"></asp:TextBox>
+             <asp:TextBox ID="tbx_room" runat="server" ReadOnly="true"></asp:TextBox>
+                <asp:TextBox ID="drp_roomsel" runat="server" ReadOnly="true"></asp:TextBox>
             <asp:TextBox ID="tbx_glid" runat="server" ReadOnly="true"></asp:TextBox>
 
         </div>

@@ -84,12 +84,12 @@
           
                                </div>
                            <div class="col col-sm-3">
-                                <div class="row row-cols-1 row-cols-sm-2 pt-2">
+                                <div class="row row-cols-1 row-cols-sm-2  pt-2">
                                     <div class="col col-sm-4" >
                                  <label for="drp_shipvia" class="form-label fonttitle">Ship Via:<font color="red">*</font></label>
                                             </div>
                                   <div class="col col-sm-8">
-                                  <asp:DropDownList ID="drp_shipvia" runat="server" class="form-select" required>
+                                  <asp:DropDownList ID="drp_shipvia"  runat="server" class="form-select" required>
                                            <asp:ListItem Value="ship">Sea freight</asp:ListItem>
                                              <asp:ListItem Value="air">Airfreight</asp:ListItem>
                                             </asp:DropDownList>
@@ -367,9 +367,13 @@
         <div style="display:none">
                <asp:TextBox ID="txtProductType" runat="server"></asp:TextBox>
             <asp:TextBox ID="tbx_glid" runat="server" ReadOnly="true"></asp:TextBox>
+
+               <asp:TextBox ID="tbx_orderuserid" runat="server" ReadOnly="true"></asp:TextBox>
                 <asp:TextBox  ID="tbx_accountname" runat="server" ></asp:TextBox>
+              <asp:TextBox ID="tbx_custid" runat="server" ></asp:TextBox>
             <asp:TextBox ID="tbx_shipto" runat="server" ></asp:TextBox>
-            <asp:DropDownList ID="drpshipto" runat="server"></asp:DropDownList>
+            <select id="selallshipto"></select>
+            <asp:DropDownList ID="drpshipto" runat="server" CausesValidation="false" ></asp:DropDownList>
         </div>
         <div class="container pt-3 ps-5 pb-5">
             <input type="button" class="btn-na " value="< Back" onclick="window.history.go(-1)" />
@@ -452,7 +456,8 @@
                           event.preventDefault();
                           event.stopPropagation();
                       }
-               
+                      document.getElementById("tbx_shipto").value = document.getElementById("selshipto").value;
+                      
                       document.getElementById("form1").classList.add('was-validated');
                   }, false);
                   /*
