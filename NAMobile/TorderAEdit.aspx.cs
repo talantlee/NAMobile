@@ -17,6 +17,7 @@ namespace NAMobile
         {
             this.CheckVaild();
             string pd = Request.QueryString["orderporducttype"]??"";
+          
             string pgmcode= Request.QueryString["pgmcode"] ?? "";
             string glid = Request.QueryString["glid"] ?? "";
             this.tbx_accountname.ReadOnly = true;
@@ -44,7 +45,7 @@ namespace NAMobile
                     {
                         if (dt.Rows.Count == 1)
                         {
-                            this.tbx_accountname.Text = dt.Rows[0]["AccoountName"].ToString();
+                            this.tbx_accountname.Text = dt.Rows[0]["AccountName"].ToString();
                             tbx_custid.Text = dt.Rows[0]["CustName"].ToString();
                             tbx_custid.ReadOnly = true;
                             setDealerBillTo(this.tbx_accountname.Text);
@@ -70,6 +71,7 @@ namespace NAMobile
                 tbx_glid.Text = glid;
                 if (!string.IsNullOrEmpty(pd) && string.IsNullOrEmpty(glid))
                 {
+                    tbx_pgmcode.Text = pgmcode;
                     //新增
                     txtProductType.Text = pd;
                     this.tbx_inputdate.Text = NAMobile.Model.Config.NowDateToString;
@@ -200,8 +202,24 @@ namespace NAMobile
                 Request.UserHostAddress, ArrivedPort, txt_remark.Text, tbx_shipto.Text, drp_shipvia.SelectedValue, txtProductType.Text, this.drp_shiptostate.SelectedValue,
                 tbx_shiptocity.Text, tbx_shipstostreet.Text, tbx_shiptozip.Text, tbx_shiptocontacter.Text, tbx_shiptocontacter1.Text, tbx_shiptoemail.Text,
                 tbx_shiptotel.Text, tbx_shiptowebsite.Text, tbx_shiptoremark.Text, UserID, "I");
+                if (this.txtProductType.Text == "Shutter")
+                {
+                    Response.Redirect("ShutterProgamOptions.aspx?glid=" + glid+ "&pgmcode="+tbx_pgmcode.Text);
+                    return;
+                }
+                else if (this.txtProductType.Text == "PerfectSheer")
+                {
+                    Response.Redirect("PerfectSheerOptions.aspx?glid=" + glid);
+                    return;
+                }
+                else if (this.txtProductType.Text == "CellularShade")
+                {
+                    Response.Redirect("HCProgamOptions.aspx?glid=" + glid);
+                    return;
+                }
 
-                Response.Redirect("ShutterProgamOptions.aspx?glid=" + glid);
+             
+                Response.Redirect("TOrderInfo.aspx?glid=" + glid);
             }
         }
     }

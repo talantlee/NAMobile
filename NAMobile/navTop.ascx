@@ -35,8 +35,8 @@
      <div class="col col-2 col-md-1 text-end border-1">
          <div class="row row-cols-1 row-cols-md-3">
              <div class="col col-md-3"><span data-feather="user" class="align-text-bottom" style="width:32px; height:32px;"></span></div>
-             <div class="col d-none d-md-block text-start pt-2 fonttitle col-md-5"><%=Session["UserID"] %></div>
-             <div class="col d-none d-md-block text-start col-md-3">
+             <div class="col d-none d-md-block text-start pt-2 fonttitle col-md-7"><%=Session["UserID"] %></div>
+             <div class="col d-none d-md-block text-start col-md-2">
                  <a href="LogOut.aspx"><span data-feather="power" class="align-text-bottom" style="width:32px; height:32px;"></span></a></div>
          </div>
 

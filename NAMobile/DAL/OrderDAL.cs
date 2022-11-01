@@ -20,6 +20,12 @@ namespace NAMobile.DAL
         }
 
 
+        public static DataSet getTOrderDetails(string userid, string glid)
+        {
+            return new SqlHelper().ExecuteDataset("NAMB_TOrderInfoDetails", userid, glid);
+        }
+
+
         public static string TOrderHeader_Edit(params object[] paras)
         {
             return new SqlHelper().ExecuteScalar<string>("NAMB_TOrderAMaintain", paras);

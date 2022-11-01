@@ -137,6 +137,7 @@
       <DependentUpon>LogOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\Config.cs" />
+    <Compile Include="Model\GlobalVars.cs" />
     <Compile Include="Model\UserInfo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

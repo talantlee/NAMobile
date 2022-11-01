@@ -22,8 +22,9 @@ $(function () {
         }
     });
     $("[name='iptaccountname']").val($("#tbx_accountname").val());
-    setShiptoList();
-    if (document.getElementById("tbx_shipto").value != "") {
+    getAccountData(false);
+   
+    if (document.getElementById("tbx_shipto").value != "" && document.getElementById("selshipto").value=="") {
         $("#selshipto").val(document.getElementById("tbx_shipto").value);
     }
 
@@ -142,6 +143,9 @@ function chgDealerID() {
 function getAccountData(checkonly) {
     let dtl = { gettype: "getdealer" };
     dtl.dealerid = $("#tbx_accountname").val();
+    if (!dtl.dealerid) {
+        return false;
+    }
     let checkok = true;
     $.ajax({
         url: "handles/getAccountData.ashx",
@@ -182,11 +186,12 @@ function getAccountData(checkonly) {
             }
             setShiptoList();
             if (shipcount == 1) {
-                if (isLoaded) {
-                   
+             
+            
+
                     document.getElementById("selshipto").selectedIndex = 0;
                     chgShipToAddress();
-                }
+                
             }
             setShipToReadOnly();
         },
@@ -216,7 +221,7 @@ function setShiptoList() {
 }
 function chgShipToAddress() {
  
-    if (!isLoaded) return;
+  //  if (!isLoaded) return;
     let dtl = { gettype: "getshipaddress" };
     dtl.dealerid = $("#tbx_accountname").val();
     dtl.addressid = $("#selshipto").val();
@@ -244,7 +249,7 @@ function chgShipToAddress() {
         async: false,
         data: dtl,
         success: function (hdr) {
-            console.log(hdr);
+           // console.log(hdr);
             if (hdr.total == 0) {
                
                 return false;

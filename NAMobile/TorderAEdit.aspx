@@ -366,12 +366,15 @@
 
         <div style="display:none">
                <asp:TextBox ID="txtProductType" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbx_pgmcode" runat="server" ReadOnly="true"></asp:TextBox>
             <asp:TextBox ID="tbx_glid" runat="server" ReadOnly="true"></asp:TextBox>
 
                <asp:TextBox ID="tbx_orderuserid" runat="server" ReadOnly="true"></asp:TextBox>
                 <asp:TextBox  ID="tbx_accountname" runat="server" ></asp:TextBox>
               <asp:TextBox ID="tbx_custid" runat="server" ></asp:TextBox>
             <asp:TextBox ID="tbx_shipto" runat="server" ></asp:TextBox>
+
+
             <select id="selallshipto"></select>
             <asp:DropDownList ID="drpshipto" runat="server" CausesValidation="false" ></asp:DropDownList>
         </div>

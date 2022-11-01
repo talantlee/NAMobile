@@ -133,6 +133,8 @@
                       </div>
                     <div class="bg-white row"><div class="col">&nbsp;</div></div>
                     <!-- order detail info for handset-->
+                    <%if (ProductType == "Shutters")
+                        { %>
                       <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
 
                              
@@ -605,7 +607,7 @@
                             
                       </div>
 
-                      <!-- Order total -->
+                      <!-- Order total for handset -->
                     <div class="p-2">
                        <div class="row row-cols-2 p-1">
                                 <div class="col">Total m2</div>
@@ -645,8 +647,6 @@
 
                       </div>
 
-                    
-
 
                        <!-- order detail info for pc -->
                      <div class="p-2 d-none d-sm-block bg-light">
@@ -674,26 +674,52 @@ Outside Mount
                             </tr>
                           </thead>
                             <tbody class="table-group-divider">
-                                <tr>
-                                  <th scope="row">1</th>
+                                <%foreach(System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
+                                        string divheight = "";
+                                        decimal TotalAmt = Convert.ToDecimal(dr["TotalAmt"]);
+                                        decimal partamt = 0;
+                                        if (!(dr["PartAmt"] is System.DBNull)){
+                                            partamt = Convert.ToDecimal(dr["PartAmt"]);
+                                        }
+                                        TotalAmt = TotalAmt + partamt;
+                                        if (dr["MidRailLoc"].ToString().ToUpper() == "OTHER")
+                                        {
+                                            if (Convert.ToInt32(dr["divheight1"]) > 0)
+                                            {
+                                                divheight += "1<sup>st</sup>:" + dr["divheight1"].ToString();
+                                            }
+                                            if (Convert.ToInt32(dr["divheight2"]) > 0)
+                                            {
+                                                divheight += "<br>2<sup>nd</sup>:" + dr["divheight1"].ToString();
+                                            }
+                                        }else  if (dr["MidRailLoc"].ToString() == "Centre")
+                                        {
+                                            divheight = "Centre";
+                                        }
+                                        %>
+                                    <tr>
+                                  <th scope="row"><%= dr["ItemNo"].ToString() %></th>
                                   <td>Shutter</td>
-                                  <td>Woodlore</td>
-                                  <td>Bathroom</td>
+                                  <td><%= NAMobile.Model.GlobalVars.GetMaterialName(dr["Mater_Code"].ToString()) %><%if (dr["iswaterproof"].ToString() == "Y") { Response.Write("(Waterproof)"); }%></td>
+                                  <td><%= dr["Room"].ToString() %></td>
                                     
-                                  <td>L Frame</td>
-                                  <td>650/1000</td>
-                                      <td>IN</td>
-                                  <td>1</td>
-                                  <td>47mm Elliptical Louvre</td>
-                                       <td>Pure White</td>
-                                  <td>-</td>
-                                  <td>-</td>
-                                     <td>F</td>
-                                    <!--td>0.65</td>
-                                     <td>498.33</td -->
+                                  <td><%= dr["Bpbf"].ToString() %></td>
+                                  <td><%= dr["GrossWidth"].ToString() %>/<%= dr["GrossHeight"].ToString() %></td>
+                                  <td><%= dr["MountType"].ToString() %></td>
+                                  <td><%= dr["ShutterqTY"].ToString() %></td>
+                                  <td><%= dr["BladeSizeDes"].ToString() %></td>
+                                    <td><%= dr["MaterialColorDes"].ToString() %></td>
+                                     
+                                  <td><%= dr["HingedColor"].ToString() %></td>
+                                  <td><%=divheight %></td>
+                                     <td><%= dr["LayoutDes"].ToString() %></td>
+                           
                                 </tr>
-                                 <!-- order parts -->
-                                 <tr >
+                                <%
+                                    System.Data.DataRow[] dtlparts = GetShutterParts(Convert.ToInt32(dr["LineID"]));
+                                  
+                                 %>
+                                    <tr >
                                      <td colspan="13" class="border-0">
                                          <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
                                          <div class="bg-white p-1 rounded-2 m-2" >
@@ -707,50 +733,51 @@ Outside Mount
                                                         <th scope="col">Material</th>
                                                            <th scope="col">Specification</th>
                                                         <th>Colour</th>
-                                                        <th>Item Total Charge</th>
+                                                        <%if (hasPriceShow) { Response.Write("<th>Item Total Charge</th>"); } %>
                                                         <th>Action</th>
                                
                                                     </tr>
                                                   </thead>
                                                   <tbody>
-                                                      <tr><td scope="row">1</td>
-                                                          <td>Hinge</td>
-                                                           <td>25</td>
-                                                           <td>-</td>
-                                                           <td>Woodlore</td>
-                                                           <td>60mm Self-mortise hinge</td>
-                                                           <td>Antique Brass</td>
-                                                           <td>A$ 332.10</td>
-                                                          <td></td>
+                                                      <%
+                                                          int recno = 1;
+                                                          foreach (System.Data.DataRow dpart in dtlparts)
+                                                          {  %>
+                                                          <tr><td scope="row"><%= recno.ToString() %></td>
+                                                          <td><%= dpart["Kind"].ToString() %></td>
+                                                           <td><%= dpart["Quan"].ToString() %></td>
+                                                           <td><%if (Convert.ToDecimal(dpart["length"]) > 0) { Response.Write(dpart["length"].ToString()); } %></td>
+                                                           <td><%= NAMobile.Model.GlobalVars.GetMaterialName(dpart["Mater_Code"].ToString()) %></td>
+                                                           <td><%= dpart["specDes"].ToString() %></td>
+                                                           <td><%= dpart["ColorDes"].ToString() %></td>
+                                                          <%if (hasPriceShow) { Response.Write("<td>" + Convert.ToDecimal(dpart["itemprice"]).ToString("f2") + "</td>"); } %>
+                                                          <td>Action</td>
                                                       </tr>
+                                                      <%
+                                                              recno++;
+                                                          } %>
+                                                    
                                                   </tbody>
-                                                  
                                                   <tfoot>
                                                       <tr >
                                                           <td  colspan="2" >
                                                                <input type="button" class="btn-na btn-na-outline" value="+ Add Part" />
                                                           </td>
+                                                          <%if (hasPriceShow && partamt>0 ) { %>
                                                           <td colspan="4"></td>
                                                           <td class=" border-top border-dark" >Parts Charge Total</td>
-                                                          <td class=" border-top border-dark" colspan="2">A$ 372.60</td>
-                                                          
+                                                          <td class=" border-top border-dark" colspan="2">A$ <%=Convert.ToDecimal(dr["PartAmt"]).ToString("f2") %></td>
+                                                          <%} %>
                                                       </tr>
                                                   </tfoot>
-
-                                                
                                               </table>
-                   
-                                         <!-- sub part total -->
-                      
-                               
-                     
-                         
                                         </div>
                                      </td>
-
                                  </tr>
-                                 <!-- order parts -->
-                                 <tr >
+                                
+                                <!-- end shutter parts-->
+                                <!-- order item total -->
+                                  <tr >
                                       <td colspan="13" class="border-0">
                                             <!--Item total --->
                                           <div class="row justify-content-end">
@@ -761,10 +788,12 @@ Outside Mount
                                              m2
                                             </div>
                                             <div class="col-2 fonttitle text-end border-dark border-top pt-2">
-                                          0.6
+                                                <%=Convert.ToDecimal(dr["m2"]).ToString("f2") %>
                                             </div>
                                             </div>
-                                           <div class="row justify-content-end">
+                                          <%if (hasPriceShow)
+                                              {%>
+                                           <div class="row justify-content-end pb-2">
                                              <div class="col-8">
                                                
                                                  </div>
@@ -772,11 +801,19 @@ Outside Mount
                                              Item Total Charge
                                             </div>
                                             <div class="col-2 fonttitle text-end pt-2">
-                                         A$ 498.33
+                                         A$ <% Response.Write(TotalAmt.ToString("f2") );  %>
+                                            
                                             </div>
                                             </div>
+                                          <%} %>
                                       </td>
                                   </tr>
+
+                               <% } // orderdetail foreach%>
+                            
+                             
+                                 <!-- order parts -->
+                               
                                    
 
                                
@@ -788,8 +825,8 @@ Outside Mount
                      </div>
 
             
-                             <!-- Order total -->
-                        <div class="d-none d-sm-block p-4">
+                       <!-- Order total for pc -->
+                       <div class="d-none d-sm-block p-4">
                             <div class="p-3">
                           <div class="row">
                               <div class="col text-end">
@@ -845,7 +882,13 @@ Outside Mount
                       
                         </div>
                 
+                    <%}
+                        else if (ProductType == "DisplayTower")
+                        { %>
 
+                        <%} else if (ProductType != "") { 
+                         
+                        }%>
                       
                   </main>
                  </div>

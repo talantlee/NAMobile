@@ -247,9 +247,17 @@ namespace NAMobile.Framework
             }
             return pd;
         }
-
+        public bool hasPriceShow
+        {
+            get
+            {
+                if(Session["ShowPrice"]==null) return false;
+                if (Session["ShowPrice"].ToString() == "Y") return true;
+                return false;
+            }
         
-
+        }
+     
 
 
         protected override void OnError(EventArgs e)

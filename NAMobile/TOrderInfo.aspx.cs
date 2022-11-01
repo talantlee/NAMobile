@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Data;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -9,6 +9,9 @@ namespace NAMobile
 {
     public partial class TOrderInfo : Framework.BasePage
     {
+        public string ProductType = string.Empty;
+
+        public DataSet orderDetails = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
             this.CheckVaild();
@@ -21,11 +24,8 @@ namespace NAMobile
                 System.Data.DataTable hdr = DAL.OrderDAL.getTOrderHeader(UserID, glid);
                 if (hdr != null && hdr.Rows.Count > 0)
                 {
-                       txt_producttype.Text = hdr.Rows[0]["producttype"].ToString();
-
-
-
-
+                    txt_producttype.Text = hdr.Rows[0]["producttype"].ToString();
+                    ProductType = hdr.Rows[0]["producttype"].ToString();
                     this.lbl_po.Text = hdr.Rows[0]["po"].ToString();
                     lbl_custnam.Text = hdr.Rows[0]["Custnam"].ToString();
                     this.lbl_inputdate.Text = Convert.ToDateTime(hdr.Rows[0]["PODate"]).ToString(NAMobile.Model.Config.glbDateFormat);
@@ -65,12 +65,21 @@ namespace NAMobile
                         this.lbl_m2.Text = hdr.Rows[0]["m2"].ToString();
                     }
                     lbl_ordertotal.Text ="A$ " +Convert.ToDecimal(hdr.Rows[0]["OrderAmt"]).ToString("#0.00");
+
+
+                    orderDetails = NAMobile.DAL.OrderDAL.getTOrderDetails(UserID, glid);
                 }
                 else
                 {
                     RegisterScript("alert('the order has been check-out or deleted. ')");
                 }
             }
+        }
+
+
+        public DataRow[] GetShutterParts(int lineid)
+        {
+            return orderDetails.Tables[2].Select(String .Format("LineID={0}", lineid));
         }
     }
 }
