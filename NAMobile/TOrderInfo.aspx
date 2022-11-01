@@ -136,47 +136,69 @@
                     <%if (ProductType == "Shutters")
                         { %>
                       <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
-
-                             
-                          <div class="eacherow mb-2" >
-                         <div class="row row-cols-2">
+                              <%foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows)
+                                  {
+                                        string divheight = "";
+                                        decimal TotalAmt = Convert.ToDecimal(dr["TotalAmt"]);
+                                        decimal partamt = 0;
+                                        if (!(dr["PartAmt"] is System.DBNull)){
+                                            partamt = Convert.ToDecimal(dr["PartAmt"]);
+                                        }
+                                        TotalAmt = TotalAmt + partamt;
+                                        if (dr["MidRailLoc"].ToString().ToUpper() == "OTHER")
+                                        {
+                                            if (Convert.ToInt32(dr["divheight1"]) > 0)
+                                            {
+                                                divheight += "1<sup>st</sup>:" + dr["divheight1"].ToString();
+                                            }
+                                            if (Convert.ToInt32(dr["divheight2"]) > 0)
+                                            {
+                                                divheight += "<br>2<sup>nd</sup>:" + dr["divheight1"].ToString();
+                                            }
+                                        }else  if (dr["MidRailLoc"].ToString() == "Centre")
+                                        {
+                                            divheight = "Centre";
+                                        }
+                                      
+                                      %>
+                               <div class="eacherow mb-2" >
+                             <div class="row row-cols-2">
                               <div class="col">No</div>
-                              <div class="col fonttitle text-end">1</div>
+                              <div class="col fonttitle text-end"><%= dr["ItemNo"].ToString() %></div>
                               <div class="col">Item</div>
                                <div class="col fonttitle text-end">Shutter</div>
                                  <div class="col">Room</div>
-                               <div class="col fonttitle text-end">Bathroom</div>
+                               <div class="col fonttitle text-end"><%= dr["Room"].ToString() %></div>
 
                                <div class="col">Material</div>
-                               <div class="col fonttitle text-end">Woodlore</div>
+                               <div class="col fonttitle text-end"><%= NAMobile.Model.GlobalVars.GetMaterialName(dr["Mater_Code"].ToString()) %><%if (dr["iswaterproof"].ToString() == "Y") { Response.Write("(Waterproof)"); }%></div>
 
-                                <div class="col">Range Type</div>
-                               <div class="col fonttitle text-end">Beaded</div>
+                           
 
                                 <div class="col">Item Type</div>
-                               <div class="col fonttitle text-end">L Frame</div>
+                               <div class="col fonttitle text-end"><%= dr["Bpbf"].ToString() %></div>
 
                                    <div class="col">Gross Open Width/Height</div>
-                               <div class="col fonttitle text-end">650/1000</div>
+                               <div class="col fonttitle text-end"><%= dr["GrossWidth"].ToString() %>/<%= dr["GrossHeight"].ToString() %></div>
                                  <div class="col">Inside Mount or Outside Mount</div>
-                               <div class="col fonttitle text-end">L Frame</div>
+                               <div class="col fonttitle text-end"><%= dr["MountType"].ToString() %></div>
 
                                   <div class="col">Number of Window Openings</div>
-                               <div class="col fonttitle text-end">1</div>
+                               <div class="col fonttitle text-end"><%= dr["ShutterqTY"].ToString() %></div>
 
                                <div class="col">Blade Size</div>
-                               <div class="col fonttitle text-end">47mm Elliptical Louvre</div>
+                               <div class="col fonttitle text-end"><%= dr["BladeSizeDes"].ToString() %></div>
 
                                <div class="col">Colour</div>
-                               <div class="col fonttitle text-end">Pure White</div>
+                               <div class="col fonttitle text-end"><%= dr["MaterialColorDes"].ToString() %></div>
 
                              <div class="col">Hinge Colour</div>
-                               <div class="col fonttitle text-end">-</div>
+                               <div class="col fonttitle text-end"><%= dr["HingedColor"].ToString() %></div>
                              <div class="col">Mid Rail Location</div>
-                              <div class="col fonttitle text-end">-</div>
+                              <div class="col fonttitle text-end"><%=divheight %></div>
 
                               <div class="col">Layout Code</div>
-                              <div class="col fonttitle text-end">F</div>
+                              <div class="col fonttitle text-end"><%= dr["LayoutDes"].ToString() %></div>
                          </div>
                           <!-- toobar-->
                            <div class="row p-1">
@@ -205,54 +227,16 @@
 
                                   </div>
                               </div>
+                            <%
+                                System.Data.DataRow[] dtlparts = GetShutterParts(Convert.ToInt32(dr["LineID"]));
+                                int recno = 1;
+
+                        %>
                           <!-- parts -->
                           <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
                         <div class="bg-white p-3 rounded-2 m-2" >
-                            <div class="row row-cols-2">
-                                <div class="col ">No</div>
-                                <div class="col fonttitle text-end">1</div>
-
-                                  <div class="col">Item</div>
-                                <div class="col fonttitle text-end">Hinge</div>
-
-                                  <div class="col">Qty</div>
-                                <div class="col fonttitle text-end">100</div>
-
-                                  <div class="col">Length (mm)</div>
-                                <div class="col fonttitle text-end">1</div>
-
-                                  <div class="col">Material</div>
-                                <div class="col fonttitle text-end">Woodlore</div>
-
-                                  <div class="col">Specification</div>
-                                <div class="col fonttitle text-end">60mm Self-mortise hinge</div>
-                                
-                                  <div class="col">Colour</div>
-                                <div class="col fonttitle text-end">Silk White</div>
-                                
-                                  <div class="col">Item Total Charge</div>
-                                <div class="col fonttitle text-end">A$ 332.10</div>
-
-                                
-                            </div>
-                            <div class="row border-bottom border-dark pb-2 pt-3 row-cols-2">
-                                  <div class="col col-4">Action</div>
-                                   <div class="col col-8">
-                                       <div class="row-cols-2 row">
-                                        <div class="text-center col"  >
-                                   <div class="border fonttitle bg-white rounded-1 p-1" >
-                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
-                                 </div>
-                              </div>
-                                     <div class="text-center col" >
-                                   <div class="border fonttitle bg-white rounded-1 p-1 " >
-                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
-                                 </div>
-                              </div>
-                      </div>
-
-                                </div>
-                            </div>
+                            <%    foreach (System.Data.DataRow dpart in dtlparts)
+                                {  %>
 
                              <div class="row row-cols-2 pt-2">
                                 <div class="col">No</div>
@@ -304,295 +288,28 @@
                                   <div class="col">Parts Charge Total</div>
                                   <div class="col text-end fonttitle">A$ 372.60</div>
                             </div>
-                           <div class="row pt-2 text-center">
+                             <%} %>
+                            <div class="row pt-2 text-center">
                                   <div class="col"><input type="button" class="btn-na btn-na-outline" value="+ Add Part" /></div>
                                 
                             </div>
+                     
                         </div>
+                          
                           <!--Item total --->
                         <div class="row row-cols-2 p-1">
                                 <div class="col">m2</div>
-                                  <div class="col text-end fonttitle">0.65</div>
+                                  <div class="col text-end fonttitle"><%=Convert.ToDecimal(dr["m2"]).ToString("f2") %></div>
                                 <div class="col">Item Total Charge</div>
-                                  <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 498.33</div>
+                                  <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ <% Response.Write(TotalAmt.ToString("f2") );  %></div>
                             </div>
+
                         </div>
-
-                          <div class="bg-white row"><div class="col">&nbsp;</div></div>
-
-                         
-                          <div class="eacherow mb-2" >
-                         <div class="row row-cols-2">
-                              <div class="col">No</div>
-                              <div class="col fonttitle text-end">2</div>
-                              <div class="col">Item</div>
-                               <div class="col fonttitle text-end">Shutter</div>
-                                 <div class="col">Room</div>
-                               <div class="col fonttitle text-end">Bathroom</div>
-
-                               <div class="col">Material</div>
-                               <div class="col fonttitle text-end">Woodlore</div>
-
-                                <div class="col">Range Type</div>
-                               <div class="col fonttitle text-end">Beaded</div>
-
-                                <div class="col">Item Type</div>
-                               <div class="col fonttitle text-end">L Frame</div>
-
-                                   <div class="col">Gross Open Width/Height</div>
-                               <div class="col fonttitle text-end">650/1000</div>
-                                 <div class="col">Inside Mount or Outside Mount</div>
-                               <div class="col fonttitle text-end">L Frame</div>
-
-                                  <div class="col">Number of Window Openings</div>
-                               <div class="col fonttitle text-end">1</div>
-
-                               <div class="col">Blade Size</div>
-                               <div class="col fonttitle text-end">47mm Elliptical Louvre</div>
-
-                               <div class="col">Colour</div>
-                               <div class="col fonttitle text-end">Pure White</div>
-
-                             <div class="col">Hinge Colour</div>
-                               <div class="col fonttitle text-end">-</div>
-                             <div class="col">Mid Rail Location</div>
-                              <div class="col fonttitle text-end">-</div>
-
-                              <div class="col">Layout Code</div>
-                              <div class="col fonttitle text-end">F</div>
-                         </div>
-                          <!-- toobar-->
-                           <div class="row p-1">
-                                  <div class="col">
-                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
-                                   <div class="border fonttitle bg-white rounded-1 p-1" >
-                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
-                                 </div>
-                              </div>
-
-                                  </div>
-                                     <div class="col">
-                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
-                                   <div class="border fonttitle bg-white rounded-1 p-1" >
-                                    <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
-                                 </div>
-                              </div>
-
-                                  </div>
-                                     <div class="col">
-                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
-                                   <div class="border fonttitle bg-white rounded-1 p-1" >
-                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
-                                 </div>
-                              </div>
-
-                                  </div>
-                              </div>
-                          <!-- parts -->
-                         <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
-                        <div class="bg-white p-3 rounded-2 m-2" >
-                            <div class="row row-cols-2">
-                                <div class="col ">No</div>
-                                <div class="col fonttitle text-end">1</div>
-
-                                  <div class="col">Item</div>
-                                <div class="col fonttitle text-end">Hinge</div>
-
-                                  <div class="col">Qty</div>
-                                <div class="col fonttitle text-end">100</div>
-
-                                  <div class="col">Length (mm)</div>
-                                <div class="col fonttitle text-end">1</div>
-
-                                  <div class="col">Material</div>
-                                <div class="col fonttitle text-end">Woodlore</div>
-
-                                  <div class="col">Specification</div>
-                                <div class="col fonttitle text-end">60mm Self-mortise hinge</div>
-                                
-                                  <div class="col">Colour</div>
-                                <div class="col fonttitle text-end">Silk White</div>
-                                
-                                  <div class="col">Item Total Charge</div>
-                                <div class="col fonttitle text-end">A$ 332.10</div>
-
-                                
-                            </div>
-                            <div class="row border-bottom border-dark pb-2 pt-3 row-cols-2">
-                                  <div class="col col-4">Action</div>
-                                   <div class="col col-8">
-                                       <div class="row-cols-2 row">
-                                        <div class="text-center col"  >
-                                   <div class="border fonttitle bg-white rounded-1 p-1" >
-                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
-                                 </div>
-                              </div>
-                                     <div class="text-center col" >
-                                   <div class="border fonttitle bg-white rounded-1 p-1 " >
-                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
-                                 </div>
-                              </div>
-                      </div>
-
-                                </div>
-                            </div>
-
-                             <div class="row row-cols-2 pt-2">
-                                <div class="col">No</div>
-                                <div class="col fonttitle text-end">1</div>
-
-                                  <div class="col">Item</div>
-                                <div class="col fonttitle text-end">Hinge</div>
-
-                                  <div class="col">Qty</div>
-                                <div class="col fonttitle text-end">100</div>
-
-                                  <div class="col">Length (mm)</div>
-                                <div class="col fonttitle text-end">1</div>
-
-                                  <div class="col">Material</div>
-                                <div class="col fonttitle text-end">Woodlore</div>
-
-                                  <div class="col">Specification</div>
-                                <div class="col fonttitle text-end">60mm Self-mortise hinge</div>
-                                
-                                  <div class="col">Colour</div>
-                                <div class="col fonttitle text-end">Silk White</div>
-                                
-                                  <div class="col">Item Total Charge</div>
-                            
-                            </div>
-
-                             <div class="row border-bottom border-dark pb-2 pt-3 row-cols-2">
-                                  <div class="col col-4">Action</div>
-                                   <div class="col col-8">
-                                       <div class="row-cols-2 row">
-                                        <div class="text-center col"  >
-                                   <div class="border fonttitle bg-white rounded-1 p-1" >
-                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
-                                 </div>
-                              </div>
-                                     <div class="text-center col" >
-                                   <div class="border fonttitle bg-white rounded-1 p-1 " >
-                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
-                                 </div>
-                              </div>
-                         </div>
-
-                                </div>
-                            </div>
-
-                            <!-- sub part total -->
+                             <div class="bg-white row"><div class="col">&nbsp;</div></div>
+                            <%} %>
                              
-                            <div class="row row-cols-2 pt-2">
-                                <div class="col">Parts Charge Total</div>
-                                  <div class="col text-end fonttitle">A$ 372.60</div>
-                            </div>
-                             <div class="row pt-2 text-center">
-                                  <div class="col"><input type="button" class="btn-na btn-na-outline" value="+ Add Part" /></div>
-                                
-                            </div>
-                        </div>
-                          <!--Item total --->
-                        <div class="row row-cols-2 p-1">
-                                <div class="col">m2</div>
-                                  <div class="col text-end fonttitle">0.65</div>
-                                <div class="col">Item Total Charge</div>
-                                  <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 498.33</div>
-                            </div>
-                        </div>
-
-                      <div class="bg-white row"><div class="col">&nbsp;</div></div>
-
-                         
-                      <div class="eacherow mb-2" >
-                         <div class="row row-cols-2">
-                              <div class="col">No</div>
-                              <div class="col fonttitle text-end">3</div>
-                              <div class="col">Item</div>
-                               <div class="col fonttitle text-end">Shutter</div>
-                                 <div class="col">Room</div>
-                               <div class="col fonttitle text-end">Bathroom</div>
-
-                               <div class="col">Material</div>
-                               <div class="col fonttitle text-end">Woodlore</div>
-
-                                <div class="col">Range Type</div>
-                               <div class="col fonttitle text-end">Beaded</div>
-
-                                <div class="col">Item Type</div>
-                               <div class="col fonttitle text-end">L Frame</div>
-
-                                   <div class="col">Gross Open Width/Height</div>
-                               <div class="col fonttitle text-end">650/1000</div>
-                                 <div class="col">Inside Mount or Outside Mount</div>
-                               <div class="col fonttitle text-end">L Frame</div>
-
-                                  <div class="col">Number of Window Openings</div>
-                               <div class="col fonttitle text-end">1</div>
-
-                               <div class="col">Blade Size</div>
-                               <div class="col fonttitle text-end">47mm Elliptical Louvre</div>
-
-                               <div class="col">Colour</div>
-                               <div class="col fonttitle text-end">Pure White</div>
-
-                             <div class="col">Hinge Colour</div>
-                               <div class="col fonttitle text-end">-</div>
-                             <div class="col">Mid Rail Location</div>
-                              <div class="col fonttitle text-end">-</div>
-
-                              <div class="col">Layout Code</div>
-                              <div class="col fonttitle text-end">F</div>
-                         </div>
-                          <!-- toobar-->
-                           <div class="row p-1">
-                                  <div class="col">
-                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
-                                   <div class="border fonttitle bg-white rounded-1 p-1" >
-                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
-                                 </div>
-                              </div>
-
-                                  </div>
-                                     <div class="col">
-                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
-                                   <div class="border fonttitle bg-white rounded-1 p-1" >
-                                    <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
-                                 </div>
-                              </div>
-
-                                  </div>
-                                     <div class="col">
-                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
-                                   <div class="border fonttitle bg-white rounded-1 p-1" >
-                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
-                                 </div>
-                              </div>
-
-                                  </div>
-                              </div>
-                          <!-- parts -->
-                             <div class="row"><div class="col"><span data-feather="plus" class="align-text-bottom"  ></span>Part</div></div>
-                       <div class="bg-white p-3 rounded-2 m-2" >
-                        
-                            <!-- sub part total -->
-                           
-                             <div class="row pt-2 text-center">
-                                  <div class="col"><input type="button" class="btn-na" style="background-color:#fff;color:#000;border: 1px solid #003c4b;" value="+ Add Part" /></div>
-                                
-                            </div>
-                        </div>
-                          <!--Item total --->
-                        <div class="row row-cols-2 p-1">
-                                <div class="col">m2</div>
-                                  <div class="col text-end fonttitle">0.65</div>
-                                <div class="col">Item Total Charge</div>
-                                  <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 498.33</div>
-                            </div>
-                        </div>
-
-                         <!--end  order detail info for handset-->
+                      
+                     
 
                           
                        <!-- tool bar -->
@@ -647,7 +364,6 @@
 
                       </div>
 
-
                        <!-- order detail info for pc -->
                      <div class="p-2 d-none d-sm-block bg-light">
                           <table class="table">
@@ -659,10 +375,10 @@
                               <th scope="col">Room</th>
                                 <th scope="col">Item Type</th>
                                    <th scope="col">Gross Open<br />
-Width/Height</th>
-                                <th>Inside Mount or <br />
-Outside Mount
-</th>
+                            Width/Height</th>
+                                                            <th>Inside Mount or <br />
+                            Outside Mount
+                            </th>
                                 <th>Number of <br />Window Openings</th>
                                 <th>Blade Size</th>
                                  <th>Colour</th>
@@ -717,12 +433,12 @@ Outside Mount
                                 </tr>
                                 <%
                                     System.Data.DataRow[] dtlparts = GetShutterParts(Convert.ToInt32(dr["LineID"]));
-                                  
+
                                  %>
                                     <tr >
                                      <td colspan="13" class="border-0">
-                                         <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
-                                         <div class="bg-white p-1 rounded-2 m-2" >
+                                         <div class="row"><div class="col"><span data-feather="<%if (dtlparts.Length > 0) Response.Write("minus"); else Response.Write("plus"); %>" id="plusshutterpart<%=dr["ItemNo"].ToString() %>" class="align-text-bottom" onclick="collapsePart(<%=dr["ItemNo"].ToString() %>,this)" style="cursor:pointer"  ></span>Part</div></div>
+                                         <div class="bg-white p-1 rounded-2 m-2" id="shutterpart<%=dr["ItemNo"].ToString() %>" style="<%if (dtlparts.Length == 0) Response.Write("display:none;"); %>" >
                                          <table class="table table-borderless">
                                                      <thead>
                                                     <tr >
@@ -776,6 +492,7 @@ Outside Mount
                                  </tr>
                                 
                                 <!-- end shutter parts-->
+
                                 <!-- order item total -->
                                   <tr >
                                       <td colspan="13" class="border-0">
@@ -793,14 +510,14 @@ Outside Mount
                                             </div>
                                           <%if (hasPriceShow)
                                               {%>
-                                           <div class="row justify-content-end pb-2">
+                                           <div class="row justify-content-end pb-3">
                                              <div class="col-8">
                                                
                                                  </div>
                                             <div class="col-2 pt-2">
                                              Item Total Charge
                                             </div>
-                                            <div class="col-2 fonttitle text-end pt-2">
+                                            <div class="col-2 fonttitle text-end pt-2" style="color:red;">
                                          A$ <% Response.Write(TotalAmt.ToString("f2") );  %>
                                             
                                             </div>
@@ -824,7 +541,6 @@ Outside Mount
                       
                      </div>
 
-            
                        <!-- Order total for pc -->
                        <div class="d-none d-sm-block p-4">
                             <div class="p-3">
@@ -1012,6 +728,20 @@ Outside Mount
             function placeShutterItem(progam) {
                 let url = "ShutterProgamOptions.aspx?pgmcode=" + progam;
                 window.location.href = url.concat("&glid=" + document.querySelector("#tbx_glid").value);
+            }
+            function collapsePart(itemno,obj) {
+              
+                if ($(obj).hasClass("feather-plus")) {
+                    $(obj).removeClass("feather-plus");
+                    obj.setAttribute("data-feather", "minus");
+                    $("#shutterpart" + itemno).css("display", "");
+
+                } else {
+                    $(obj).removeClass("feather-minus");
+                    obj.setAttribute("data-feather", "plus");
+                    $("#shutterpart" + itemno).css("display", "none");
+                }
+                feather.replace({ id: 'plusshutterpart' + itemno });
             }
         </script>
 
