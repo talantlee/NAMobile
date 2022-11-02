@@ -132,9 +132,10 @@
 
                       </div>
                     <div class="bg-white row"><div class="col">&nbsp;</div></div>
-                    <!--  Shutter order detail info for handset-->
+                 
                     <%if (ProductType == "Shutters")
                         { %>
+                       <!--  Shutter order detail info for handset-->
                       <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
                               <%foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows)
                                   {
@@ -233,7 +234,7 @@
 
                         %>
                           <!-- parts -->
-                          <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
+                        <div class="row"><div class="col"><span data-feather="minus" class="align-text-bottom"  ></span>Part</div></div>
                         <div class="bg-white p-3 rounded-2 m-2" >
                             <%    foreach (System.Data.DataRow dpart in dtlparts)
                                 {  %>
@@ -308,60 +309,6 @@
                              <div class="bg-white row"><div class="col">&nbsp;</div></div>
                             <%} %>
                              
-                      
-                     
-
-                          
-                       <!-- tool bar -->
-                      <div class="p-3">
-                          <div class="row">
-                              <div class="col text-center">
-                                  <input type="button" class="btn-na "  data-bs-toggle="modal" data-bs-target="#selectshutterprogram" value="+ Add New Item" />
-                             &nbsp;&nbsp;&nbsp;
-                             <input type="button" class="btn-na" value="+ Add Part" />
-                              </div>
-                          </div>
-                            
-                      </div>
-
-                      <!-- Order total for handset -->
-                    <div class="p-2">
-                       <div class="row row-cols-2 p-1">
-                                <div class="col">Total m2</div>
-                                  <div class="col text-end fonttitle"><%=OrderM2 %></div>
-                                <div class="col">Order surcharge</div>
-                                  <div class="col text-end fonttitle" ><%=OrderHdrSurcharge %></div>
-                       </div>
-
-                        <div  class="p-1 border-top border-dark" >
-                        <div class="row row-cols-2 pt-3">
-                             <div class="col">Total cost of job (excl GST)</div>
-                               <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;"><%=OrderAmount %></div>
-                        </div>
-                     </div>
-
-                    </div>   
-
-                      <div class="p-3">
-                             <div class="row pt-2">
-                                 <div class="col col-2"></div>
-                                  <div class="col col-4">
-                                         <input type="button" class="btn-na btn-na-outline"   value="Delete Order" />
-
-                                  </div>
-                                   <div class="col col-4 text-end">
-                                           <input type="button"  class="btn-na btn-na-outline" style="background-color:#fff;color:#000;border: 1px solid #003c4b;"  value="Edit Order" />
-                                       </div>
-                                  <div class="col col-2"></div>
-                            
-                            </div>
-                    
-                             <div class="d-grid col-8 mx-auto pt-3">
-                                <input type="button" class="btn-na " value=" Check out " />
-                            </div>
-                      </div>
-
-
                       </div>
 
                        <!-- order detail info for pc -->
@@ -541,63 +488,7 @@
                       
                      </div>
 
-                       <!-- Order total for pc -->
-                       <div class="d-none d-sm-block p-4">
-                            <div class="p-3">
-                          <div class="row">
-                              <div class="col text-end">
-                                  <input type="button" class="btn-na "   onclick="addorderitem()"  value="+ Add New Item" />
-                             &nbsp;&nbsp;&nbsp;
-                             <input type="button" class="btn-na" value="+ Add Part" />
-                              </div>
-                          </div>
-                            
-                      </div>
-                            <div class="row justify-content-end p-1">
-                            <div class="col-2">
-                                Total m2
-                            </div>
-                            <div class="col-2 fonttitle text-end">
-                              <%=OrderM2 %>
-                            </div>
-                            </div>
-
-                            <div class="row justify-content-end p-1">
-                            <div class="col-2">
-                                Order surcharge
-                            </div>
-                            <div class="col-2 fonttitle text-end">
-                            <%=OrderHdrSurcharge %>
-                           
-                            </div>
-                            </div>
-
-                            <div class="row justify-content-end p-1">
-                            <div class="col-2 border-top border-dark pt-3">
-                            Total cost of job (excl GST)
-                            </div>
-                            <div class="col-2 fonttitle border-top border-dark text-end pt-3" style="color:red; font-size:1.1rem;">
-                                <%=OrderAmount %>
-                              
-                            </div>
-                            </div>
-
-                              <div class="p-3">
-                          <div class="row">
-                              <div class="col text-end">
-                                  <input type="button" class="btn-na btn-na-outline"  value="Delete Order" />
-                             &nbsp;&nbsp;&nbsp;
-                             <input type="button" class="btn-na btn-na-outline" value="Edit Order" />
-                                    &nbsp;&nbsp;&nbsp;
-                                    <input type="button" class="btn-na " value=" Check out " />
-                              </div>
-                          </div>
-                            
-                      </div>
-
-                      
-                        </div>
-                
+  
                     <%}
                         else if (ProductType == "DisplayTower")
                         { %>
@@ -609,7 +500,7 @@
                         <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
                               <%
                                   
-                                  foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
+                                 foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
                                       AutoLineID++;
                                %>
                                <div class="eacherow mb-2" >
@@ -680,59 +571,6 @@
                            </div> 
                             <%}//end  order details foreach%>
                            
-                    
-                           
-                               <!-- tool bar -->
-                              <div class="p-3">
-                                  <div class="row">
-                                      <div class="col text-center">
-                                          <input type="button" class="btn-na "  data-bs-toggle="modal" data-bs-target="#selectshutterprogram" value="+ Add New Item" />
-                                     &nbsp;&nbsp;&nbsp;
-                                     <input type="button" class="btn-na" value="+ Add Part" />
-                                      </div>
-                                  </div>
-                            
-                              </div>
-
-                               <!-- Order total for handset -->
-                            <div class="p-2">
-                               <div class="row row-cols-2 p-1">
-                                        <div class="col">Total m2</div>
-                                          <div class="col text-end fonttitle"><%=OrderM2 %></div>
-                                        <div class="col">Order surcharge</div>
-                                          <div class="col text-end fonttitle" ><%=OrderHdrSurcharge %></div>
-                               </div>
-
-                                <div  class="p-1 border-top border-dark" >
-                                <div class="row row-cols-2 pt-3">
-                                     <div class="col">Total cost of job (excl GST)</div>
-                                       <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;"><%=OrderAmount %></div>
-                                </div>
-                             </div>
-
-                            </div>   
-
-                             <!-- check out toolbar -->
-                              <div class="p-3">
-                                     <div class="row pt-2">
-                                         <div class="col col-2"></div>
-                                          <div class="col col-4">
-                                                 <input type="button" class="btn-na btn-na-outline"   value="Delete Order" />
-
-                                          </div>
-                                           <div class="col col-4 text-end">
-                                                   <input type="button"  class="btn-na btn-na-outline" style="background-color:#fff;color:#000;border: 1px solid #003c4b;"  value="Edit Order" />
-                                               </div>
-                                          <div class="col col-2"></div>
-                            
-                                    </div>
-                    
-                                     <div class="d-grid col-8 mx-auto pt-3">
-                                        <input type="button" class="btn-na " value=" Check out " />
-                                    </div>
-                              </div>
-
-
                       </div>
 
                           <!-- CellularShade order detail info for pc -->
@@ -788,7 +626,7 @@
 
                         </table>
                           
-                      
+
                      </div>
                     
 
@@ -799,6 +637,116 @@
                       <%}%>
                       
                     <!-- Parts -->
+
+                    <!-- Order total for Handset-->
+                    <div class=" d-block d-sm-none">
+                    <!-- tool bar -->
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col text-center">
+                                <input type="button" class="btn-na "  data-bs-toggle="modal" data-bs-target="#selectshutterprogram" value="+ Add New Item" />
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="button" class="btn-na" value="+ Add Part" />
+                            </div>
+                        </div>
+                            
+                    </div>
+
+                    <!-- Order total for handset -->
+                <div class="p-2">
+                    <div class="row row-cols-2 p-1">
+                            <div class="col">Total m2</div>
+                                <div class="col text-end fonttitle"><%=OrderM2 %></div>
+                            <div class="col">Order surcharge</div>
+                                <div class="col text-end fonttitle" ><%=OrderHdrSurcharge %></div>
+                    </div>
+
+                    <div  class="p-1 border-top border-dark" >
+                    <div class="row row-cols-2 pt-3">
+                            <div class="col">Total cost of job (excl GST)</div>
+                            <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;"><%=OrderAmount %></div>
+                    </div>
+                    </div>
+
+                </div>   
+
+                    <div class="p-3">
+                            <div class="row pt-2">
+                                <div class="col col-2"></div>
+                                <div class="col col-4">
+                                        <input type="button" class="btn-na btn-na-outline"   value="Delete Order" />
+
+                                </div>
+                                <div class="col col-4 text-end">
+                                        <input type="button"  class="btn-na btn-na-outline" style="background-color:#fff;color:#000;border: 1px solid #003c4b;"  value="Edit Order" />
+                                    </div>
+                                <div class="col col-2"></div>
+                            
+                        </div>
+                    
+                            <div class="d-grid col-8 mx-auto pt-3">
+                            <input type="button" class="btn-na " value=" Check out " />
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Order total for PC-->
+                    <div class="d-none d-sm-block p-4">
+                        <div class="p-3">
+                        <div class="row">
+                            <div class="col text-end">
+                                <input type="button" class="btn-na "   onclick="addorderitem()"  value="+ Add New Item" />
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="button" class="btn-na" value="+ Add Part" />
+                            </div>
+                        </div>
+                            
+                    </div>
+                        <div class="row justify-content-end p-1">
+                        <div class="col-2">
+                            Total m2
+                        </div>
+                        <div class="col-2 fonttitle text-end">
+                            <%=OrderM2 %>
+                        </div>
+                        </div>
+
+                        <div class="row justify-content-end p-1">
+                        <div class="col-2">
+                            Order surcharge
+                        </div>
+                        <div class="col-2 fonttitle text-end">
+                        <%=OrderHdrSurcharge %>
+                           
+                        </div>
+                        </div>
+
+                        <div class="row justify-content-end p-1">
+                        <div class="col-2 border-top border-dark pt-3">
+                        Total cost of job (excl GST)
+                        </div>
+                        <div class="col-2 fonttitle border-top border-dark text-end pt-3" style="color:red; font-size:1.1rem;">
+                            <%=OrderAmount %>
+                              
+                        </div>
+                        </div>
+
+                       
+
+                      
+                    </div>
+                    <div class="p-3 d-none d-sm-block">
+                        <div class="row">
+                            <div class="col text-end">
+                                <input type="button" class="btn-na btn-na-outline"  value="Delete Order" />
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="button" class="btn-na btn-na-outline" value="Edit Order" />
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="button" class="btn-na " value=" Check out " />
+                            </div>
+                        </div>
+                            
+                    </div>
 
 
                   </main>
