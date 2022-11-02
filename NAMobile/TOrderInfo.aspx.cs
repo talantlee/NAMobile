@@ -12,6 +12,10 @@ namespace NAMobile
         public string ProductType = string.Empty;
 
         public DataSet orderDetails = new DataSet();
+
+        public string OrderAmount = string.Empty;
+        public string OrderM2 = string.Empty;
+        public string OrderHdrSurcharge = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             this.CheckVaild();
@@ -59,12 +63,12 @@ namespace NAMobile
                     {
                         OrderSurcharge += Convert.ToDecimal(hdr.Rows[0]["perOrderSurcharge"]);
                     }
-                    this.lbl_ordersurcharge.Text = "A$ " + OrderSurcharge.ToString("#0.00");
+                    OrderHdrSurcharge = "A$ " + OrderSurcharge.ToString("#0.00");
                     if (!(hdr.Rows[0]["m2"] is System.DBNull))
                     {
-                        this.lbl_m2.Text = hdr.Rows[0]["m2"].ToString();
+                        OrderM2 = hdr.Rows[0]["m2"].ToString();
                     }
-                    lbl_ordertotal.Text ="A$ " +Convert.ToDecimal(hdr.Rows[0]["OrderAmt"]).ToString("#0.00");
+                    OrderAmount = "A$ " +Convert.ToDecimal(hdr.Rows[0]["OrderAmt"]).ToString("#0.00");
 
 
                     orderDetails = NAMobile.DAL.OrderDAL.getTOrderDetails(UserID, glid);

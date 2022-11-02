@@ -83,7 +83,7 @@
                           <!-- shipto-->
                          <div class="col">
                               <div class="row pt-1 ps-2 pe-2">
-                                    <div class="col text-center border fonttitle border-dark">Ship To</div>
+                                    <div class="col text-center border fonttitle border-dark rounded-1">Ship To</div>
                                 </div>
                        
                          <div class="row pt-1">
@@ -100,7 +100,7 @@
         
       
                                   
-                                    <div class="col text-center border fonttitle border-dark bg-white" style="cursor:pointer" onclick="EditHdr()" >
+                                    <div class="col text-center fonttitle border-dark bg-white rounded-1" style="cursor:pointer" onclick="EditHdr()" >
                                            <span data-feather="edit-2"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
                                   Copy Item From <input type="text"  style="width:3.8rem;" /> to  <input type="text" style="width:3.8rem;"  />
                               </div>
                                <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
-                                   <div class="border fonttitle border-dark bg-white rounded-1" >
+                                   <div class="fonttitle border-dark bg-white rounded-1" >
                                     <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
                                  </div>
                               </div>
@@ -132,34 +132,34 @@
 
                       </div>
                     <div class="bg-white row"><div class="col">&nbsp;</div></div>
-                    <!-- order detail info for handset-->
+                    <!--  Shutter order detail info for handset-->
                     <%if (ProductType == "Shutters")
                         { %>
                       <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
                               <%foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows)
                                   {
-                                        string divheight = "";
-                                        decimal TotalAmt = Convert.ToDecimal(dr["TotalAmt"]);
-                                        decimal partamt = 0;
-                                        if (!(dr["PartAmt"] is System.DBNull)){
-                                            partamt = Convert.ToDecimal(dr["PartAmt"]);
-                                        }
-                                        TotalAmt = TotalAmt + partamt;
-                                        if (dr["MidRailLoc"].ToString().ToUpper() == "OTHER")
-                                        {
-                                            if (Convert.ToInt32(dr["divheight1"]) > 0)
-                                            {
-                                                divheight += "1<sup>st</sup>:" + dr["divheight1"].ToString();
-                                            }
-                                            if (Convert.ToInt32(dr["divheight2"]) > 0)
-                                            {
-                                                divheight += "<br>2<sup>nd</sup>:" + dr["divheight1"].ToString();
-                                            }
-                                        }else  if (dr["MidRailLoc"].ToString() == "Centre")
-                                        {
-                                            divheight = "Centre";
-                                        }
-                                      
+                                      string divheight = "";
+                                      decimal TotalAmt = Convert.ToDecimal(dr["TotalAmt"]);
+                                      decimal partamt = 0;
+                                      if (!(dr["PartAmt"] is System.DBNull)) {
+                                          partamt = Convert.ToDecimal(dr["PartAmt"]);
+                                      }
+                                      TotalAmt = TotalAmt + partamt;
+                                      if (dr["MidRailLoc"].ToString().ToUpper() == "OTHER")
+                                      {
+                                          if (Convert.ToInt32(dr["divheight1"]) > 0)
+                                          {
+                                              divheight += "1<sup>st</sup>:" + dr["divheight1"].ToString();
+                                          }
+                                          if (Convert.ToInt32(dr["divheight2"]) > 0)
+                                          {
+                                              divheight += "<br>2<sup>nd</sup>:" + dr["divheight1"].ToString();
+                                          }
+                                      } else if (dr["MidRailLoc"].ToString() == "Centre")
+                                      {
+                                          divheight = "Centre";
+                                      }
+
                                       %>
                                <div class="eacherow mb-2" >
                              <div class="row row-cols-2">
@@ -301,7 +301,7 @@
                                 <div class="col">m2</div>
                                   <div class="col text-end fonttitle"><%=Convert.ToDecimal(dr["m2"]).ToString("f2") %></div>
                                 <div class="col">Item Total Charge</div>
-                                  <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ <% Response.Write(TotalAmt.ToString("f2") );  %></div>
+                                  <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ <% Response.Write(TotalAmt.ToString("f2"));  %></div>
                             </div>
 
                         </div>
@@ -328,15 +328,15 @@
                     <div class="p-2">
                        <div class="row row-cols-2 p-1">
                                 <div class="col">Total m2</div>
-                                  <div class="col text-end fonttitle">1.25</div>
+                                  <div class="col text-end fonttitle"><%=OrderM2 %></div>
                                 <div class="col">Order surcharge</div>
-                                  <div class="col text-end fonttitle" >A$ 25</div>
+                                  <div class="col text-end fonttitle" ><%=OrderHdrSurcharge %></div>
                        </div>
 
                         <div  class="p-1 border-top border-dark" >
                         <div class="row row-cols-2 pt-3">
                              <div class="col">Total cost of job (excl GST)</div>
-                               <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;">A$ 648.72</div>
+                               <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;"><%=OrderAmount %></div>
                         </div>
                      </div>
 
@@ -390,11 +390,11 @@
                             </tr>
                           </thead>
                             <tbody class="table-group-divider">
-                                <%foreach(System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
+                                <%foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
                                         string divheight = "";
                                         decimal TotalAmt = Convert.ToDecimal(dr["TotalAmt"]);
                                         decimal partamt = 0;
-                                        if (!(dr["PartAmt"] is System.DBNull)){
+                                        if (!(dr["PartAmt"] is System.DBNull)) {
                                             partamt = Convert.ToDecimal(dr["PartAmt"]);
                                         }
                                         TotalAmt = TotalAmt + partamt;
@@ -408,7 +408,7 @@
                                             {
                                                 divheight += "<br>2<sup>nd</sup>:" + dr["divheight1"].ToString();
                                             }
-                                        }else  if (dr["MidRailLoc"].ToString() == "Centre")
+                                        } else if (dr["MidRailLoc"].ToString() == "Centre")
                                         {
                                             divheight = "Centre";
                                         }
@@ -479,7 +479,7 @@
                                                           <td  colspan="2" >
                                                                <input type="button" class="btn-na btn-na-outline" value="+ Add Part" />
                                                           </td>
-                                                          <%if (hasPriceShow && partamt>0 ) { %>
+                                                          <%if (hasPriceShow && partamt > 0) { %>
                                                           <td colspan="4"></td>
                                                           <td class=" border-top border-dark" >Parts Charge Total</td>
                                                           <td class=" border-top border-dark" colspan="2">A$ <%=Convert.ToDecimal(dr["PartAmt"]).ToString("f2") %></td>
@@ -518,7 +518,7 @@
                                              Item Total Charge
                                             </div>
                                             <div class="col-2 fonttitle text-end pt-2" style="color:red;">
-                                         A$ <% Response.Write(TotalAmt.ToString("f2") );  %>
+                                         A$ <% Response.Write(TotalAmt.ToString("f2"));  %>
                                             
                                             </div>
                                             </div>
@@ -558,7 +558,7 @@
                                 Total m2
                             </div>
                             <div class="col-2 fonttitle text-end">
-                            <asp:Label ID="lbl_m2" runat="server"></asp:Label>
+                              <%=OrderM2 %>
                             </div>
                             </div>
 
@@ -567,7 +567,7 @@
                                 Order surcharge
                             </div>
                             <div class="col-2 fonttitle text-end">
-                              <asp:Label ID="lbl_ordersurcharge" runat="server"></asp:Label>
+                            <%=OrderHdrSurcharge %>
                            
                             </div>
                             </div>
@@ -577,7 +577,7 @@
                             Total cost of job (excl GST)
                             </div>
                             <div class="col-2 fonttitle border-top border-dark text-end pt-3" style="color:red; font-size:1.1rem;">
-                                 <asp:Label ID="lbl_ordertotal" runat="server"></asp:Label>
+                                <%=OrderAmount %>
                               
                             </div>
                             </div>
@@ -602,10 +602,205 @@
                         else if (ProductType == "DisplayTower")
                         { %>
 
-                        <%} else if (ProductType != "") { 
+                        <%} else if (ProductType == "CellularShade") { 
+                                int AutoLineID = 0;
+                                %>
+                       <!-- CellularShade order detail info for handset-->
+                        <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
+                              <%
+                                  
+                                  foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
+                                      AutoLineID++;
+                               %>
+                               <div class="eacherow mb-2" >
+                             <div class="row row-cols-2">
+                              <div class="col">No</div>
+                              <div class="col fonttitle text-end"><%= AutoLineID.ToString() %></div>
+                              <div class="col">Item</div>
+                               <div class="col fonttitle text-end">Honeycomb Shade</div>
+                                 <div class="col">Room</div>
+                               <div class="col fonttitle text-end"><%= dr["Room"].ToString() %></div>
+
+                               <div class="col">Material</div>
+                               <div class="col fonttitle text-end"><%= NAMobile.Model.GlobalVars.GetHCPgmDesc(dr["PgmDesc"].ToString()) %></div>
+
+                           
+
+                                <div class="col">Colour</div>
+                               <div class="col fonttitle text-end"><%= dr["MaterialColorName"].ToString() %></div>
+                                    <div class="col">Headrail Colour</div>
+                               <div class="col fonttitle text-end"><%= dr["FinColorDesc"].ToString() %></div>
+                                      <div class="col">Qty</div>
+                               <div class="col fonttitle text-end"><%= dr["OrderQty"].ToString() %></div>
+
+                                   <div class="col">Width/Height</div>
+                               <div class="col fonttitle text-end"><%= dr["Width"].ToString() %>/<%= dr["Leng"].ToString() %></div>
+                                 <div class="col">In/Out</div>
+                               <div class="col fonttitle text-end"><%= dr["MountType"].ToString() %></div>
+
+                             
+
+                               <div class="col">Remark</div>
+                               <div class="col fonttitle text-end"><%= dr["remark"].ToString() %></div>
+
+                               <div class="col">Item Total Charge</div>
+                               <div class="col fonttitle text-end" style="color:blue; text-decoration:underline;">A$<%= Convert.ToDecimal(dr["TotalAmt"]).ToString("f2") %></div>
+
+                           
+                         </div>
+                          <!-- toobar-->
+                           <div class="row p-1">
+                                  <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                              </div>
+  
+                         <div class="bg-white row"><div class="col">&nbsp;</div></div>
+                           </div> 
+                            <%}//end  order details foreach%>
+                           
+                    
+                           
+                               <!-- tool bar -->
+                              <div class="p-3">
+                                  <div class="row">
+                                      <div class="col text-center">
+                                          <input type="button" class="btn-na "  data-bs-toggle="modal" data-bs-target="#selectshutterprogram" value="+ Add New Item" />
+                                     &nbsp;&nbsp;&nbsp;
+                                     <input type="button" class="btn-na" value="+ Add Part" />
+                                      </div>
+                                  </div>
+                            
+                              </div>
+
+                               <!-- Order total for handset -->
+                            <div class="p-2">
+                               <div class="row row-cols-2 p-1">
+                                        <div class="col">Total m2</div>
+                                          <div class="col text-end fonttitle"><%=OrderM2 %></div>
+                                        <div class="col">Order surcharge</div>
+                                          <div class="col text-end fonttitle" ><%=OrderHdrSurcharge %></div>
+                               </div>
+
+                                <div  class="p-1 border-top border-dark" >
+                                <div class="row row-cols-2 pt-3">
+                                     <div class="col">Total cost of job (excl GST)</div>
+                                       <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;"><%=OrderAmount %></div>
+                                </div>
+                             </div>
+
+                            </div>   
+
+                             <!-- check out toolbar -->
+                              <div class="p-3">
+                                     <div class="row pt-2">
+                                         <div class="col col-2"></div>
+                                          <div class="col col-4">
+                                                 <input type="button" class="btn-na btn-na-outline"   value="Delete Order" />
+
+                                          </div>
+                                           <div class="col col-4 text-end">
+                                                   <input type="button"  class="btn-na btn-na-outline" style="background-color:#fff;color:#000;border: 1px solid #003c4b;"  value="Edit Order" />
+                                               </div>
+                                          <div class="col col-2"></div>
+                            
+                                    </div>
+                    
+                                     <div class="d-grid col-8 mx-auto pt-3">
+                                        <input type="button" class="btn-na " value=" Check out " />
+                                    </div>
+                              </div>
+
+
+                      </div>
+
+                          <!-- CellularShade order detail info for pc -->
+                       <div class="p-2 d-none d-sm-block bg-light">
+                          <table class="table">
+                            <thead>
+                            <tr >
+                                <th scope="col">No</th>
+                           
+                                <th scope="col">Material</th>
+                                <th scope="col">Room</th>
+                                <th scope="col">Colour</th>
+                                <th scope="col">Headrail Colour</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col"> Width/Height</th>
+                                <th>In/Out</th>
+                                <th>Remark</th>
+                                <th>Item Total Charge</th>
+                            </tr>
+                          </thead>
+                            <tbody class="table-group-divider">
+                                <%
+                                     AutoLineID = 0;
+                                    foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
+                                       AutoLineID++;
+                                        %>
+                                    <tr>
+                                  <th scope="row"><%= AutoLineID.ToString() %></th>
+                               
+                                  <td><%= NAMobile.Model.GlobalVars.GetHCPgmDesc(dr["PgmDesc"].ToString()) %></td>
+                                  <td><%= dr["Room"].ToString() %></td>
+                                    
+                                  <td><%= dr["MaterialColorName"].ToString() %></td>
+                                   <td><%= dr["FinColorDesc"].ToString() %></td>
+                                          <td><%= dr["OrderQty"].ToString() %></td>
+                                  <td><%= dr["Width"].ToString() %>/<%= dr["Leng"].ToString() %></td>
+                                  <td><%= dr["MountType"].ToString() %></td>
+                                
+                                  <td><%= dr["Remark"].ToString() %></td>
+                                
+                               
+                                     <td>A$<%= Convert.ToDecimal(dr["TotalAmt"]).ToString("f2") %></td>
+                           
+                                </tr>
                          
-                        }%>
+                                 
+
+                        
+
+                               <% } // orderdetail foreach%>
+                            
+                              </tbody>
+
+                        </table>
+                          
                       
+                     </div>
+                    
+
+                      <%} else if (ProductType == "Blinds") { %>
+
+                      <%} else if (ProductType == "PerfectSheer") { %>
+
+                      <%}%>
+                      
+                    <!-- Parts -->
+
+
                   </main>
                  </div>
              </div>

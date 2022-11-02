@@ -42,6 +42,48 @@ namespace NAMobile.Model
 			}
 			return materialParams;
 		}
+	
 
+		public static string GetHCPgmDesc(string material)
+		{
+			var materialParams = material;
+			switch (material)
+			{
+				case "BO":
+					materialParams = "SoftCel Black out";
+					break;
+				case "SL":
+					materialParams = "SoftCel Spun lace";
+					break;
+				case "US":
+					materialParams = "UltraCel semi-opaque";
+					break;
+				case "UB":
+					materialParams = "UltraCel blackout";
+					break;
+				case "RD":
+					materialParams = "Room Darkening";
+					break;
+				case "DF":
+					materialParams = "Designer Fabric";
+					break;
+				case "FR":
+					materialParams = "Flame Resistant";
+					break;
+				case "LF":
+					materialParams = "Light Filtering";
+					break;
+				case "SH":
+					materialParams = "Sheer";
+					break;
+				case "WS":
+					materialParams = "Windsong";
+					break;
+				case "BZ":
+					materialParams = "Breeze";
+					break;
+			}
+			return materialParams;
+		}
 	}
 }

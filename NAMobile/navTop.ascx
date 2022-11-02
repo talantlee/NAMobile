@@ -31,12 +31,12 @@
          <div class="col d-md-none col-2 col-md-1">
              <span onclick="replaceToggler(this)" data-feather="align-justify" class="align-text-bottom" style="width:32px; height:32px; cursor:pointer" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"></span>
           </div>
-         <div class="col col-8 col-md-10 text-center text-md-start"><img src="css/images/home_norman3.jpg" height="49" /></div>
-     <div class="col col-2 col-md-1 text-end border-1">
+         <div class="col col-8 col-md-9 text-center text-md-start"><img src="css/images/home_norman3.jpg" height="49" /></div>
+     <div class="col col-2 col-md-2 text-end border-1">
          <div class="row row-cols-1 row-cols-md-3">
              <div class="col col-md-3"><span data-feather="user" class="align-text-bottom" style="width:32px; height:32px;"></span></div>
-             <div class="col d-none d-md-block text-start pt-2 fonttitle col-md-7"><%=Session["UserID"] %></div>
-             <div class="col d-none d-md-block text-start col-md-2">
+             <div class="col d-none d-md-block text-start pt-2 ps-1 fonttitle col-md-6"><%=Session["UserID"] %></div>
+             <div class="col d-none d-md-block text-end col-md-3">
                  <a href="LogOut.aspx"><span data-feather="power" class="align-text-bottom" style="width:32px; height:32px;"></span></a></div>
          </div>
 
@@ -56,15 +56,18 @@
             <div class="pt-4">
             <div class="text-center p-1" style="background-color:#6e8299; color:white;font-size:1.15rem; ">About Order</div>
          <ul class="list-group">
-  <li class="list-group-item" ><a href="PendingOrders.aspx" class="nav-link" >Place Order</a></li>
+  <li class="list-group-item" >Place Order</li>
               <li class="list-group-item ps-5" data-bs-toggle="modal" data-bs-target="#selectshutterprogram">Shutters &nbsp;&nbsp;<span data-feather="chevron-right" class="align-text-top" ></span>
               </li>
                 <li class="list-group-item ps-5">Blinds &nbsp;&nbsp;<span data-feather="chevron-right" class="align-text-top" ></span></li>
               <li class="list-group-item ps-5" data-bs-toggle="modal" data-bs-target="#selectshadesprogram">Shades &nbsp;&nbsp;<span data-feather="chevron-right" class="align-text-top" ></span></li>
-  <li class="list-group-item">Track Order</li>
-  <li class="list-group-item">On Hold Question</li>
-  <li class="list-group-item">Ask a Question</li>
-  <li class="list-group-item">RGA</li>
+ 
+
+               <li class="list-group-item"><a href="PendingOrders.aspx" class="nav-link" >Checkout My Order</a></li>
+             <li class="list-group-item">Track Order</li>
+              <li class="list-group-item">On Hold Question</li>
+              <li class="list-group-item">Ask a Question</li>
+              <li class="list-group-item">RGA</li>
 </ul>
 
              <div class="text-center p-1" style="background-color:#6e8299; color:white;font-size:1.1rem;">About Sales</div>
