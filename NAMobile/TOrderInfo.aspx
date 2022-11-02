@@ -263,7 +263,7 @@
                                       <%if (hasPriceShow) { %>
                                   <div class="col">Item Total Charge</div>
                               
-                                  <div class="col"><%=Convert.ToDecimal(dpart["itemprice"]).ToString("f2") %></div>
+                                  <div class="col">A$ <%=Convert.ToDecimal(dpart["itemprice"]).ToString("f2") %></div>
                                  <%} %>
                             </div>
 
@@ -414,7 +414,7 @@
                                                            <td><%= NAMobile.Model.GlobalVars.GetMaterialName(dpart["Mater_Code"].ToString()) %></td>
                                                            <td><%= dpart["specDes"].ToString() %></td>
                                                            <td><%= dpart["ColorDes"].ToString() %></td>
-                                                          <%if (hasPriceShow) { Response.Write("<td>" + Convert.ToDecimal(dpart["itemprice"]).ToString("f2") + "</td>"); } %>
+                                                          <%if (hasPriceShow) { Response.Write("<td>A$ " + Convert.ToDecimal(dpart["itemprice"]).ToString("f2") + "</td>"); } %>
                                                           <td>Action</td>
                                                       </tr>
                                                       <%
@@ -643,7 +643,7 @@
                     <!-- parts handset -->
                         <div class=" d-block d-sm-none bg-white p-3 rounded-2 m-2" >
                             <%     int recno = 0;
-                                foreach (System.Data.DataRow dpart in  orderDetails.Tables[1].Rows)
+                                foreach (System.Data.DataRow dpart in orderDetails.Tables[1].Rows)
                                 {
                                     recno++;
                                     %>
@@ -660,10 +660,10 @@
 
                                   <div class="col">Length (mm)</div>
                                 <div class="col fonttitle text-end"><%if (Convert.ToDecimal(dpart["length"]) > 0) { Response.Write(dpart["length"].ToString()); } %></div>
-
+                                 <%if (ProductType == "Shutters") {  %>
                                   <div class="col">Material</div>
                                 <div class="col fonttitle text-end"><%= NAMobile.Model.GlobalVars.GetMaterialName(dpart["Mater_Code"].ToString()) %></div>
-
+                                 <%} %>
                                   <div class="col">Specification</div>
                                 <div class="col fonttitle text-end"><%= dpart["specDes"].ToString() %></div>
                                 
@@ -672,7 +672,7 @@
                                       <%if (hasPriceShow) { %>
                                   <div class="col">Item Total Charge</div>
                               
-                                  <div class="col"><%=Convert.ToDecimal(dpart["itemprice"]).ToString("f2") %></div>
+                                  <div class="col fonttitle text-end">A$ <%=Convert.ToDecimal(dpart["itemprice"]).ToString("f2") %></div>
                                  <%} %>
                             </div>
 
@@ -713,7 +713,9 @@
                                     <th scope="col">Item</th>
                                     <th scope="col">Qty</th>
                                     <th scope="col">Length (mm)</th>
+                                      <%if (ProductType == "Shutters") {  %>
                                     <th scope="col">Material</th>
+                                    <%} %>
                                         <th scope="col">Specification</th>
                                     <th>Colour</th>
                                     <%if (hasPriceShow) { Response.Write("<th>Item Total Charge</th>"); } %>
@@ -730,10 +732,13 @@
                                         <td><%= dpart["Kind"].ToString() %></td>
                                         <td><%= dpart["Quan"].ToString() %></td>
                                         <td><%if (Convert.ToDecimal(dpart["length"]) > 0) { Response.Write(dpart["length"].ToString()); } %></td>
-                                        <td><%= NAMobile.Model.GlobalVars.GetMaterialName(dpart["Mater_Code"].ToString()) %></td>
+                                        <%if (ProductType == "Shutters")
+                                            { %>
+                                                <td><%= NAMobile.Model.GlobalVars.GetMaterialName(dpart["Mater_Code"].ToString()) %></td>
+                                            <%} %>
                                         <td><%= dpart["specDes"].ToString() %></td>
                                         <td><%= dpart["ColorDes"].ToString() %></td>
-                                        <%if (hasPriceShow) { Response.Write("<td>" + Convert.ToDecimal(dpart["itemprice"]).ToString("f2") + "</td>"); } %>
+                                        <%if (hasPriceShow) { Response.Write("<td>A$ " + Convert.ToDecimal(dpart["itemprice"]).ToString("f2") + "</td>"); } %>
                                         <td>Action</td>
                                     </tr>
                                     <%
