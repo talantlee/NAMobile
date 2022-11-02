@@ -239,30 +239,32 @@
                             <%    foreach (System.Data.DataRow dpart in dtlparts)
                                 {  %>
 
-                             <div class="row row-cols-2 pt-2">
+                                <div class="row row-cols-2 pt-2">
                                 <div class="col">No</div>
-                                <div class="col fonttitle text-end">1</div>
+                                <div class="col fonttitle text-end"><%=recno.ToString() %></div>
 
                                   <div class="col">Item</div>
-                                <div class="col fonttitle text-end">Hinge</div>
+                                <div class="col fonttitle text-end"><%= dpart["Kind"].ToString() %></div>
 
                                   <div class="col">Qty</div>
-                                <div class="col fonttitle text-end">100</div>
+                                <div class="col fonttitle text-end"><%= dpart["Quan"].ToString() %></div>
 
                                   <div class="col">Length (mm)</div>
-                                <div class="col fonttitle text-end">1</div>
+                                <div class="col fonttitle text-end"><%if (Convert.ToDecimal(dpart["length"]) > 0) { Response.Write(dpart["length"].ToString()); } %></div>
 
                                   <div class="col">Material</div>
-                                <div class="col fonttitle text-end">Woodlore</div>
+                                <div class="col fonttitle text-end"><%= NAMobile.Model.GlobalVars.GetMaterialName(dpart["Mater_Code"].ToString()) %></div>
 
                                   <div class="col">Specification</div>
-                                <div class="col fonttitle text-end">60mm Self-mortise hinge</div>
+                                <div class="col fonttitle text-end"><%= dpart["specDes"].ToString() %></div>
                                 
                                   <div class="col">Colour</div>
-                                <div class="col fonttitle text-end">Silk White</div>
-                                
+                                <div class="col fonttitle text-end"><%= dpart["ColorDes"].ToString() %></div>
+                                      <%if (hasPriceShow) { %>
                                   <div class="col">Item Total Charge</div>
-                            
+                              
+                                  <div class="col"><%=Convert.ToDecimal(dpart["itemprice"]).ToString("f2") %></div>
+                                 <%} %>
                             </div>
 
                              <div class="row border-bottom border-dark pb-2 pt-3 row-cols-2">
@@ -332,8 +334,7 @@
                                  <th>Hinge Colour</th>
                                  <th>Mid Rail Location</th>
                                  <th>Layout Code</th>
-                                 <!--th>m2</!--th>
-                                 <th>Item Total Charge</th-->
+                              
                             </tr>
                           </thead>
                             <tbody class="table-group-divider">
@@ -476,10 +477,6 @@
                                <% } // orderdetail foreach%>
                             
                              
-                                 <!-- order parts -->
-                               
-                                   
-
                                
                               </tbody>
 
@@ -495,7 +492,7 @@
 
                         <%} else if (ProductType == "CellularShade") { 
                                 int AutoLineID = 0;
-                                %>
+                               %>
                        <!-- CellularShade order detail info for handset-->
                         <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
                               <%
@@ -533,10 +530,10 @@
 
                                <div class="col">Remark</div>
                                <div class="col fonttitle text-end"><%= dr["remark"].ToString() %></div>
-
+                                <%if (hasPriceShow){%>
                                <div class="col">Item Total Charge</div>
                                <div class="col fonttitle text-end" style="color:blue; text-decoration:underline;">A$<%= Convert.ToDecimal(dr["TotalAmt"]).ToString("f2") %></div>
-
+                                 <%} %>
                            
                          </div>
                           <!-- toobar-->
@@ -588,7 +585,9 @@
                                 <th scope="col"> Width/Height</th>
                                 <th>In/Out</th>
                                 <th>Remark</th>
+                                   <%if (hasPriceShow){%>
                                 <th>Item Total Charge</th>
+                                <%} %>
                             </tr>
                           </thead>
                             <tbody class="table-group-divider">
@@ -611,9 +610,10 @@
                                 
                                   <td><%= dr["Remark"].ToString() %></td>
                                 
-                               
+                                  <%if (hasPriceShow)
+                                      {%>
                                      <td>A$<%= Convert.ToDecimal(dr["TotalAmt"]).ToString("f2") %></td>
-                           
+                                    <%} %>
                                 </tr>
                          
                                  
@@ -637,7 +637,115 @@
                       <%}%>
                       
                     <!-- Parts -->
+                    <%if (orderDetails.Tables[1].Rows.Count > 0)
+                        { %>
+                     <div class="row pt-3"><div class="col">Part</div></div>
+                    <!-- parts handset -->
+                        <div class=" d-block d-sm-none bg-white p-3 rounded-2 m-2" >
+                            <%     int recno = 0;
+                                foreach (System.Data.DataRow dpart in  orderDetails.Tables[1].Rows)
+                                {
+                                    recno++;
+                                    %>
 
+                             <div class="row row-cols-2 pt-2">
+                                <div class="col">No</div>
+                                <div class="col fonttitle text-end"><%=recno.ToString() %></div>
+
+                                  <div class="col">Item</div>
+                                <div class="col fonttitle text-end"><%= dpart["Kind"].ToString() %></div>
+
+                                  <div class="col">Qty</div>
+                                <div class="col fonttitle text-end"><%= dpart["Quan"].ToString() %></div>
+
+                                  <div class="col">Length (mm)</div>
+                                <div class="col fonttitle text-end"><%if (Convert.ToDecimal(dpart["length"]) > 0) { Response.Write(dpart["length"].ToString()); } %></div>
+
+                                  <div class="col">Material</div>
+                                <div class="col fonttitle text-end"><%= NAMobile.Model.GlobalVars.GetMaterialName(dpart["Mater_Code"].ToString()) %></div>
+
+                                  <div class="col">Specification</div>
+                                <div class="col fonttitle text-end"><%= dpart["specDes"].ToString() %></div>
+                                
+                                  <div class="col">Colour</div>
+                                <div class="col fonttitle text-end"><%= dpart["ColorDes"].ToString() %></div>
+                                      <%if (hasPriceShow) { %>
+                                  <div class="col">Item Total Charge</div>
+                              
+                                  <div class="col"><%=Convert.ToDecimal(dpart["itemprice"]).ToString("f2") %></div>
+                                 <%} %>
+                            </div>
+
+                             <div class="row border-bottom border-dark pb-2 pt-3 row-cols-2">
+                                  <div class="col col-4">Action</div>
+                                   <div class="col col-8">
+                                       <div class="row-cols-2 row">
+                                        <div class="text-center col"  >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
+                                 </div>
+                              </div>
+                                     <div class="text-center col" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1 " >
+                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                 </div>
+                              </div>
+                         </div>
+
+                                </div>
+                            </div>
+
+                         
+                             <%} %>
+                            <div class="row pt-2 text-center">
+                                  <div class="col"><input type="button" class="btn-na btn-na-outline" value="+ Add Part" /></div>
+                                
+                            </div>
+                     
+                        </div>
+
+                    <!-- Parts PC -->
+                      <div class="bg-white p-1 rounded-2 m-2 d-none d-sm-block" >
+                        <table class="table table-borderless">
+                                    <thead>
+                                <tr >
+                                    <th scope="col">No</th>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Length (mm)</th>
+                                    <th scope="col">Material</th>
+                                        <th scope="col">Specification</th>
+                                    <th>Colour</th>
+                                    <%if (hasPriceShow) { Response.Write("<th>Item Total Charge</th>"); } %>
+                                    <th>Action</th>
+                               
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <%
+                                        recno = 1;
+                                        foreach (System.Data.DataRow dpart in orderDetails.Tables[1].Rows)
+                                        {  %>
+                                        <tr><td scope="row"><%= recno.ToString() %></td>
+                                        <td><%= dpart["Kind"].ToString() %></td>
+                                        <td><%= dpart["Quan"].ToString() %></td>
+                                        <td><%if (Convert.ToDecimal(dpart["length"]) > 0) { Response.Write(dpart["length"].ToString()); } %></td>
+                                        <td><%= NAMobile.Model.GlobalVars.GetMaterialName(dpart["Mater_Code"].ToString()) %></td>
+                                        <td><%= dpart["specDes"].ToString() %></td>
+                                        <td><%= dpart["ColorDes"].ToString() %></td>
+                                        <%if (hasPriceShow) { Response.Write("<td>" + Convert.ToDecimal(dpart["itemprice"]).ToString("f2") + "</td>"); } %>
+                                        <td>Action</td>
+                                    </tr>
+                                    <%
+                                            recno++;
+                                        } %>
+                                                    
+                                </tbody>
+                             
+                            </table>
+                       </div>
+                   
+                       <% }%>
                     <!-- Order total for Handset-->
                     <div class=" d-block d-sm-none">
                     <!-- tool bar -->
@@ -653,21 +761,24 @@
                     </div>
 
                     <!-- Order total for handset -->
-                <div class="p-2">
+                    <div class="p-2">
                     <div class="row row-cols-2 p-1">
                             <div class="col">Total m2</div>
                                 <div class="col text-end fonttitle"><%=OrderM2 %></div>
+                          <%if (hasPriceShow)
+                              { %>
                             <div class="col">Order surcharge</div>
-                                <div class="col text-end fonttitle" ><%=OrderHdrSurcharge %></div>
+                            <div class="col text-end fonttitle" ><%=OrderHdrSurcharge %></div>
+                        <%} %>
                     </div>
-
+                    <%if (hasPriceShow) { %>
                     <div  class="p-1 border-top border-dark" >
                     <div class="row row-cols-2 pt-3">
                             <div class="col">Total cost of job (excl GST)</div>
                             <div class="col text-end fonttitle" style="color:red; font-size:1.1rem;"><%=OrderAmount %></div>
                     </div>
                     </div>
-
+                    <%} %>
                 </div>   
 
                     <div class="p-3">
@@ -710,7 +821,7 @@
                             <%=OrderM2 %>
                         </div>
                         </div>
-
+                          <%if (hasPriceShow){ %>
                         <div class="row justify-content-end p-1">
                         <div class="col-2">
                             Order surcharge
@@ -720,7 +831,7 @@
                            
                         </div>
                         </div>
-
+                       
                         <div class="row justify-content-end p-1">
                         <div class="col-2 border-top border-dark pt-3">
                         Total cost of job (excl GST)
@@ -730,11 +841,12 @@
                               
                         </div>
                         </div>
-
+                        <%} %>
                        
 
                       
                     </div>
+
                     <div class="p-3 d-none d-sm-block">
                         <div class="row">
                             <div class="col text-end">
