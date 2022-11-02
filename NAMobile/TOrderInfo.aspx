@@ -134,7 +134,9 @@
                     <div class="bg-white row"><div class="col">&nbsp;</div></div>
                  
                     <%if (ProductType == "Shutters")
-                        { %>
+                        {
+                            #region Shutter Details & Parts
+                            %>
                        <!--  Shutter order detail info for handset-->
                       <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
                               <%foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows)
@@ -486,11 +488,14 @@
                      </div>
 
   
-                    <%}
+                    <%
+                            #endregion
+                        }
                         else if (ProductType == "DisplayTower")
                         { %>
 
-                        <%} else if (ProductType == "CellularShade") { 
+                        <%} else if (ProductType == "CellularShade") {
+                             #region CellularShade Detail....
                                 int AutoLineID = 0;
                                %>
                        <!-- CellularShade order detail info for handset-->
@@ -630,12 +635,17 @@
                      </div>
                     
 
-                      <%} else if (ProductType == "Blinds") { %>
+                      <%
+                              #endregion
+                          }
+                          else if (ProductType == "Blinds") { %>
 
                       <%} else if (ProductType == "PerfectSheer") { %>
 
                       <%}%>
-                      
+
+
+                    <% #region Orders Parts...& Order Total & Check out Tools %>  
                     <!-- Parts -->
                     <%if (orderDetails.Tables[1].Rows.Count > 0)
                         { %>
@@ -864,7 +874,8 @@
                         </div>
                             
                     </div>
-
+                    
+                    <% #endregion %>
 
                   </main>
                  </div>
