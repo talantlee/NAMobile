@@ -87,6 +87,7 @@
     <Content Include="LogOut.aspx" />
     <Content Include="navTop.ascx" />
     <Content Include="Notices.aspx" />
+    <Content Include="OrderSteps.ascx" />
     <Content Include="PendingOrders.aspx" />
     <Content Include="css\radiogroups.css" />
     <Content Include="PerfectSheerOptions.aspx" />
@@ -155,6 +156,13 @@
     </Compile>
     <Compile Include="Notices.aspx.designer.cs">
       <DependentUpon>Notices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSteps.ascx.cs">
+      <DependentUpon>OrderSteps.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderSteps.ascx.designer.cs">
+      <DependentUpon>OrderSteps.ascx</DependentUpon>
     </Compile>
     <Compile Include="PendingOrders.aspx.cs">
       <DependentUpon>PendingOrders.aspx</DependentUpon>

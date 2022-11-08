@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TOrderInfo.aspx.cs" Inherits="NAMobile.TOrderInfo" %>
 
 <%@ Register Src="~/navTop.ascx" TagPrefix="uc1" TagName="navTop" %>
+<%@ Register Src="~/OrderSteps.ascx" TagPrefix="uc1" TagName="OrderSteps" %>
+
 
 
 <!DOCTYPE html>
@@ -22,22 +24,7 @@
         <div class="container-fluid" >
                 <div class="row" >
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mainpadding">
-                        <div class="pt-3">
-                            <div style="display: flex;white-space: nowrap;">
-                                <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-success" id="navStep1"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text"  >1</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
-                                <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-success" id="navStep2"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text" >2</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
-                                    <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-success" id="navStep3"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text" >3</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
-         
-                            <div class="el-step is-horizontal" style="flex-basis: 25%; margin-right: 0px;"><div class="el-step__head is-success" id="navStep4"><div class="el-step__line" style="margin-right: 0px;"><i class="el-step__line-inner" ></i></div><div class="el-step__icon is-text" >4</div></div><div class="el-step__main"><div class="el-step__description is-success"></div></div></div> 
-                                <div class="el-step is-horizontal is-flex" style="flex-basis: 25%; max-width:25%;"><div class="el-step__head is-success" id="navStep5"><div class="el-step__line"><i class="el-step__line-inner"></i></div><div class="el-step__icon is-text"><!----><div class="el-step__icon-inner">5</div></div></div><div class="el-step__main"><div class="el-step__description is-process"></div></div></div>
-                            </div>
-                            <div class="pt-2">
-                            <div style="background-color:#fddd89; height:3rem; vertical-align:central; line-height:3rem; font-weight:bold; font-size:1rem;" class="text-center rounded">
-                              Order Details
-                            </div>
-                            </div>
-
-                        </div>
+                 <uc1:OrderSteps runat="server" id="OrderSteps" Titles="Order Details" CurrentStep="5"    />
                     
 
                     <div class="d-flex justify-content-between" style="border-bottom:solid 1px #ccc;">
@@ -495,6 +482,7 @@
                         { %>
 
                         <%} else if (ProductType == "CellularShade") {
+
                              #region CellularShade Detail....
                                 int AutoLineID = 0;
                                %>
@@ -637,23 +625,309 @@
 
                       <%
                               #endregion
+
                           }
-                          else if (ProductType == "Blinds") { %>
+                          else if (ProductType == "Blinds") { 
+                              #region Blinds Detail....
+                                int AutoLineID = 0;
+                               %>
+                       <!-- Blinds order detail info for handset-->
+                        <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
+                              <%
+                                  
+                                 foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
+                                      AutoLineID++;
+                               %>
+                               <div class="eacherow mb-2" >
+                             <div class="row row-cols-2">
+                              <div class="col">No</div>
+                              <div class="col fonttitle text-end"><%= AutoLineID.ToString() %></div>
+                              <div class="col">Item</div>
+                               <div class="col fonttitle text-end">Blinds</div>
+                                 <div class="col">Room</div>
+                               <div class="col fonttitle text-end"><%= dr["Room"].ToString() %></div>
 
-                      <%} else if (ProductType == "PerfectSheer") { %>
+                         
+                           
 
-                      <%}%>
+                                <div class="col">Colour</div>
+                               <div class="col fonttitle text-end"><%= dr["MaterialColorName"].ToString() %></div>
+                                 
+                                      <div class="col">Qty</div>
+                               <div class="col fonttitle text-end"><%= dr["OrderQty"].ToString() %></div>
+                                   <div class="col">In/Out</div>
+                               <div class="col fonttitle text-end"><%= dr["MountType"].ToString() %></div>
+                                   <div class="col">Width/Height</div>
+                               <div class="col fonttitle text-end"><%= dr["Width"].ToString().TrimEnd('0').TrimEnd('.') %>/<%= dr["Leng"].ToString().TrimEnd('0').TrimEnd('.') %></div>
+                                     <div class="col">M2</div>
+                               <div class="col fonttitle text-end"><%= dr["sqMt"].ToString().TrimEnd('0').TrimEnd('.')  %></div>
+                                <%if (hasPriceShow){%>
+                               <div class="col">Item Total Charge</div>
+                               <div class="col fonttitle text-end" style="color:blue; text-decoration:underline;">A$<%= Convert.ToDecimal(dr["TotalAmt"]).ToString("f2") %></div>
+                                 <%} %>
+                           
+                         </div>
+                          <!-- toobar-->
+                           <div class="row p-1">
+                                  <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                              </div>
+  
+                         <div class="bg-white row"><div class="col">&nbsp;</div></div>
+                           </div> 
+                            <%}//end  order details foreach%>
+                           
+                      </div>
+
+                          <!-- Blinds order detail info for pc -->
+                       <div class="p-2 d-none d-sm-block bg-light">
+                          <table class="table">
+                            <thead>
+                            <tr >
+                                <th scope="col">No</th>
+                           
+                               
+                                <th scope="col">Room</th>
+                                <th scope="col">Colour</th>
+                           
+                                <th scope="col">Qty</th>
+                                        <th>In/Out</th>
+                                <th scope="col"> Width/Height</th>
+                          <th scope="col"> M2</th>
+                              
+                                   <%if (hasPriceShow){%>
+                                <th>Item Total Charge</th>
+                                <%} %>
+                            </tr>
+                          </thead>
+                            <tbody class="table-group-divider">
+                                <%
+                                     AutoLineID = 0;
+                                    foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
+                                       AutoLineID++;
+                                        %>
+                                    <tr>
+                                  <th scope="row"><%= AutoLineID.ToString() %></th>
+                               
+                                
+                                  <td><%= dr["Room"].ToString() %></td>
+                                    
+                                  <td><%= dr["MaterialColorName"].ToString() %></td>
+                                  
+                                          <td><%= dr["OrderQty"].ToString() %></td>
+                                               <td><%= dr["MountType"].ToString() %></td>
+                                  <td><%= dr["Width"].ToString().TrimEnd('0').TrimEnd('.') %>/<%= dr["Leng"].ToString().TrimEnd('0').TrimEnd('.')  %></td>
+                       
+                                  <td><%= dr["sqMt"].ToString().TrimEnd('0').TrimEnd('.')  %></td>
+                                 
+                                
+                                  <%if (hasPriceShow)
+                                      {%>
+                                     <td>A$<%= Convert.ToDecimal(dr["TotalAmt"]).ToString("f2") %></td>
+                                    <%} %>
+                                </tr>
+                         
+                                 
+
+                        
+
+                               <% } // orderdetail foreach%>
+                            
+                              </tbody>
+
+                        </table>
+                          
+
+                     </div>
+                    
+
+                      <%
+                              #endregion
+                      } else if (ProductType == "PerfectSheer") {   
+                             #region PerfectSheer Detail....
+                                int AutoLineID = 0;
+                               %>
+                       <!-- PerfectSheer order detail info for handset-->
+                        <div class="p-2 d-block d-sm-none bg-light rounded-3"  >
+                              <%
+                                  
+                                 foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
+                                      AutoLineID++;
+                               %>
+                               <div class="eacherow mb-2" >
+                             <div class="row row-cols-2">
+                              <div class="col">No</div>
+                              <div class="col fonttitle text-end"><%= AutoLineID.ToString() %></div>
+                              <div class="col">Item</div>
+                               <div class="col fonttitle text-end">PerfectSheer</div>
+                                 <div class="col">Room</div>
+                               <div class="col fonttitle text-end"><%= dr["Room"].ToString() %></div>
+
+                               <div class="col">Shade Type</div>
+                               <div class="col fonttitle text-end"><%= dr["BlindTypeName"].ToString() %></div>
+
+                           
+
+                                <div class="col">Colour</div>
+                               <div class="col fonttitle text-end"><%= dr["MaterialColorName"].ToString() %></div>
+                                 
+                                      <div class="col">Qty</div>
+                               <div class="col fonttitle text-end"><%= dr["OrderQty"].ToString() %></div>
+                                   <div class="col">In/Out</div>
+                               <div class="col fonttitle text-end"><%= dr["MountType"].ToString() %></div>
+                                   <div class="col">Width/Height</div>
+                               <div class="col fonttitle text-end"><%= dr["Width"].ToString().TrimEnd('0').TrimEnd('.') %>/<%= dr["Leng"].ToString().TrimEnd('0').TrimEnd('.') %></div>
+                                     <div class="col">M2</div>
+                               <div class="col fonttitle text-end"><%= dr["sqMt"].ToString().TrimEnd('0').TrimEnd('.')  %></div>
+                                <%if (hasPriceShow){%>
+                               <div class="col">Item Total Charge</div>
+                               <div class="col fonttitle text-end" style="color:blue; text-decoration:underline;">A$<%= Convert.ToDecimal(dr["TotalAmt"]).ToString("f2") %></div>
+                                 <%} %>
+                           
+                         </div>
+                          <!-- toobar-->
+                           <div class="row p-1">
+                                  <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="delete"  class="align-text-bottom" ></span><span class="p-1" >Delete</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="copy"  class="align-text-bottom" ></span><span class="p-1" >Copy</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                                     <div class="col">
+                                       <div class="col pt-1 pb-1 ps-3 pe-3 text-center justify-content-between" >
+                                   <div class="border fonttitle bg-white rounded-1 p-1" >
+                                    <span data-feather="edit"  class="align-text-bottom" ></span><span class="p-1" >Edit</span>
+                                 </div>
+                              </div>
+
+                                  </div>
+                              </div>
+  
+                         <div class="bg-white row"><div class="col">&nbsp;</div></div>
+                           </div> 
+                            <%}//end  order details foreach%>
+                           
+                      </div>
+
+                          <!-- PerfectSheer order detail info for pc -->
+                       <div class="p-2 d-none d-sm-block bg-light">
+                          <table class="table">
+                            <thead>
+                            <tr >
+                                <th scope="col">No</th>
+                           
+                                <th scope="col">Shade Type</th>
+                                <th scope="col">Room</th>
+                                <th scope="col">Colour</th>
+                           
+                                <th scope="col">Qty</th>
+                                        <th>In/Out</th>
+                                <th scope="col"> Width/Height</th>
+                          <th scope="col"> M2</th>
+                              
+                                   <%if (hasPriceShow){%>
+                                <th>Item Total Charge</th>
+                                <%} %>
+                            </tr>
+                          </thead>
+                            <tbody class="table-group-divider">
+                                <%
+                                     AutoLineID = 0;
+                                    foreach (System.Data.DataRow dr in orderDetails.Tables[0].Rows) {
+                                       AutoLineID++;
+                                        %>
+                                    <tr>
+                                  <th scope="row"><%= AutoLineID.ToString() %></th>
+                               
+                                  <td><%= dr["BlindTypeName"].ToString() %></td>
+                                  <td><%= dr["Room"].ToString() %></td>
+                                    
+                                  <td><%= dr["MaterialColorName"].ToString() %></td>
+                                  
+                                          <td><%= dr["OrderQty"].ToString() %></td>
+                                               <td><%= dr["MountType"].ToString() %></td>
+                                  <td><%= dr["Width"].ToString().TrimEnd('0').TrimEnd('.') %>/<%= dr["Leng"].ToString().TrimEnd('0').TrimEnd('.')  %></td>
+                       
+                                  <td><%= dr["sqMt"].ToString().TrimEnd('0').TrimEnd('.')  %></td>
+                                 
+                                
+                                  <%if (hasPriceShow)
+                                      {%>
+                                     <td>A$<%= Convert.ToDecimal(dr["TotalAmt"]).ToString("f2") %></td>
+                                    <%} %>
+                                </tr>
+                         
+                                 
+
+                        
+
+                               <% } // orderdetail foreach%>
+                            
+                              </tbody>
+
+                        </table>
+                          
+
+                     </div>
+                    
+
+                      <%
+                              #endregion
+
+                      }%>
 
 
                     <% #region Orders Parts...& Order Total & Check out Tools %>  
                     <!-- Parts -->
-                    <%if (orderDetails.Tables[1].Rows.Count > 0)
+                    <%
+                        System.Data.DataTable OrderParts = new System.Data.DataTable();
+                        if (ProductType == "DisplayTower")
+                        {
+                            OrderParts = orderDetails.Tables[0];
+                        }
+                        else
+                        {
+                            OrderParts = orderDetails.Tables[1];
+                        }
+                        if (OrderParts.Rows.Count > 0)
                         { %>
                      <div class="row pt-3"><div class="col">Part</div></div>
                     <!-- parts handset -->
                         <div class=" d-block d-sm-none bg-white p-3 rounded-2 m-2" >
                             <%     int recno = 0;
-                                foreach (System.Data.DataRow dpart in orderDetails.Tables[1].Rows)
+                                foreach (System.Data.DataRow dpart in OrderParts.Rows)
                                 {
                                     recno++;
                                     %>
@@ -716,7 +990,7 @@
 
                     <!-- Parts PC -->
                       <div class="bg-white p-1 rounded-2 m-2 d-none d-sm-block" >
-                        <table class="table table-borderless">
+                        <table class="table">
                                     <thead>
                                 <tr >
                                     <th scope="col">No</th>
@@ -733,10 +1007,10 @@
                                
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody lass="table-group-divider">
                                     <%
                                         recno = 1;
-                                        foreach (System.Data.DataRow dpart in orderDetails.Tables[1].Rows)
+                                        foreach (System.Data.DataRow dpart in OrderParts.Rows)
                                         {  %>
                                         <tr><td scope="row"><%= recno.ToString() %></td>
                                         <td><%= dpart["Kind"].ToString() %></td>
@@ -822,8 +1096,16 @@
                         <div class="row">
                             <div class="col text-end">
                                 <input type="button" class="btn-na "   onclick="addorderitem()"  value="+ Add New Item" />
-                            &nbsp;&nbsp;&nbsp;
+                        
+                             <%if (ProductType == "Shutters" || ProductType == "CellularShade" || ProductType == "Blinds" )
+                                 {  %> &nbsp;&nbsp;&nbsp;
                             <input type="button" class="btn-na" value="+ Add Part" />
+                                <%} %>
+
+                                  <%if ( ProductType == "CellularShade"  )
+                                 {  %>
+                               &nbsp;&nbsp;&nbsp; <input type="button" class="btn-na" value="+ Hand Sample" />
+                                <%} %>
                             </div>
                         </div>
                             
@@ -990,6 +1272,20 @@
                         break;
                     case "cellularshade":
                         window.location.href ="HCProgamOptions.aspx?glid=" + document.querySelector("#tbx_glid").value;
+                        break;
+                    case "perfectsheer":
+                        window.location.href = "PerfectSheerOptions.aspx?glid=" + document.querySelector("#tbx_glid").value;
+                        break;
+                }
+            }
+            function addpart() {
+                let pdtype = document.getElementById("txt_producttype").value;
+                switch (pdtype.toLowerCase()) {
+                    case "shutters":
+                        alert("go add shutter part page");
+                        break;
+                    case "cellularshade":
+                        alert("go add honeycom part page");
                         break;
                     case "perfectsheer":
                         window.location.href = "PerfectSheerOptions.aspx?glid=" + document.querySelector("#tbx_glid").value;
